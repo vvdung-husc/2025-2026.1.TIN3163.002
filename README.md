@@ -21,3 +21,6 @@ Yêu cầu cấu hình:
 Kali-Linux gồm 2 NIC: 1 kiểu NAT và 1 kiểu Host-only
 
 Trong đó Host-only có địa chỉ IP: 192.168.56.113/255.255.255.0
+
+VMWare
+https://it.iothings.vn/downloads/
