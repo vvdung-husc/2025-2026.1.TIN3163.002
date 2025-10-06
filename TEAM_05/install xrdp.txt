@@ -1,0 +1,29 @@
+Installing xrdp Kali Linux
+
+Now that your desktop environment is ready, it’s time to install xrdp Kali Linux— the server that handles RDP sessions on Kali.
+Step-by-Step with Commands
+
+Update your package list:
+
+sudo apt update
+
+Install xrdp:
+
+sudo apt install -y xrdp
+
+Enable and start the xrdp Kali Linux service:
+
+sudo systemctl enable xrdp
+sudo systemctl start xrdp
+
+To verify it’s running:
+
+sudo systemctl status xrdp
+
+Look for active (running) in the output.
+Source:https://monovm.com/blog/kali-rdp/
+
+How to Setup Remote Desktop in Kali Linux Using XRDP (Windows Remote Desktop Connection): https://www.youtube.com/watch?v=0kFQG-3hkbE
+How to enable Remote Desktop and SSH access to Kali Linux: https://www.fosslinux.com/120180/how-to-enable-remote-desktop-and-ssh-access-to-kali-linux.htm
+Installing XRDP Kali Linux tutorial: https://www.youtube.com/shorts/ZcxpNQauKXU
+https://quantrimang.com/cong-nghe/thay-doi-cong-listening-remote-desktop-connection-66451
