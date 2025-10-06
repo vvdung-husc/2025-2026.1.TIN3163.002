@@ -1,1 +1,2 @@
 Tài liệu nginx: https://topdev.vn/blog/nginx-la-gi/
+Link các dòng code để điều kiển máy tính từ xa: https://monovm.com/blog/kali-rdp/#Installing-xrdp-Kali-Linux (phần 4: Installing xrdp Kali Linux)
