@@ -1,1 +1,57 @@
+# Tìm hiểu dịch vụ Nginx
 
+## I. Giới thiệu Nginx
+
+Nginx (đọc là "Engine-X") là một máy chủ web (web server) mã nguồn mở, nhẹ và mạnh mẽ. Nó được dùng để phục vụ các trang web tĩnh, làm reverse proxy, load balancer, mail proxy, API gateway, và các ứng dụng bảo mật như SSL/TLS, Firewall.
+
+### Ưu điểm chính
+
+Ưu điểm của Nginx gồm:
+
+- Hiệu năng cao: xử lý hàng ngàn kết nối đồng thời với tài nguyên thấp.
+- Nhẹ: sử dụng CPU và RAM rất ít so với Apache.
+- Reverse proxy và load balancing dễ cấu hình.
+- Bảo mật tốt: hỗ trợ HTTPS, giới hạn truy cập, chống DDoS.
+
+## II. Hướng dẫn cài đặt Nginx trên Linux (Ubuntu)
+
+Sử dụng các lệnh sau để cài đặt và chạy Nginx:
+
+1. Cập nhật hệ thống: sudo apt update
+2. Cài đặt Nginx: sudo apt install nginx
+3. Kiểm tra trạng thái: sudo systemctl status nginx
+4. Khởi động Nginx: sudo systemctl start nginx
+
+## III. Hướng dẫn cài đặt Nginx trên Windows
+
+Tải bản Nginx cho Windows từ trang chủ, giải nén và chạy file nginx.exe để khởi động.
+
+## IV. Cấu trúc thư mục Nginx
+
+- /etc/nginx: chứa file cấu hình chính.
+- /var/www/html: thư mục chứa các file web tĩnh.
+- /var/log/nginx: thư mục chứa file log.
+
+## V. Ví dụ cấu hình Nginx cơ bản
+
+server {
+    
+    listen 80;
+    
+    server_name example.com;
+    
+    root /var/www/html;
+    
+    index index.html index.htm;
+    
+}
+
+## VI. So sánh Nginx với Apache
+
+Nginx nhẹ hơn, hiệu năng cao hơn và ít tốn tài nguyên so với Apache, nhưng Apache hỗ trợ nhiều module hơn và dễ dàng mở rộng.
+
+## VII. Các ứng dụng thực tế của Nginx
+
+Nginx được sử dụng phổ biến để phục vụ các trang web tĩnh, cân bằng tải trên nhiều server, làm reverse proxy, và tăng cường bảo mật website.
+
+***
