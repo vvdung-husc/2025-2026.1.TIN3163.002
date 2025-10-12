@@ -1,0 +1,22 @@
+Nginx (đọc là Engine X) là một web server mã nguồn mở, dùng để:
+Phục vụ trang web (HTTP, HTTPS).
+Reverse Proxy (chuyển tiếp yêu cầu đến backend như Node.js, PHP, v.v.).
+Load Balancer (cân bằng tải).
+Cache và bảo mật.
+=> Hiệu năng cao, Tiêu tốn ít tài nguyên, Hỗ trợ đồng thời hàng chục nghìn kết nối
+Nginx hoạt động theo mô hình event-driven (phi luồng) → xử lý hàng nghìn request chỉ với vài tiến trình.
+Cấu trúc cơ bản:
+Client --> Nginx (Proxy/Load Balancer/Static) --> Backend (PHP, Node, v.v.)
+
+Cài đặt Nginx trên Linux
+Bước 1: Cập nhật hệ thống
+Bước 2: Cài đặt
+Bước 3: Kiểm tra trạng thái dịch vụ
+Bước 4: Khởi động / Dừng / Khởi động lại
+Bước 5: Kiểm tra hoạt động
+
+Một số lệnh và thư mục quan trọng:
+nginx -t	Kiểm tra cú pháp file cấu hình
+sudo systemctl reload nginx	Nạp lại cấu hình không cần dừng dịch vụ
+/var/log/nginx/access.log	Log truy cập
+/var/log/nginx/error.log	Log lỗi
