@@ -10,6 +10,7 @@ B4:Mở VSCode,tìm mục Source control ở thanh bên (cái thứ 3 từ trên
 
 B5:Dùng tổ hợp ctrl+shift+` để mở terminal,gõ:
 git config --global user.email "email dùng để đki github"
+
 git config --global user.name "Tên tài khoản github"
 
 B6:Khi thêm cái gì vào nhóm lớp (thêm tài liệu,sửa,xóa....nhớ ctrl+s),quay lại mục Source control ở thanh bên,nhập message (nhập cái gì cũng đc,đừng chửi thề là đc) rồi bấm commit,nếu hiện cái gì cứ bấm yes (nếu có nút always thì click vào thay vì yes),rồi bấm sync change.
