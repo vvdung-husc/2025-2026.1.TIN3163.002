@@ -8,9 +8,29 @@ Note:down vmware version for vmware
 
 Ubuntu server link download: https://ubuntu.com/download/server 
 
+------------------------------------------------------------------------------------------------------------------------
+
 1.Tìm hiểu về địa chỉ IP và cách gán IPv4 trong Window, Linux
 +Tìm hiểu về địa chỉ IP: https://www.studocu.vn/vn/document/truong-dai-hoc-sai-gon/he-dieu-hanh-os/cach-chia-mang-con-va-dia-chi-ip-bai-1-tim-hieu-ve-ip/139530155
 +Cách gán IPv4 trong Window: https://quantrimang.com/cong-nghe/gan-dia-chi-ip-tinh-47928
 +Cách gán IPv4 trong Linux: https://quantrimang.com/cong-nghe/cach-tim-thiet-lap-va-thay-doi-dia-chi-ip-tren-linux-152890
 2.Tìm hiểu về Wireshark
 https://www.wireshark.org/docs/wsug_html_chunked/ChapterIntroduction.html
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+1.How to Setup Remote Desktop in Kali Linux Using XRDP (Windows Remote Desktop Connection): https://www.youtube.com/watch?v=0kFQG-3hkbE
+2.How to enable Remote Desktop and SSH access to Kali Linux: https://www.fosslinux.com/120180/how-to-enable-remote-desktop-and-ssh-access-to-kali-linux.htm
+3.Installing XRDP Kali Linux tutorial: https://www.youtube.com/shorts/ZcxpNQauKXU
+4.How Do I Remote Desktop to a VMWare Windows 10 VM, not the base machine? : https://stackoverflow.com/questions/72210163/how-do-i-remote-desktop-to-a-vmware-windows-10-vm-not-the-base-machine
+5.Truy cập máy chủ ảo từ xa với Remote Desktop: https://nhanhoa.com/tin-tuc/truy-cap-may-chu-ao-tu-xa-voi-remote-desktop.html
+6.How do I connect to a VMware virtual machine from another computer? : https://www.quora.com/How-do-I-connect-to-a-VMware-virtual-machine-from-another-computer
+7.Remote Access Kali Linux over RDP and SSH: https://www.helpwire.app/blog/remote-access-kali-linux/
+8.Cách truy cập từ xa Linux trên Windows: https://funix.edu.vn/chia-se-kien-thuc/cach-truy-cap-tu-xa-linux-tren-windows/
+9.How to enable Remote Desktop and SSH access to Kali Linux: https://www.fosslinux.com/120180/how-to-enable-remote-desktop-and-ssh-access-to-kali-linux.htm
+10.Installing RDP on Kali Linux: https://www.drchaos.com/post/installing-rdp-on-kali-linux
+11.How to Enable Remote Desktop on Kali? : https://www.dropvps.com/blog/enable-remote-desktop-on-kali/
+12.How to Connect to Kali Linux in Windows with RDP: https://www.youtube.com/watch?v=L12Tsc4G9AY
+13.https://www.itblognote.com/2019/05/cai-at-ssh-cho-windows-10-e-thuc-hien.html
+14.How to remote desktop kali linux on window: https://thudinh.blogspot.com/2017/10/how-to-remote-desktop-kali-linux-on.html
+15.Connect to Windows 11 from Kali Linux using RDP: https://www.youtube.com/watch?v=4rWx4Gzlqmk
