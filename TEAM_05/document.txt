@@ -1,3 +1,9 @@
 https://cloud.z.com/vn/news/dia-chi-ip-lan/
 https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/networking_guide/sec-configuring_ipv4_settings
 https://docs.bizflycloud.vn/cloud_server/resources/linux_statics_ip/
+
+Kali linux for virtual machine download link:https://www.kali.org/get-kali/#kali-virtual-machines
+
+Note:down vmware version for vmware
+
+Ubuntu server link download: https://ubuntu.com/download/server 
