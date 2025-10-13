@@ -9,6 +9,7 @@ B3:Vào nhóm an ninh mạng, copy link này để clone:https://github.com/vvdu
 B4:Mở VSCode,tìm mục Source control ở thanh bên (cái thứ 3 từ trên xuống),tìm ô có tên là Clone repository,paste link vào.Chọn nơi lưu folder của nhóm lớp.Đợi clone về (Khá lâu tùy vào tốc độ mạng).
 
 B5:Dùng tổ hợp ctrl+shift+` để mở terminal,gõ:
+
 git config --global user.email "email dùng để đki github"
 
 git config --global user.name "Tên tài khoản github"
