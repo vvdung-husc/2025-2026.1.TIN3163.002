@@ -7,3 +7,10 @@ Kali linux for virtual machine download link:https://www.kali.org/get-kali/#kali
 Note:down vmware version for vmware
 
 Ubuntu server link download: https://ubuntu.com/download/server 
+
+1.Tìm hiểu về địa chỉ IP và cách gán IPv4 trong Window, Linux
++Tìm hiểu về địa chỉ IP: https://www.studocu.vn/vn/document/truong-dai-hoc-sai-gon/he-dieu-hanh-os/cach-chia-mang-con-va-dia-chi-ip-bai-1-tim-hieu-ve-ip/139530155
++Cách gán IPv4 trong Window: https://quantrimang.com/cong-nghe/gan-dia-chi-ip-tinh-47928
++Cách gán IPv4 trong Linux: https://quantrimang.com/cong-nghe/cach-tim-thiet-lap-va-thay-doi-dia-chi-ip-tren-linux-152890
+2.Tìm hiểu về Wireshark
+https://www.wireshark.org/docs/wsug_html_chunked/ChapterIntroduction.html
