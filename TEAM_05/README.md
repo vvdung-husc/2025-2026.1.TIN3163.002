@@ -10,6 +10,7 @@ B4:Mở VSCode,tìm mục Source control ở thanh bên (cái thứ 3 từ trên
 
 B5:Dùng tổ hợp ctrl+shift+` để mở terminal,gõ:
 
+
 git config --global user.email "email dùng để đki github"
 
 git config --global user.name "Tên tài khoản github"
