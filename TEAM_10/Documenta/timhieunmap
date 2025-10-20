@@ -16,5 +16,5 @@ Nmap Scripting Engine (NSE)
 NSE cho phép viết script bằng Lua để tự động hóa nhiệm vụ: dò lỗ hổng, brute-force, thu thập thông tin, v.v. Script được phân loại (vuln, discovery, brute, safe, intrusive...). Đây là phần mở rộng mạnh mẽ nhất của Nmap. Ví dụ: --script vuln để chạy các script rà soát lỗ hổng. 
 Định dạng xuất kết quả & tích hợp
 Nmap hỗ trợ xuất XML (-oX), grepable, normal, và kết hợp với công cụ khác (Zenmap GUI, scripts, công cụ SIEM). Xuất XML tiện cho tự động phân tích/đưa vào pipeline. 
-Lưu ý pháp lý & đạo đức
+Lưu ý pháp lý
 Quét mạng/host chỉ khi bạn sở hữu hoặc có phép rõ ràng. Quét trái phép có thể vi phạm pháp luật. Nmap được thiết kế cho quản trị và audit có trách nhiệm. 
