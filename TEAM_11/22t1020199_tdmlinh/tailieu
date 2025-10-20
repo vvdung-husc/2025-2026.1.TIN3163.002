@@ -19,3 +19,9 @@ Windows:
 Ubnutu:
 +https://www.studocu.vn/vn/document/truong-dai-hoc-duy-tan/lap-trinh-co-so/gioi-thieu-ve-he-dieu-hanh-ubuntu-server/63586059
 +https://daynhauhoc.com/t/xin-tai-lieu-hoc-terminal-linux-ubuntu-day-du/31905
+6.Tìm hiểu về TryHackMe, OpenVPN
++TryHackMe: https://cehvietnam.com/2024/06/26/huong-dan-toan-dien-tryhackme-pentest-phong-leo-thang-dac-quyen-tren-windows/
++OpenVPN: https://fptshop.com.vn/tin-tuc/thu-thuat/openvpn-la-gi-184801
+7.Kết nối TryHackMe server với OpenVPN trong Kali Linux
++Kết nối: https://tuhocnetworksecurity.business.blog/2020/10/20/linux-can-ban-2-openvpn-va-ssh/
++cấu hình GUI OpenVPN trên máy Kali cho Tryhackme: https://www.reddit.com/r/tryhackme/comments/1ai0bdj/how_to_configure_the_gui_openvpn_on_a_kali/?tl=vi
