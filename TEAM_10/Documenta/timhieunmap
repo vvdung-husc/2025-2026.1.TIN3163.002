@@ -1,0 +1,20 @@
+Tóm tắt lý thuyết 
+Nmap là gì?
+Nmap (Network Mapper) là công cụ mã nguồn mở để khám phá mạng và kiểm tra bảo mật: tìm host còn hoạt động, quét port TCP/UDP, nhận diện dịch vụ và phiên bản, fingerprint hệ điều hành, và hỗ trợ scripting để tự động hóa kiểm tra. 
+Nguyên lý hoạt động cơ bản
+Gửi các gói IP/transport (TCP/UDP/ICMP, v.v.) đến mục tiêu và phân tích phản hồi để suy luận trạng thái host/port.
+Dựa trên kiểu trả lời (RST, SYN/ACK, ICMP unreachable, không trả lời...) để đánh giá port là open / closed / filtered. Cơ chế này cho phép Nmap hoạt động nhanh trên mạng lớn. 
+Các loại quét quan trọng
+Host discovery (-sn) — phát hiện host “sống”.
+SYN scan (-sS) — quét nhanh, “stealth” (cần quyền root).
+Connect scan (-sT) — dùng TCP connect(), không cần root.
+UDP scan (-sU) — quét dịch vụ UDP (chậm và phức tạp).
+Version detection (-sV) — xác định dịch vụ & phiên bản.
+OS detection (-O) — fingerprint hệ điều hành.
+Aggressive scan (-A) — kết hợp nhiều kỹ thuật (OS, version, NSE, traceroute). 
+Nmap Scripting Engine (NSE)
+NSE cho phép viết script bằng Lua để tự động hóa nhiệm vụ: dò lỗ hổng, brute-force, thu thập thông tin, v.v. Script được phân loại (vuln, discovery, brute, safe, intrusive...). Đây là phần mở rộng mạnh mẽ nhất của Nmap. Ví dụ: --script vuln để chạy các script rà soát lỗ hổng. 
+Định dạng xuất kết quả & tích hợp
+Nmap hỗ trợ xuất XML (-oX), grepable, normal, và kết hợp với công cụ khác (Zenmap GUI, scripts, công cụ SIEM). Xuất XML tiện cho tự động phân tích/đưa vào pipeline. 
+Lưu ý pháp lý & đạo đức
+Quét mạng/host chỉ khi bạn sở hữu hoặc có phép rõ ràng. Quét trái phép có thể vi phạm pháp luật. Nmap được thiết kế cho quản trị và audit có trách nhiệm. 
