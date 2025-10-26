@@ -1,1 +1,12 @@
-cách cài DRP trên kali linux : https://monovm.com/blog/kali-rdp/
+-cách cài DRP trên kali linux : https://monovm.com/blog/kali-rdp/
+khi làm xong các bước thì gõ shell : 'ip a'
+để lấy ip của máy kali linux và khởi động lại kali linux. Lưu ý ko đăng nhập lại trên máy ảo kali linux hãy để yên đó
+-gõ RDP trên thanh tìm kiếm của window và nhập địa chi ip của máy ảo 'ip a' đã có ở trước đó và cuối cùng chỉ nhập user password là thành công.
+1. Tìm hiểu nmap
+Link tham khảo: https://viblo.asia/p/nmap-network-scanner-cong-cu-quet-mang-va-lo-hong-bao-mat-RnB5p4bb5PG
+2. Đăng ký tài khoản TryHackMe https://tryhackme.com/
+
+3. Thử kết nối TryHackMe server với OpenVPN trong Kali Linux (Nhờ Google, ChatGPT hỗ trợ)
+Link tham khảo: https://tryhackme.com/room/introtoopenvpn để thực hiện các phòng để làm quen với môi trường cyber security trên TryHackMe
+4. Tham gia phòng Intro to OpenVPN trên TryHackMe và hoàn thành các nhiệm vụ trong phòng (Nhờ Google, ChatGPT hỗ trợ)
+Link tham khảo: https://tryhackme.com/room/openvpn 

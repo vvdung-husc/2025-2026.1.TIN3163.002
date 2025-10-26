@@ -1,0 +1,68 @@
+1. Tóm tắt ngắn trước khi bắt đầu
+•	Bạn cần file cấu hình .ovpn (Connection Pack) do TryHackMe cung cấp trên trang Access/Connect. Tải file này về máy (hoặc sang VM Kali). TryHackMe Help Center
+•	Trên Kali, dùng openvpn (chạy với sudo) để kết nối: sudo openvpn --config <file>.ovpn. TryHackMe Help Center
+________________________________________
+2. Chuẩn bị (checklist nhanh)
+1.	Đã đăng nhập TryHackMe (tài khoản) và đã vào phòng/room bạn muốn làm.
+2.	Bấm Access / OpenVPN / Download Connection Pack (tải .ovpn). TryHackMe Help Center
+3.	Nếu dùng Kali trong VM: đảm bảo VM có Internet (NAT hoặc bridged).
+4.	Trên Kali: openvpn đã cài (mặc định Kali thường có sẵn). Nếu chưa có, cài:
+sudo apt update && sudo apt install openvpn
+________________________________________
+3. Cách kết nối bằng terminal (đơn giản & hay dùng)
+1.	Mở terminal, chuyển tới thư mục chứa file .ovpn (thường ~/Downloads):
+cd ~/Downloads
+2.	Chạy (thay <file> bằng tên file .ovpn bạn tải):
+sudo openvpn --config <file>.ovpn --auth-nocache
+o	--auth-nocache giúp không lưu credentials vào file tạm, thường khuyến nghị. Reddit+1
+3.	Nếu thành công: bạn sẽ thấy nhiều dòng log, cuối cùng có Initialization Sequence Completed — VPN đang up. Giữ cửa sổ terminal này mở (OpenVPN chạy foreground). TryHackMe Help Center
+Ví dụ:
+sudo openvpn --config TryHackMe-TunEU1.ovpn --auth-nocache
+________________________________________
+4. Cách kết nối bằng GUI (NetworkManager) — nếu thích giao diện
+1.	Click biểu tượng mạng trên thanh taskbar → VPN Connections → Configure VPN…
+2.	Import a saved VPN configuration → chọn file .ovpn bạn tải.
+3.	Connect từ menu VPN Connections. (Nếu gặp lỗi, thử terminal để xem log rõ hơn). Reddit
+________________________________________
+5. Kiểm tra & xác nhận kết nối
+Sau khi Initialization Sequence Completed:
+•	Kiểm tra interface mới (thường tun0):
+ip a show tun0 hoặc ifconfig tun0
+•	Xem route: ip route — bạn sẽ thấy route tới mạng TryHackMe (10.10.0.0/16 / 10.0.0.0/8 tùy vùng). (TryHackMe dùng 10.10.0.0/16 cho AttackBox & task VMs; openVPN IP nằm trong 10.0.0.0/8). TryHackMe Help Center
+•	Ping máy mục tiêu trong phòng (ví dụ VM có IP 10.10.14.4 — dùng IP phòng bạn thấy trên trang room):
+ping -c 4 10.10.14.4
+•	Nếu ping trả lời → kết nối OK.
+________________________________________
+6) Lỗi thường gặp & cách khắc phục
+Mình liệt kê lỗi hay gặp + cách fix (theo tài liệu và kinh nghiệm cộng đồng):
+1.	Không thấy Initialization Sequence Completed / kết nối fail
+o	Chạy với sudo (bắt buộc). TryHackMe Help Center
+o	Thử --auth-nocache (tránh lưu credentials). Reddit
+o	Tải lại Connection Pack (thử chọn region khác nếu có nhiều lựa chọn). Một số người đã khắc phục bằng cách lấy file mới. Reddit
+2.	Không ping được máy trong room dù VPN đã up
+o	Kiểm tra IP của máy mục tiêu trong trang room (ví dụ 10.10.x.x). Đảm bảo bạn dùng đúng IP.
+o	Kiểm tra route ip route — có route tới 10.10.0.0/16 không?
+o	Nếu DNS lỗi (không resolve tên), dùng IP trực tiếp hoặc update /etc/resolv.conf / restart NetworkManager. (TryHackMe có bài troubleshooting chi tiết). TryHackMe Help Center
+3.	OpenVPN báo permission / can't open TUN/TAP device
+o	Chạy sudo hoặc chạy từ root. Đảm bảo kernel module tun được bật: sudo modprobe tun.
+o	Nếu VM: đảm bảo VirtualBox/VMware cho phép TUN/TAP, và không có policy chặn.
+4.	VPN kết nối nhưng không có Internet / hoặc clashing route
+o	Nếu bạn cần Internet qua VPN: kiểm tra redirect-gateway trong config; nhưng với TryHackMe thường bạn vẫn giữ Internet host bình thường — không nhất thiết redirect toàn bộ traffic.
+o	Nếu có conflict IP local (vd. bạn đang dùng 10.10.0.0/16 trên LAN), đổi network của VM host hoặc dùng host networking khác.
+5.	Nếu dùng Kali VM trong Windows và file .ovpn ở host
+o	Copy .ovpn vào VM (scp, shared folder, hoặc tải trực tiếp từ trình duyệt trong VM).
+(Thông tin troubleshooting tham khảo chính thức). TryHackMe Help Center+1
+________________________________________
+7) Ví dụ workflow bạn có thể copy/paste (terminal)
+# 1. (cài nếu cần)
+sudo apt update
+sudo apt install -y openvpn
+# 2. Vào folder chứa .ovpn (ví dụ ~/Downloads)
+cd ~/Downloads
+# 3. Chạy OpenVPN (thay tên file)
+sudo openvpn --config TryHackMe-EU-Regular1.ovpn --auth-nocache
+# 4. Trong cửa sổ terminal khác: kiểm tra
+ip a show tun0
+ip route | grep 10.10
+ping -c 3 10.10.14.4   # thay bằng IP của machine trong room
+

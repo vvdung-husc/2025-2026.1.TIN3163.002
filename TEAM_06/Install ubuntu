@@ -1,0 +1,30 @@
+---- Cài đặt Ubuntu Server 24.04.3 LTS (No GUI) trên VMware Workstation ----
+bước 1: Tải file ISO Ubuntu Server 24.04.3 LTS:
+        Truy cập :   https://ubuntu.com/download/server
+        Chọn phiên bản Ubuntu Server 24.04.3 LTS (No GUI) tải về.
+
+bước 2: Tạo máy ảo mới trong VMware Workstation:
+        Mở VMware Workstation và chọn Create a New Virtual Machine.
+        Chọn Typical (recommended) và nhấn Next.
+        Chọn Installer disc image file (iso) và duyệt đến file ISO đã tải về.
+        Chọn Linux và Ubuntu 64-bit.
+        Đặt tên cho máy ảo và chọn vị trí lưu trữ.
+        Cấu hình dung lượng đĩa và chọn Store virtual disk as a single file.
+        Hoàn tất quá trình tạo máy ảo.
+
+bước 3: Cấu hình card mạng:
+        Chọn máy ảo vừa tạo, nhấn Edit virtual machine settings.
+        Trong tab Hardware, nhấn Add.
+        Chọn Network Adapter và nhấn Next.
+        Chọn Custom: Specific virtual network và chọn VMnet8 (NAT).
+        Nhấn Finish để thêm card mạng thứ nhất.
+        Tiếp tục thêm card mạng thứ hai:
+            Nhấn Add > Network Adapter > Next.
+            Chọn Host-only: A private network shared with the host và chọn VMnet1.
+            Nhấn Finish để thêm card mạng thứ hai.
+
+bước 4: Khởi động máy ảo và cài đặt Ubuntu Server:
+        Chọn máy ảo và nhấn Power on this virtual machine.
+        Chọn ngôn ngữ và bàn phím phù hợp.
+        Chọn Install Ubuntu Server.
+        Tiếp tục theo hướng dẫn trên màn hình để hoàn tất cài đặt.

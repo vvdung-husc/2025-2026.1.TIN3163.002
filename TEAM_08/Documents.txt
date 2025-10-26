@@ -1,0 +1,8 @@
+Tìm địa chỉ IP của máy ảo Kali Linux: https://www.wikihow.com/Check-the-IP-Address-in-Linux
+Cài đặt và Cấu hình XRDP (Phương pháp RDP được khuyến nghị): https://www.a6n.co.uk/2025/06/how-to-installing-xrdp-on-kali-linux.html
+Cài đặt và Cấu hình TightVNC (Phương pháp VNC thay thế): https://www.linode.com/community/questions/23047/how-do-i-configure-vnc-on-my-kali-linode
+Xử lý sự cố "Màn hình đen" của XRDP: https://c-nergy.be/blog/?p=16682
+Khác (sử dụng AI): ChatGPT, Gemini
+-Tài liệu tham khảo cho "Kết nối TryHackMe server với OpenVPN trong Kali Linux":
+https://www.geeksforgeeks.org/linux-unix/command-to-check-ip-address-in-linux/
+https://help.tryhackme.com/en/articles/6496038-connecting-to-openvpn-on-linux-and-mac
