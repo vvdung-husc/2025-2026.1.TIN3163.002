@@ -15,6 +15,6 @@ git config --global user.email "email dùng để đki github"
 
 git config --global user.name "Tên tài khoản github"
 
-B6:Khi thêm cái gì vào nhóm lớp (thêm tài liệu,sửa,xóa....nhớ ctrl+s),quay lại mục Source control ở thanh bên,nhập message (nhập cái gì cũng đc,đừng chửi thề là đc) rồi bấm commit,nếu hiện cái gì cứ bấm yes (nếu có nút always thì click vào thay vì yes),rồi bấm sync change.
+B6:Khi thêm cái gì vào nhóm lớp (thêm tài liệu,sửa,xóa....nhớ ctrl+s),quay lại mục Source control ở thanh bên,nhập message (nhập cái gì cũng đc,đừng chửi thề là đc) rồi bấm commit,nếu hiện cái gì cứ bấm yes (nếu có nút always thì click vào thay vì yes),rồi bấm sync change(đừng quên bấm,ko là trên github sẽ ko sync đc).
 
 B7:Vola, giờ có thể commit,đưa bài tập (maybe) lên nhóm lớp.
