@@ -25,7 +25,7 @@ Trong đó Host-only có địa chỉ IP: 192.168.56.113/255.255.255.0
 VMWare
 https://it.iothings.vn/downloads/
 
-VM - Win2022 Server
+VM - Win2016 Server
 - https://drive.google.com/file/d/1Gr3Pl35xN5bYwaNzBZLp7xkbuYrm0Sdy/view?pli=1
-- http://42.115.82.144/uploads/VMDienTap.zip
-- http://116.105.244.106/uploads/VMDienTap.zip
+- https://it.iothings.vn/downloads/VMDienTap.zip
+
