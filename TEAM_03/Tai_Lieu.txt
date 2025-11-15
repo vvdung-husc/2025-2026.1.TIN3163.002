@@ -1,4 +1,85 @@
-Tài liệu nginx: https://topdev.vn/blog/nginx-la-gi/
+- NGINX:
+    Tài liệu nginx: https://topdev.vn/blog/nginx-la-gi/
+-----------------------------------------------------------------------------------------------------------------
 Link các dòng code để điều kiển máy tính từ xa: https://monovm.com/blog/kali-rdp/#Installing-xrdp-Kali-Linux (phần 4: Installing xrdp Kali Linux)
-Nmap là gì: https://youtu.be/gN70wz5WFH4?si=uL4-IrMdre5XSOJL
-Các lệnh cơ bản của Nmap: https://www.varonis.com/blog/nmap-commands
+-----------------------------------------------------------------------------------------------------------------
+- Nmap:
+    + Nmap là gì: https://youtu.be/gN70wz5WFH4?si=uL4-IrMdre5XSOJL
+    + Các lệnh cơ bản của Nmap: https://www.varonis.com/blog/nmap-commands
+-----------------------------------------------------------------------------------------------------------------
+- Exeinfo PE:
+    + Exeinfo PE là một công cụ miễn phí dùng để phân tích cấu trúc và các thuộc tính của tệp thực thi Windows (PE file), giúp xem chi tiết về các thành phần như nhập, xuất, tài nguyên, siêu dữ liệu, và xác định các packer được sử dụng. Công cụ này hữu ích cho việc phân tích tĩnh mã độc, cung cấp gợi ý cách unpack và cung cấp thông tin chi tiết về tệp .exe, bao gồm cả việc đổi tên, mở hoặc xóa tệp. 
+    + Phân tích cấu trúc PE: Giúp xem chi tiết cấu trúc bên trong của tệp thực thi, bao gồm PE header, thông tin nhập, xuất, tài nguyên và siêu dữ liệu khác.
+    + Xác định Packer: Có khả năng xác định packer (chương trình nén) mà tệp sử dụng, một bước quan trọng trong phân tích mã độc.
+    + Hỗ trợ phân tích mã độc: Là công cụ hữu ích cho các nhà phân tích mã độc để hiểu rõ hơn về tệp thực thi bị nhiễm, bao gồm cả gợi ý cách giải nén (unpack).
+    + Các chức năng khác: Ngoài phân tích, Exeinfo PE còn có các chức năng quản lý tệp đơn giản như đổi tên, mở trực tiếp hoặc xóa tệp. 
+-----------------------------------------------------------------------------------------------------------------
+- Resourse Hacker:
+    +Resource Hacker là một tiện ích (phần mềm) miễn phí cho phép người dùng xem, sửa đổi, thêm, xóa và trích xuất các tài nguyên (resources) bên trong các tệp thực thi Windows 32-bit và 64-bit (như *.exe, *.dll, .scr) cũng như các tệp tài nguyên đã biên dịch (.res, *.mui). 
+    +Chương trình này hoạt động như một trình biên dịch và dịch ngược tài nguyên tích hợp, hiển thị cấu trúc tài nguyên theo dạng cây phân cấp, giúp người dùng dễ dàng thao tác với các thành phần như:
+        -Icon (biểu tượng): Thay đổi biểu tượng của một ứng dụng.
+        -Bitmap (ảnh bitmap) và Cursor (con trỏ chuột).
+        -Menu và Dialog box (hộp thoại): Sửa đổi giao diện menu hoặc các hộp thoại trong chương trình.
+        -String Table (bảng chuỗi ký tự): Thay đổi các thông báo hoặc văn bản hiển thị trong phần mềm.
+        -Version Info (thông tin phiên bản): Cập nhật thông tin phiên bản của tệp.
+        -Manifest (tệp kê khai): Xem hoặc sửa đổi các thông tin cấu hình khác. 
+    + Mục đích sử dụng:
+        -Tùy chỉnh giao diện: Cá nhân hóa giao diện của các ứng dụng Windows theo ý muốn.
+        -Việt hóa phần mềm: Dịch các chuỗi ký tự từ tiếng nước ngoài sang tiếng Việt.
+        -Phân tích phần mềm: Các chuyên gia bảo mật có thể sử dụng Resource Hacker để kiểm tra, phân tích các thành phần tài nguyên, bao gồm cả trong các mẫu mã độc (malware analysis).
+        -Khôi phục tài nguyên: Trích xuất các tài nguyên (như icon, hình ảnh, âm thanh) từ một tệp thực thi để sử dụng cho mục đích khác. 
+    Lưu ý: Việc sử dụng Resource Hacker để sửa đổi các tệp thực thi có thể vi phạm các điều khoản cấp phép phần mềm hoặc gây ra lỗi nếu không thực hiện đúng cách. Người dùng nên sao lưu tệp gốc trước khi tiến hành chỉnh sửa.
+
+-----------------------------------------------------------------------------------------------------------------
+- DIE (Detect It Easy):
+    + DIE là một công cụ mã nguồn mở, đa nền tảng, dùng để phân tích tĩnh các tệp tin. Công cụ này giúp người dùng xác định loại tệp, cấu trúc bên trong, các đặc điểm bảo mật, và các dấu hiệu của phần mềm độc hại. DIE phổ biến trong cộng đồng an ninh mạng, chuyên gia phân tích phần mềm độc hại và kỹ sư đảo ngược. 
+    + Chức năng chính của DIE:
+        -Xác định loại tệp: Nhận diện các loại tệp khác nhau dựa trên chữ ký (signature) hoặc heuristic.
+        -Phân tích cấu trúc: Cung cấp thông tin chi tiết về cấu trúc và đặc điểm bên trong của tệp tin.
+        -Phân tích bảo mật: Giúp nhận diện các packer, phân tích entropy, trích xuất chuỗi và phát hiện các dấu hiệu tiềm ẩn của phần mềm độc hại.
+        -Hỗ trợ đa nền tảng: Tương thích với nhiều hệ điều hành như Windows, Linux và macOS.
+        -Khả năng mở rộng: Có thể mở rộng chức năng thông qua hệ thống plugin. 
+-----------------------------------------------------------------------------------------------------------------
+- Regshot:
+    + Regshot là là một công cụ miễn phí mã nguồn mở dùng để chụp ảnh nhanh và so sánh sự khác biệt trong Windows Registry tại hai thời điểm khác nhau. Công cụ này được sử dụng phổ biến trong phân tích phần mềm độc hại để ghi lại các thay đổi mà một chương trình đáng ngờ tạo ra trong hệ thống Registry, sau đó tạo báo cáo về các mục Registry, tệp và thư mục bị thêm, sửa đổi hoặc xóa. 
+    + Cách hoạt động:
+        -Chụp ảnh nhanh lần 1: Chụp ảnh chụp nhanh tình trạng Registry hiện tại trước khi thực thi một chương trình hoặc thực hiện thay đổi hệ thống.
+        -Thực thi chương trình: Chạy chương trình hoặc thực hiện các hành động cần phân tích.
+        -Chụp ảnh nhanh lần 2: Chụp ảnh nhanh lần thứ hai sau khi chương trình đã chạy xong.
+        -So sánh: RegShot sẽ so sánh hai ảnh chụp nhanh này và tạo ra một báo cáo liệt kê chi tiết tất cả các thay đổi.  
+    + Công dụng: 
+        -Phân tích phần mềm độc hại (Malware Analysis): Các chuyên gia an ninh mạng thường sử dụng Regshot trong môi trường ảo hóa để xem phần mềm độc hại (virus, trojan, v.v.) đã thay đổi những phần nào trong hệ thống, giúp hiểu rõ cơ chế hoạt động của chúng.
+        -Gỡ cài đặt phần mềm sạch sẽ: Nó có thể giúp xác định tất cả các mục Registry và tệp tin mà một chương trình đã tạo ra, cho phép gỡ bỏ hoàn toàn phần mềm đó khỏi hệ thống.
+        -Giám sát thay đổi hệ thống: Người dùng có thể sử dụng nó để theo dõi các thay đổi không mong muốn đối với cài đặt hệ thống hoặc để khắc phục sự cố.  
+-----------------------------------------------------------------------------------------------------------------
+- HxD: 
+    + HxD là một trình soạn thảo hex (hex editor) miễn phí, được thiết kế để xem và sửa đổi nội dung của các tệp ở dạng mã hex. Nó cho phép người dùng chỉnh sửa các tệp có kích thước lớn, xem và chỉnh sửa bộ nhớ (RAM) của các tiến trình đang chạy, cũng như thực hiện các thao tác trên đĩa ở dạng thô. 
+        -Chỉnh sửa tệp hex: Hỗ trợ xem và chỉnh sửa nội dung tệp ở dạng mã hex, giúp phân tích và sửa đổi dữ liệu nhị phân.
+        -Chỉnh sửa đĩa và bộ nhớ: Có khả năng mở và chỉnh sửa trực tiếp nội dung thô của ổ đĩa và chỉnh sửa bộ nhớ mà các chương trình đang sử dụng.
+        -Các tính năng khác: Bao gồm tính năng như tìm kiếm và thay thế, tính toán tổng kiểm tra (checksum), so sánh tệp, hủy thao tác, ghép hoặc tách tệp.
+        -Giao diện và hiệu suất: Cung cấp giao diện dễ sử dụng, được tối ưu hóa để xử lý nhanh chóng và hiệu quả, ngay cả với các tệp rất lớn. 
+-----------------------------------------------------------------------------------------------------------------
+- Everything:
+Chức năng chính của công cụ Everything là tìm kiếm tên tệp và thư mục trên Windows với tốc độ cực nhanh nhờ chỉ lập chỉ mục tên tệp thay vì nội dung. Nó giúp bạn tìm thấy tệp và thư mục gần như ngay lập tức, hỗ trợ các tính năng tìm kiếm nâng cao như toán tử Boolean và ký tự đại diện để lọc kết quả chính xác hơn. 
+-----------------------------------------------------------------------------------------------------------------
+- FakeNet:
+    + FakeNet là một công cụ được sử dụng để tạo ra một "mạng giả" (fake network) để phân tích và kiểm tra hoạt động của phần mềm độc hại hoặc các kết nối mạng. Nó giả lập các máy chủ và dịch vụ mạng, cho phép chuyên gia bảo mật quan sát cách phần mềm độc hại tương tác với mạng, ví dụ như khi nó cố gắng tải xuống các tệp độc hại hoặc giao tiếp với máy chủ điều khiển. 
+    + Nguyên lý hoạt động: FakeNet sẽ tạo ra một môi trường mạng ảo. Khi phần mềm độc hại được chạy trong môi trường này và cố gắng kết nối với các máy chủ ngoài, FakeNet sẽ bắt giữ các kết nối đó, cho phép các chuyên gia theo dõi và phân tích dữ liệu.
+    + Ứng dụng:
+        -Phân tích phần mềm độc hại (malware analysis).
+        -Thử nghiệm các biện pháp bảo mật.
+        -Phân tích các mẫu lừa đảo (phishing) và các cuộc tấn công khác. 
+-----------------------------------------------------------------------------------------------------------------
+- IDA (Interactive Disassembler):
+    + IDA là là một công cụ dịch ngược và gỡ lỗi mạnh mẽ, được sử dụng phổ biến trong kỹ thuật đảo ngược phần mềm để phân tích mã máy của các tệp thực thi và phần mềm độc hại. Công cụ này chuyển đổi mã máy thành mã hợp ngữ hoặc mã giả C dễ hiểu hơn, giúp các chuyên gia bảo mật phân tích sâu vào cấu trúc và hoạt động của chương trình. IDA có thể hoạt động trên nhiều kiến trúc bộ xử lý và hệ điều hành khác nhau, hỗ trợ bởi các plugin và một ngôn ngữ kịch bản tích hợp (IDC).
+    + Chức năng chính:
+        -Dịch ngược (Disassembly): Chuyển đổi mã máy thành mã hợp ngữ để con người có thể đọc hiểu.
+        -Gỡ lỗi (Debugging): Hoạt động như một trình gỡ lỗi để theo dõi và phân tích quá trình thực thi của chương trình.
+        -Phân tích động và tĩnh: Phân tích mã mà không chạy chương trình (tĩnh) hoặc trong quá trình chạy (động).
+        -Hỗ trợ đa nền tảng: Hỗ trợ nhiều định dạng tệp thực thi (PE, ELF, Mach-O) và các kiến trúc bộ xử lý khác nhau (x86, x64, ARM, MIPS).
+        -Tùy chỉnh và mở rộng: Cho phép người dùng tương tác với kết quả dịch ngược (đặt tên biến, hàm), xây dựng biểu đồ luồng mã và tạo/sử dụng plugin để mở rộng chức năng. 
+    + Ứng dụng:
+        -Phân tích phần mềm độc hại: Hiểu rõ cách thức hoạt động của mã độc để phát hiện lỗ hổng, mã hóa hoặc kỹ thuật che giấu.
+        -Nghiên cứu lỗ hổng bảo mật: Tìm kiếm và phân tích các điểm yếu trong phần mềm.
+        -Kiểm thử và bảo trì phần mềm: Hiểu rõ mã nguồn gốc khi không có sẵn mã nguồn gốc
+        
