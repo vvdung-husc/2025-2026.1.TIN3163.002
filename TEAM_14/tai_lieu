@@ -53,15 +53,22 @@ Công dụng
 -   Xuất hiện Themida, UPX, VMProtect → thường là malware. ### Tài liệu
     https://github.com/horsicq/Detect-It-Easy
 
-4. Notepad++
-
-Công dụng
-
--   Xem plaintext config, log, shellcode dump, script. ### Tình huống
-    thường gặp
--   Malware tạo file .txt, .ini chứa cấu hình C2.
--   Xem base64, hex → decode nhanh để phân tích. ### Tài liệu
-    https://notepad-plus-plus.org/
+4. fakenet3.5 / FakeNet-NG
+Công dụng:
+	• Giả lập Internet để xem malware kết nối tới đâu.
+	• Thay thế DNS, HTTP, HTTPS bằng server ảo.
+ Cách dùng:
+	1. Chạy FakeNet-NG bằng admin.
+	2. Chạy file nghi ngờ malware trong VM.
+	3. Quan sát log:
+		○ Domain
+		○ HTTP request
+		○ Cổng kết nối
+		○ Payload
+Ví dụ:
+Malware cố kết nối hacker-control.xyz:8080 → FakeNet sẽ bắt lại.
+TÀI LIỆU THAM KHẢO
+https://github.com/mandiant/flare-fakenet-ng
 
 5. Wireshark
 
