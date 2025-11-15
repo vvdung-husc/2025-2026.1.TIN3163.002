@@ -18,3 +18,103 @@ Link tham khảo: https://tryhackme.com/room/openvpn
 
 -ngày 10/11/2025 : tìm hiểu chung về các tool trong win 2016 Diễn tập
 -IDA: https://whitehat.vn/threads/re3-huong-dan-su-dung-ida.913/
+
+1. Autoruns (Sysinternals)
+
+Công dụng
+
+-   Kiểm tra toàn bộ chương trình tự chạy khi Windows khởi động.
+-   Phát hiện cơ chế persistence của malware. ### Dấu hiệu nhận biết
+    malware
+-   Tên file lạ trong AppData, Temp.
+-   Autoruns highlight màu vàng (file missing). ### Hướng dẫn sử dụng
+-   Tab Logon: kiểm tra key Run, RunOnce.
+-   Tab Services: xem dịch vụ Windows fake.
+-   Tab Scheduled Tasks: kiểm tra malware tạo task tự động. ### Tài liệu
+    https://learn.microsoft.com/sysinternals/downloads/autoruns
+
+2. IDA64
+
+Công dụng
+
+-   Disassembler mạnh nhất để phân tích mã máy.
+-   Dịch ngược sang pseudocode (nếu có Hex-Rays). ### Phân tích cơ bản
+-   Xem Imports để đoán chức năng malware.
+-   Xem Strings để tìm URL, API, key, command.
+-   Control Flow Graph để thấy luồng xử lý. ### Tài liệu
+    https://hex-rays.com
+
+3. Detect It Easy (DiE)
+
+Công dụng
+
+-   Xác định packer, compiler, entropy. ### Nhận diện file bị pack
+-   Entropy > 7 → file packed/obfuscated.
+-   Xuất hiện Themida, UPX, VMProtect → thường là malware. ### Tài liệu
+    https://github.com/horsicq/Detect-It-Easy
+
+4. Notepad++
+
+Công dụng
+
+-   Xem plaintext config, log, shellcode dump, script. ### Tình huống
+    thường gặp
+-   Malware tạo file .txt, .ini chứa cấu hình C2.
+-   Xem base64, hex → decode nhanh để phân tích. ### Tài liệu
+    https://notepad-plus-plus.org/
+
+5. Wireshark
+
+Công dụng
+
+-   Phân tích network traffic do malware tạo ra. ### Cách bắt gói
+    malware dễ nhất
+-   Filter: dns, http, tcp.port == 4444, suspicious domain. ### Dấu hiệu
+    malware
+-   Domain random.
+-   Gửi beacon đều đặn mỗi 5–10 giây.
+-   Request tới IP lạ không phải CDN. ### Tài liệu
+    https://www.wireshark.org/
+
+6. ExeinfoPE
+
+Công dụng
+
+-   Nhận diện packer sâu hơn DiE.
+-   Đưa ra gợi ý unpack. ### Đặc điểm mạnh
+-   Hiện EntryPoint rõ ràng.
+-   Xem Section bất thường: .text UPX0/UPX1, .aspack, .vmp. ### Tài liệu
+    http://exeinfo.xn.pl/
+
+7. Process Monitor (ProcMon)
+
+Công dụng
+
+-   Theo dõi hành vi malware theo thời gian thực. ### Quan sát quan
+    trọng
+-   Tạo file lạ.
+-   Ghi registry lạ (Run, Services).
+-   Tự nhân bản vào AppData. ### Lưu ý khi phân tích malware
+-   Luôn dùng Filter để tránh spam. ### Tài liệu
+    https://learn.microsoft.com/sysinternals/downloads/procmon
+
+8. x32dbg / x64dbg
+
+Công dụng
+
+-   Debugger để phân tích runtime, đặt breakpoint, patch code. ### Dùng
+    để:
+-   Bypass anti-debug.
+-   Tìm key, serial trong crackme.
+-   Theo dõi hàm gọi API như CreateProcess, WriteFile, WinExec. ### Tài
+    liệu https://github.com/x64dbg/x64dbg/wiki
+
+9. HxD (Hex Editor)
+
+Công dụng
+
+-   Mở file dạng hex để xem cấu trúc và sửa byte. ### Công việc thường
+    làm:
+-   Tìm magic byte: MZ, PE.
+-   Sửa byte JMP, NOP để bypass check.
+-   Phân tích shellcode. ### Tài liệu https://mh-nexus.de/en/hxd/
