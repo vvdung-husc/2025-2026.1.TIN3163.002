@@ -3,6 +3,18 @@ Cài đặt và Cấu hình XRDP (Phương pháp RDP được khuyến nghị): 
 Cài đặt và Cấu hình TightVNC (Phương pháp VNC thay thế): https://www.linode.com/community/questions/23047/how-do-i-configure-vnc-on-my-kali-linode
 Xử lý sự cố "Màn hình đen" của XRDP: https://c-nergy.be/blog/?p=16682
 Khác (sử dụng AI): ChatGPT, Gemini
--Tài liệu tham khảo cho "Kết nối TryHackMe server với OpenVPN trong Kali Linux":
-https://www.geeksforgeeks.org/linux-unix/command-to-check-ip-address-in-linux/
-https://help.tryhackme.com/en/articles/6496038-connecting-to-openvpn-on-linux-and-mac
+Exeinfo PE: Công cụ miễn phí này chuyên "soi" cấu trúc tệp thực thi Windows (PE). Nó nhanh chóng xác định các đặc tính, thư viện sử dụng, và quan trọng nhất là phát hiện loại packer (trình nén/bảo vệ) đang được dùng, một bước đệm quan trọng cho phân tích mã độc.
+
+Resource Hacker: Đây là công cụ "mổ xẻ" tài nguyên của file thực thi Windows (EXE, DLL). Nó cho phép bạn trích xuất, xem và thay đổi trực tiếp các thành phần "ẩn" bên trong như biểu tượng (icon), hình ảnh, menu, và các đoạn văn bản (string), rất hữu dụng để tùy biến giao diện hoặc "Việt hóa" phần mềm.
+
+DIE (Detect It Easy): Một trình phân tích file đa năng, mã nguồn mở. Thay vì chỉ dựa vào đuôi tệp, DIE dùng nhiều chữ ký (signatures) để "bóc tách" và nhận diện chính xác bản chất của một tệp tin—cho biết nó được biên dịch bằng gì, bị nén (pack) hay không, và các đặc điểm bảo mật khác.
+
+Regshot: Công cụ này hoạt động như một máy "chụp X-quang" cho Windows Registry. Bạn chụp một ảnh "trước" khi chạy phần mềm lạ và một ảnh "sau". Regshot sẽ so sánh và chỉ ra chính xác từng khóa Registry nào đã bị thêm, xóa, hay sửa đổi, giúp vạch trần hành vi của mã độc.
+
+HxD: Một trình biên tập "hex" gọn nhẹ nhưng mạnh mẽ. HxD cho phép bạn đọc và chỉnh sửa nội dung "thô" (dạng mã nhị phân/hex) của bất kỳ tệp tin nào, kể cả các tệp siêu lớn. Nó cũng có khả năng xem và sửa đổi trực tiếp bộ nhớ RAM của các tiến trình đang chạy hoặc dữ liệu trên ổ đĩa.
+
+Everything: Công cụ tìm kiếm file "thần tốc" dành cho Windows. Thay vì quét nội dung, Everything chỉ lập chỉ mục tên tệp và thư mục, cho phép bạn tìm thấy bất cứ thứ gì trên ổ cứng (chỉ cần gõ tên) gần như ngay lập tức.
+
+FakeNet: Công cụ này tạo ra một "mạng Internet giả" trong môi trường phân tích. Khi mã độc cố gắng kết nối ra ngoài, FakeNet sẽ "bắt" và "giả mạo" phản hồi từ các dịch vụ (như DNS, HTTP), cho phép nhà phân tích thấy rõ mọi ý định giao tiếp mạng của mã độc mà không cần kết nối thật.
+
+IDA (Interactive Disassembler): Được coi là "tiêu chuẩn vàng" trong ngành kỹ thuật đảo ngược, IDA là công cụ tối thượng để "dịch ngược" mã máy từ một tệp thực thi. Nó biến các tệp nhị phân phức tạp thành dạng mã assembly (hoặc mã giả C) mà con người có thể đọc hiểu, cho phép phân tích sâu hoạt động và thuật toán của phần mềm.
