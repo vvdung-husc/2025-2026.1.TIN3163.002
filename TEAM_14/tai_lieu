@@ -125,3 +125,4 @@ Công dụng
 -   Tìm magic byte: MZ, PE.
 -   Sửa byte JMP, NOP để bypass check.
 -   Phân tích shellcode. ### Tài liệu https://mh-nexus.de/en/hxd/
+
