@@ -126,3 +126,4 @@ Công dụng
 -   Sửa byte JMP, NOP để bypass check.
 -   Phân tích shellcode. ### Tài liệu https://mh-nexus.de/en/hxd/
 
+-có các ảnh của việc kết nối trong foder image
