@@ -1,0 +1,41 @@
+1. Nmap
+
+Dùng để quét cổng, phát hiện dịch vụ đang chạy.
+
+Kiểm tra phiên bản phần mềm.
+
+Tìm lỗ hổng cơ bản.
+
+2. Wireshark
+
+Công cụ phân tích gói tin mạng.
+
+Dùng để bắt, xem và phân tích lưu lượng trong diễn tập tấn công/phòng thủ.
+
+3. Burp Suite
+
+Công cụ kiểm thử bảo mật ứng dụng web.
+
+Hay dùng để dò lỗ hổng XSS, SQLi, CSRF, SSRF,…
+
+4. Metasploit
+
+Framework khai thác lỗ hổng.
+
+Dùng để tấn công thử nghiệm, tạo payload, kiểm tra an ninh.
+
+5. John the Ripper / Hashcat
+
+Công cụ bẻ khóa mật khẩu.
+
+Dùng để kiểm thử độ mạnh của pass.
+
+6. Sysinternals Tools
+
+Process Explorer, Autoruns, TCPView…
+
+Giám sát tiến trình, kết nối mạng, phát hiện hành vi khả nghi.
+
+7. OWASP ZAP
+
+Công cụ scan lỗ hổng web miễn phí, giống Burp nhưng thân thiện hơn.
