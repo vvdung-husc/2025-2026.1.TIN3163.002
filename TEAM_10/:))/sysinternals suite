@@ -1,0 +1,87 @@
+TÌM HIỂU BỘ CÔNG CỤ SYSINTERNALS SUITE
+1. Giới thiệu chung
+
+Sysinternals Suite là bộ công cụ miễn phí do Microsoft phát triển, dùng để giám sát hệ thống, phân tích lỗi, quản trị Windows, kiểm tra bảo mật và hỗ trợ điều tra số. Các công cụ trong bộ này không cần cài đặt (portable), có tính chính xác cao và được sử dụng rộng rãi bởi quản trị viên hệ thống, kỹ thuật viên IT và chuyên gia an ninh mạng.
+
+2. Mục đích sử dụng
+
+Sysinternals Suite được dùng cho các mục đích chính:
+
+Theo dõi tiến trình, thư viện, bộ nhớ và hoạt động của hệ thống.
+
+Kiểm tra file, registry và sự kiện hệ thống.
+
+Chuẩn đoán lỗi phần mềm, tìm ứng dụng gây treo/đơ.
+
+Phát hiện malware và hành vi bất thường.
+
+Quản lý mạng, kết nối TCP/UDP, quyền truy cập.
+
+Quản trị máy tính cục bộ hoặc từ xa.
+
+3. Phân loại và chức năng các công cụ chính trong Sysinternals
+
+3.1. Nhóm giám sát hệ thống và tiến trình
+Công cụ	Chức năng
+Process Explorer	Thay thế Task Manager; xem chi tiết tiến trình, thread, DLL, phát hiện malware chạy ẩn.
+Process Monitor (ProcMon)	Theo dõi hoạt động File – Registry – Process – Network theo thời gian thực; dùng để debug lỗi phần mềm và hệ thống.
+Autoruns	Xem tất cả chương trình khởi động cùng Windows; phát hiện các mục autostart bất thường hoặc mã độc.
+PsTools (pslist, pskill, psexec,… )	Bộ công cụ quản trị từ xa: xem tiến trình, chạy lệnh, kill process, khởi động lại máy khác trong mạng LAN.
+
+3.2. Nhóm quản lý file và ổ đĩa
+Công cụ	Chức năng
+Disk Usage (DU)	Kiểm tra dung lượng thư mục, giúp xác định thư mục nào chiếm nhiều dung lượng.
+Disk2VHD	Chuyển hệ điều hành đang dùng thành máy ảo (tạo file VHD/VHDX).
+Contig	Chống phân mảnh cho từng file; hữu ích cho file game hoặc file lớn.
+SDelete	Xóa file/an toàn, không thể khôi phục bằng các công cụ phục hồi dữ liệu.
+SigCheck	Kiểm tra chữ ký số file, giúp phát hiện file giả mạo hoặc chứa mã độc.
+
+3.3. Nhóm quản trị Windows và Desktop
+Công cụ	Chức năng
+BGInfo	Hiển thị thông tin hệ thống lên màn hình Desktop (IP, user, RAM, domain...).
+Desktops	Tạo nhiều màn hình desktop ảo.
+ZoomIt	Phóng to màn hình, hỗ trợ trình chiếu hoặc giảng dạy.
+RegJump	Nhảy nhanh tới một khóa trong Registry Editor.
+
+3.4. Nhóm bảo mật và phân quyền
+Công cụ	Chức năng
+AccessChk	Kiểm tra quyền truy cập của user vào file/thư mục/registry.
+Sysmon	Ghi log nâng cao về hoạt động hệ thống (tạo process, kết nối mạng…); hỗ trợ điều tra số và SIEM.
+LogonSessions	Kiểm tra những phiên đăng nhập hiện tại và lịch sử đăng nhập.
+ADExplorer	Khám phá, quản lý và tra cứu thông tin trong Active Directory.
+
+3.5. Nhóm công cụ mạng (Networking Tools)
+Công cụ	Chức năng
+TCPView	Xem mọi kết nối TCP/UDP, cổng đang mở; phát hiện trojan kết nối mạng bất thường.
+PsPing	Phiên bản nâng cấp của ping, đo độ trễ chính xác.
+Whois	Tra cứu thông tin domain/IP.
+PortMon	Giám sát cổng COM/Serial.
+
+3.6. Nhóm hỗ trợ chẩn đoán hệ thống
+Công cụ	Chức năng
+RAMMap	Xem chi tiết cách Windows sử dụng RAM; xác định memory leak.
+WinObj	Xem các object kernel trong Windows, phục vụ phát triển và phân tích hệ thống.
+NotMyFault / BlueScreen	Công cụ mô phỏng lỗi hệ thống (BSOD) để kiểm thử bảo mật và độ ổn định.
+4. Các công cụ quan trọng nên sử dụng trong thực tế
+
+Process Explorer → xác định tiến trình độc hại hoặc chiếm CPU/RAM.
+
+Process Monitor → debug lỗi ứng dụng nhanh chóng.
+
+Autoruns → dọn rác startup và tìm rootkit, malware tự chạy.
+
+TCPView → theo dõi kết nối mạng đang hoạt động.
+
+Sysmon → ghi log bảo mật nâng cao.
+
+SDelete → xóa dữ liệu an toàn.
+
+Disk2VHD → tạo bản sao máy ảo.
+
+5. Kết luận
+
+Sysinternals Suite là một bộ công cụ cực kỳ mạnh mẽ và
+linh hoạt cho quản trị hệ thống, hỗ trợ xử lý sự cố, kiểm tra bảo mật và quản 
+lý tài nguyên Windows. Với các tính năng giám sát sâu, ghi log chi tiết và khả
+năng điều khiển hệ thống từ xa, Sysinternals Suite trở thành bộ công cụ cần 
+thiết cho mọi kỹ thuật viên IT, sinh viên CNTT và chuyên gia an ninh mạng.
