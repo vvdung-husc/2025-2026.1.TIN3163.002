@@ -1,0 +1,170 @@
+I. Chuẩn bị
+
+Bạn cần:
+
+VMware Workstation/Player
+
+ISO Kali Linux mới nhất
+
+Máy tính RAM 8GB trở lên
+
+Đã bật ảo hóa (VT-x/AMD-V)
+
+II. Tạo máy ảo Kali Linux
+1. Mở VMware → Create a New Virtual Machine
+
+Chọn: Typical (recommended)
+
+Next
+
+2. Chọn file ISO
+
+Use ISO → chọn kali-linux-*.iso
+
+Next
+
+3. Chọn hệ điều hành
+
+Linux
+
+Version: Debian 12.x (64-bit) hoặc Debian 10/11 (đều OK)
+
+4. Đặt tên máy ảo
+
+Ví dụ: Kali-2NIC
+
+5. Cấu hình phần cứng
+
+RAM: 4GB – 8GB
+
+CPU: 2 core
+
+HDD: 40GB+ (recommended)
+
+→ Finish để tạo máy ảo
+
+III. Thêm 2 card mạng
+
+Sau khi tạo xong máy ảo:
+
+1. Card 1: NAT
+
+VM → Settings → Network Adapter
+
+Check Connect at power on
+
+Chọn: NAT
+
+✔ Dùng để ra INTERNET
+
+2. Card 2: Host-only
+
+VM → Settings → Add…
+
+Chọn: Network Adapter → Finish
+
+Trong “Network Connection”:
+→ Host-only (VMnet1)
+
+✔ Dùng để giao tiếp máy thật – máy ảo
+✔ Dùng khi làm LAB tấn công – phòng thủ
+
+IV. Cài đặt Kali Linux
+
+Boot máy ảo:
+
+Chọn Graphical Install
+
+Ngôn ngữ: English
+
+Keyboard: American English
+
+Chọn network → bỏ qua DHCP nếu treo
+
+Đặt hostname → kali
+
+Username → tùy chọn
+
+Password → nhập
+
+Partition → Guided – use entire disk
+
+Continue → Install
+
+Sau khi xong → reboot vào Kali.
+
+V. Cấu hình 2 card mạng trong Kali
+
+Mở Terminal:
+
+ip a
+
+
+Bạn sẽ thấy:
+
+eth0 → NAT
+
+eth1 → Host-only
+
+1. Cấu hình IP cho card NAT (eth0)
+
+Card NAT thường DHCP tự động:
+Kiểm tra:
+
+sudo dhclient eth0
+ip a
+
+
+Nếu có IP dạng 192.168.***.x → OK.
+
+2. Cấu hình card Host-only (eth1)
+
+Xem dải IP của VMware Host-only:
+Trên máy thật → VMware → Virtual Network Editor
+
+VMnet1: 192.168.56.0/24 (hoặc 192.168.10.0/24)
+
+Giả sử:
+Host-only network: 192.168.56.0/24
+
+Cấu hình IP tĩnh:
+
+Mở file cấu hình:
+
+sudo nano /etc/network/interfaces
+
+
+Thêm:
+
+auto eth1
+iface eth1 inet static
+    address 192.168.56.50
+    netmask 255.255.255.0
+
+
+Lưu lại (Ctrl + O → Enter → Ctrl + X)
+
+Restart mạng:
+
+sudo systemctl restart NetworkManager
+
+
+Kiểm tra:
+
+ip a
+
+VI. Kiểm tra hoạt động
+1. Kiểm tra Internet (NAT)
+ping google.com
+
+
+Nếu reply → NAT hoạt động.
+
+2. Kiểm tra Host-only
+
+Trên máy thật:
+
+ping 192.168.56.50
+
+
+Nếu reply → Host-only OK.
