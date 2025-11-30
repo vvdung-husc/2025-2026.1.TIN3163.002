@@ -1,23 +1,149 @@
-https://viblo.asia/p/nmap-network-scanner-cong-cu-quet-mang-va-lo-hong-bao-mat-RnB5p4bb5PG //tìm hiểu nmap
-1.	Cú pháp của câu lệnh Nmap như sau:
--	nmap <tùy-chọn-flags> <IP-mục-tiêu>
--	ví dụ:  nmap 10.10.2.1
-2.	Các flags thường được sử dụng phổ biến:
--v (verbose): In ra thông tin liên quan đến quá trình scan theo thời gian thực
--sn (scan whole network): dùng để scan toàn bộ mạng của đối tượng nhằm tìm ra các hosts và servers đang hoạt động bên trong mạng. Cú pháp”
-nmap -sN <IP-mục-tiêu>/<subnet-mask>
--sn (ping scan): Ngoài khả năng scan toàn bộ network để tìm hosts và servers đang online, flag -sn còn có thể được dùng để xác định xem một host hoặc server đang online hay offline. Cú pháp như sau:
-nmap -sN <IP-mục-tiêu>
--p-: Khi sử dụng flag -p-, Nmap sẽ tự động scan 65535 ports của mục tiêu
--p để scan một hoặc một nhóm port nào đó ví dụ:
-Để scan port 8888 của mục tiêu:
-nmap -p8888 <IP-đối-tượng>
-Để scan các port 1000, 4000, 7888 của mục tiêu:
-nmap -p1000,4000,7888 <IP-đối-tượng>
-Để scan một dãy ports nhất định ví dụ từ 2000 đến 3500:
-nmap -p2000-3500 <IP-đối-tượng>
--sV (scan service version): sẽ cho biết những dịch vụ nào đang được chạy ứng với những ports vừa tìm được, đồng thời cung cấp tên và version của những dịch vụ đó.
--sU (scan UDP ports): Scan tất cả UDP ports. 
--O (OS scan): Xác định hoặc dự đoán hệ điều hành đang được chạy trên server hoặc host mục tiêu
--T<0-5>: T càng lớn thì thời gian quét càng nhanh, ví dụ thời gian quét của T5 sẽ nhanh hơn T4
--sC (script scan): Với flag -sC, Nmap sẽ sử dụng những scripts tìm lỗi hoặc thu thập thông tin (được gọi là Nmap Scripting Engine – NSE) mặc định được tích hợp bên trong để thu thập thông tin hoặc quét lỗi bảo mật trên hệ thống mục tiêu.
+# Hướng Dẫn Cơ Bản Về **Nmap** – Network Scanner
+
+---
+
+## 1. Cú pháp lệnh Nmap
+
+```
+nmap <tuy-chon-flags> <IP-muc-tieu>
+```
+
+**Ví dụ:**
+
+```
+nmap 10.10.2.1
+```
+
+---
+
+## 2. Các flags phổ biến trong Nmap
+
+### **2.1. -v (Verbose Mode)**
+
+Hiển thị chi tiết tiến trình quét theo thời gian thực.
+
+```
+nmap -v <IP-muc-tieu>
+```
+
+---
+
+### **2.2. -sn (Ping Scan / Network Scan)**
+
+#### **• Scan toàn bộ network để tìm host đang hoạt động**
+
+```
+nmap -sn <IP-muc-tieu>/<subnet-mask>
+```
+
+#### **• Kiểm tra 1 host online/offline**
+
+```
+nmap -sn <IP-muc-tieu>
+```
+
+---
+
+### **2.3. -p / -p- (Port Scan)**
+
+#### **• Scan toàn bộ 65535 cổng:**
+
+```
+nmap -p- <IP-muc-tieu>
+```
+
+#### **• Scan một port cụ thể:**
+
+```
+nmap -p8888 <IP-muc-tieu>
+```
+
+#### **• Scan nhiều port:**
+
+```
+nmap -p1000,4000,7888 <IP-muc-tieu>
+```
+
+#### **• Scan dãy ports:**
+
+```
+nmap -p2000-3500 <IP-muc-tieu>
+```
+
+---
+
+### **2.4. -sV (Service Version Detection)**
+
+Xác định dịch vụ và phiên bản đang chạy trên các port tìm được.
+
+```
+nmap -sV <IP-muc-tieu>
+```
+
+---
+
+### **2.5. -sU (UDP Scan)**
+
+Quét các cổng UDP.
+
+```
+nmap -sU <IP-muc-tieu>
+```
+
+---
+
+### **2.6. -O (OS Detection)**
+
+Xác định hệ điều hành của target.
+
+```
+nmap -O <IP-muc-tieu>
+```
+
+---
+
+### **2.7. -T<0-5> (Timing Template)**
+
+* T0 → chậm nhất (Stealth)
+* T5 → nhanh nhất (Aggressive)
+
+```
+nmap -T4 <IP-muc-tieu>
+```
+
+---
+
+### **2.8. -sC (Nmap Script Scan – NSE)**
+
+Chạy các tập script mặc định để thu thập thông tin hoặc phát hiện lỗ hổng.
+
+```
+nmap -sC <IP-muc-tieu>
+```
+
+---
+
+## 3. Ví dụ kết hợp flags
+
+### **Scan nhanh, xác định dịch vụ + OS:**
+
+```
+nmap -sV -O -T4 <IP-muc-tieu>
+```
+
+### **Full scan mạnh + script:**
+
+```
+nmap -p- -sV -sC -O <IP-muc-tieu>
+```
+
+---
+
+## 4. Tài liệu tham khảo
+
+* [https://nmap.org/book/](https://nmap.org/book/)
+* [https://nmap.org/nsedoc/](https://nmap.org/nsedoc/)
+
+---
+
+Nếu bạn muốn thêm bảng thống kê flags hoặc thêm phần hướng dẫn nâng cao như: *Stealth scan (-sS), Firewall evasion, Output to file (-oN, -oX)*, mình có thể bổ sung tiếp.
