@@ -1,0 +1,129 @@
+I. Chuẩn bị
+
+VMware Workstation/Player
+
+ISO Windows Server 2016
+
+Máy tính đủ RAM (8GB+), hỗ trợ ảo hóa
+
+II. Tạo máy ảo Windows Server 2016
+1. Mở VMware → Create a New Virtual Machine
+
+Chọn: Typical
+
+Next
+
+2. Chọn file cài Win Server
+
+Use ISO → chọn Windows Server 2016 ISO
+
+Next
+
+3. Chọn hệ điều hành
+
+Microsoft Windows
+
+Version: Windows Server 2016
+
+4. Đặt tên máy ảo + thư mục lưu
+5. Cấu hình phần cứng
+
+RAM: 4GB trở lên
+
+CPU: 2 core
+
+HDD: 60GB+
+
+Next → Finish
+
+III. Thêm 2 card mạng
+
+Sau khi tạo xong máy ảo:
+
+1. Card 1: NAT
+
+Chọn VM → Settings → Network Adapter
+
+Check: Connect at power on
+
+Chọn: NAT
+
+✔ Card này dùng để ra Internet
+
+2. Thêm Card 2: Host-Only
+
+Trong VM → Settings → nhấn Add…
+
+Chọn Network Adapter → Finish
+
+Trong “Network Connection” chọn:
+Host-only (VMnet1)
+
+✔ Card này để máy ảo giao tiếp với máy thật, dùng cho lab AD, DNS, DHCP.
+
+IV. Cài đặt Windows Server 2016
+
+Sau khi boot ISO:
+
+Chọn ngôn ngữ
+
+Install Now
+
+Chọn phiên bản:
+→ Windows Server 2016 Standard (Desktop Experience)
+
+Custom (Advanced)
+
+Chọn ổ đĩa → Next
+
+Đợi cài đặt xong
+
+Đặt password cho Administrator
+
+V. Cấu hình IP cho 2 card mạng
+
+Sau khi vào Win:
+
+1. Mở Network Connections
+
+Nhấn:
+Windows + R → ncpa.cpl
+
+2. Card NAT (VMnet8)
+
+Right-click → Properties → IPv4
+
+IP: Để tự động (DHCP)
+
+Purpose: Ra Internet
+
+3. Card Host-only (VMnet1)
+
+Chọn IP thủ công, ví dụ:
+
+IP: 192.168.10.10
+
+Mask: 255.255.255.0
+
+Gateway: bỏ trống
+
+DNS: tự chọn, ví dụ 8.8.8.8 hoặc chính IP server nếu bạn làm AD
+
+✔ Card này không ra Internet
+✔ Dùng để lab nội bộ
+
+VI. Kiểm tra hoạt động
+1. Kiểm tra Internet
+
+Mở CMD:
+
+ping google.com
+
+2. Kiểm tra kết nối máy thật ↔ máy ảo
+
+Trên máy thật:
+
+ping 192.168.10.10
+
+
+Nếu reply → Host-only OK
