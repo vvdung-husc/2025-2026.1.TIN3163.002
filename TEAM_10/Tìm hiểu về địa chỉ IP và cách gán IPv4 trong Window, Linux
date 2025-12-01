@@ -1,0 +1,113 @@
+1. Khái niệm địa chỉ IP
+
+IP (Internet Protocol Address) là một dãy số dùng để định danh thiết bị trong mạng máy tính.
+
+Có 2 loại IP chính:
+
+IPv4: 32 bit, thường viết dạng 4 số thập phân, ngăn cách bằng dấu . (VD: 192.168.1.10).
+
+IPv6: 128 bit, viết dạng hex, ngăn cách bằng : (VD: 2001:db8::1).
+
+Trong phạm vi câu hỏi của bạn → mình tập trung vào IPv4.
+
+Cấu trúc IPv4
+
+Gồm Network ID (xác định mạng) và Host ID (xác định máy trong mạng).
+
+Ví dụ: 192.168.1.10/24
+
+192.168.1.0 là mạng.
+
+10 là host trong mạng đó.
+
+/24 nghĩa là subnet mask 255.255.255.0.
+
+Cách cấp IP
+
+Tĩnh (Static IP): Bạn tự gán thủ công.
+
+Động (Dynamic IP): Thiết bị nhận IP từ DHCP server (thường là router).
+
+2. Cách gán IPv4 trong Windows
+
+Có 2 cách: qua giao diện GUI và qua Command Line.
+
+Cách 1: GUI
+
+Mở Control Panel → Network and Sharing Center.
+
+Chọn Change adapter settings.
+
+Chuột phải Ethernet/WiFi → Properties.
+
+Chọn Internet Protocol Version 4 (TCP/IPv4) → Properties.
+
+Chọn:
+
+Use the following IP address → nhập IP, Subnet Mask, Default Gateway.
+
+Use the following DNS server addresses → nhập DNS (VD: 8.8.8.8, 8.8.4.4).
+
+Cách 2: Command Prompt (CMD)
+:: Xem IP hiện tại
+ipconfig
+
+:: Gán IP tĩnh
+netsh interface ip set address name="Ethernet" static 192.168.1.100 255.255.255.0 192.168.1.1
+
+:: Gán DNS
+netsh interface ip set dns name="Ethernet" static 8.8.8.8
+
+3. Cách gán IPv4 trong Linux
+
+Linux có nhiều distro, nhưng nhìn chung có 2 cách: tạm thời (ifconfig/ip) và vĩnh viễn (file cấu hình).
+
+Cách 1: Tạm thời (chỉ có hiệu lực đến khi reboot)
+Dùng ifconfig (cũ, một số bản Linux mới không dùng nữa)
+# Gán IP
+sudo ifconfig eth0 192.168.1.50 netmask 255.255.255.0
+
+# Gán gateway
+sudo route add default gw 192.168.1.1
+
+Dùng ip (mới hơn, chuẩn hiện nay)
+# Gán IP
+sudo ip addr add 192.168.1.50/24 dev eth0
+
+# Gán gateway
+sudo ip route add default via 192.168.1.1
+
+Cách 2: Vĩnh viễn (sửa file cấu hình)
+
+Ubuntu/Debian (dùng Netplan) → sửa file /etc/netplan/*.yaml
+Ví dụ:
+
+network:
+  version: 2
+  ethernets:
+    eth0:
+      addresses:
+        - 192.168.1.50/24
+      gateway4: 192.168.1.1
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+
+
+Rồi áp dụng:
+
+sudo netplan apply
+
+
+CentOS/RHEL (dùng ifcfg-*) → sửa file /etc/sysconfig/network-scripts/ifcfg-eth0
+
+BOOTPROTO=static
+IPADDR=192.168.1.50
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+DNS1=8.8.8.8
+ONBOOT=yes
+
+
+Rồi restart network:
+
+sudo systemctl restart network
