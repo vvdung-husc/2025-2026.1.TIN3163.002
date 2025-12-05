@@ -1,1 +1,11 @@
+Sysinternals Suite là bộ công cụ mạnh mẽ dành cho Windows, được phát triển bởi Microsoft nhằm hỗ trợ:
++ Chẩn đoán hệ thống
++ Kiểm tra hiệu suất
++ Quản lý tiến trình
++ Phân tích lỗi
++ Kiểm tra các hoạt động ẩn bên trong Windows (file, registry, network…)
++ Xử lý sự cố nâng cao
 
+Ta có nhóm các công cụ như: TCPView, Autoruns, Process Monitor (ProcMon), Process Explorer,...
+
+Ta sẽ chạy thử công cụ minh họa TCPView trên Windowns.
