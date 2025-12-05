@@ -8,4 +8,7 @@ Sysinternals Suite là bộ công cụ mạnh mẽ dành cho Windows, được p
 
 Ta có nhóm các công cụ như: TCPView, Autoruns, Process Monitor (ProcMon), Process Explorer,...
 
-Ta sẽ chạy thử công cụ minh họa TCPView trên Windowns.
+Ta tải và chạy thử công cụ minh họa TCPView trên Windowns theo link: https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview
+ * chrome.exe → kết nối là bình thường
+    đang kết nối tới static.vnpt.vn, github.com.
+ * smartscreen.exe → hoàn toàn bình thường vì: luôn gửi request lên server Microsoft khi mở Chrome hoặc tải file.
