@@ -1,0 +1,24 @@
+Tìm hiểu Sysinternals Suite :
+- Link tham khảo: https://mundobytes.com/vi/b%E1%BB%99-c%C3%B4ng-c%E1%BB%A5-sysinternals/
+- Là một bộ công cụ được phát triển nhằm cung cấp khả năng phân tích, giám sát và quản lý cho hệ điều hành Windows ngoài những chức năng được cho phép theo mặc định. Mặc dù có hơn 70 tiện ích được đóng gói trong bộ phần mềm, nhiều tiện ích trong số đó cũng có sẵn riêng trên trang web chính thức của Microsoft.
+- Các công cụ nó bao gồm được thiết kế để điều tra các quy trình, dịch vụ, khóa đăng ký, kết nối mạng, tệp đĩa,...
+- Các công cụ chính của Sysinternals Suite:
+  + Process Explorer
+  + Process Monitor
+  + ProcDump
+  + PsTools và PsExec
+  + Autoruns
+  + Sysmon (Giám sát hệ thống)
+  + BGInfo
+  + tcpview
+  + ZoomIt
+  + Máy tính để bàn
+  + Disk2vhd
+-Ngoài ra còn bao gồm nhiều tiện ích thú vị khác:
+  +Mã truy cập: Xác định sự không nhất quán về quyền trong các tệp và khóa sổ đăng ký.
+  +Contig: Chống phân mảnh từng tệp riêng lẻ thay vì toàn bộ đĩa.
+  +ĐĩaMon: Theo dõi các sector đang hoạt động của đĩa theo thời gian thực.
+  +Bản đồ RAM: Hiển thị cách phân bổ sử dụng RAM.
+  +Kiểm tra chữ ký: Xác minh chữ ký số của các tệp thực thi hoặc DLL.
+  +Nhảy theo quy tắc: Mở trực tiếp một khoá đăng ký nhất định.
+  +Xóa: Xóa tệp và giải phóng không gian một cách an toàn, ngăn chặn việc khôi phục.
