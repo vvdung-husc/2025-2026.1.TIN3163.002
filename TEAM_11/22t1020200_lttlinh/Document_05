@@ -8,13 +8,12 @@ Tìm hiểu Sysinternals Suite :
   + ProcDump
   + PsTools và PsExec
   + Autoruns
-  + Sysmon (Giám sát hệ thống)
+  + Sysmon 
   + BGInfo
   + tcpview
   + ZoomIt
   + Máy tính để bàn
   + Disk2vhd
-  
 -Ngoài ra còn bao gồm nhiều tiện ích thú vị khác:
   +Mã truy cập: Xác định sự không nhất quán về quyền trong các tệp và khóa sổ đăng ký.
   +Contig: Chống phân mảnh từng tệp riêng lẻ thay vì toàn bộ đĩa.
