@@ -2,112 +2,260 @@
 
 ## I. CÔNG CỤ GIÁM SÁT HỆ THỐNG (Monitoring & Diagnostics)
 
-* Procmon / Procmon64 – Giám sát mọi hoạt động file, registry, process
-* Procexp / Procexp64 – Thay Task Manager, giám sát process
-* PsLoggedOn / PsLoggedOn64 – Theo dõi user đang đăng nhập
-* PsList / PsList64 – Xem danh sách process
-* PsInfo / PsInfo64 – Thông tin hệ thống
-* PsLogList / PsLogList64 – Log events
-* DbgView / DbgView64 / dbgview64 – Xem debug output
-* Logonsessions / Logonsessions64 – Phiên đăng nhập
-* psping / psping64 – Kiểm tra latency, bandwidth
-* RAMMap / RAMMap64 – Phân tích RAM
-* VMMap / VMMap64 – Phân tích virtual memory
-* Winobj / Winobj64 – Quan sát object manager
-* Sysmon / Sysmon64 – Giám sát bảo mật, log hành vi hệ thống
-* RDCMan – Quản lý remote desktop
+Procmon / Procmon64 – Giám sát mọi hoạt động file, registry, process
+
+Procexp / Procexp64 – Thay Task Manager, giám sát process
+
+PsLoggedOn / PsLoggedOn64 – Theo dõi user đang đăng nhập
+
+PsList / PsList64 – Xem danh sách process
+
+PsInfo / PsInfo64 – Thông tin hệ thống
+
+PsLogList / PsLogList64 – Log events
+
+DbgView / DbgView64 – Xem debug output
+
+Logonsessions / Logonsessions64 – Phiên đăng nhập
+
+psping / psping64 – Kiểm tra latency, bandwidth
+
+RAMMap / RAMMap64 – Phân tích RAM
+
+VMMap / VMMap64 – Phân tích virtual memory
+
+Winobj / Winobj64 – Quan sát Object Manager
+
+Sysmon / Sysmon64 – Giám sát bảo mật, log hành vi hệ thống
+
+RDCMan – Quản lý remote desktop
+
+LiveKD / LiveKD64 – Debug kernel trực tiếp
+
+Listdlls / Listdlls64 – Xem DLL loaded
+
+clockres / clockres64 – Độ phân giải timer
+
+Coreinfo / Coreinfo64 – Thông tin CPU
+
+TCPView / TCPView64 – Quan sát TCP/UDP realtime
+
+tcpvcon / tcpvcon64 – Command version của TCPView
+
+Testlimit / Testlimit64 – Kiểm tra giới hạn hệ thống
+
+Portmon – Monitor cổng COM/LPT
+
+pipelist / pipelist64 – Danh sách Named Pipes
+
+AccessEnum – Xem quyền truy cập
+
+CacheSet / CacheSet64 – Điều chỉnh Cache Manager
+
+Findlinks / findlinks64 – Kiểm tra hardlink
+
+Diskmon / Diskmon64 – Theo dõi I/O realtime
+
+DiskView / DiskView64 – Xem phân bố dữ liệu
+
+ADInsight / ADInsight64 – Giám sát LDAP/Active Directory
+
+ctrl2cap – Chuyển CapsLock thành Ctrl
+
+Volumeid / volumeid64 – Đổi Volume Serial
 
 ## II. CÔNG CỤ PHÂN TÍCH TỆP & Ổ ĐĨA (Disk & File Utilities)
 
 ### 1. Disk tools
 
-* Diskmon / Diskmon64 – Monitor I/O
-* Diskview / Diskview64 – Xem phân bố dữ liệu
-* Disk2vhd / Disk2vhd64 – Chuyển ổ đĩa sang VHD
-* ntfsinfo / ntfsinfo64 – Thông tin NTFS
-* du / du64 – Disk usage
-* movefile / movefile64 – Dời file sau reboot
-* pendmoves / pendmoves64 – Xem việc move-file pending
+Diskmon / Diskmon64 – Monitor I/O
+
+Diskview / Diskview64 – Xem phân bố dữ liệu
+
+Disk2vhd / Disk2vhd64 – Chuyển ổ đĩa sang VHD
+
+ntfsinfo / ntfsinfo64 – Thông tin NTFS
+
+du / du64 – Disk usage
+
+movefile / movefile64 – Dời file sau reboot
+
+pendmoves / pendmoves64 – Xem move-file pending
+
+diskext / diskext64 – Liệt kê ổ đĩa
+
+Contig / Contig64 – Chống phân mảnh file đơn
+
+sdelete / sdelete64 – Xóa dữ liệu an toàn
+
+Volumeid / Volumeid64 – Đặt Volume Serial
 
 ### 2. File utilities
 
-* streams / streams64 – Xem ADS stream
-* sigcheck / sigcheck64 – Kiểm chữ ký file
-* sdelete / sdelete64 – Xóa file bảo mật
-* AccessEnum – Quyền truy cập file/folder
-* AccessChk / AccessChk64 – Chi tiết permission
+streams / streams64 – Xem ADS stream
+
+sigcheck / sigcheck64 – Kiểm chữ ký file
+
+sdelete / sdelete64 – Xóa file bảo mật
+
+AccessEnum – Quyền truy cập file/folder
+
+AccessChk / AccessChk64 – Permission chi tiết
+
+junction / junction64 – Liên kết NTFS
+
+findlinks / findlinks64 – Hardlinks
+
+handle / handle64 – Xem handle mở
+
+efsdump – Xem thông tin file mã hóa EFS
 
 ## III. CÔNG CỤ TIẾN TRÌNH & GỠ LỖI (Process Utilities)
 
-* Procexp / Procexp64 – Process Explorer
-* Procmon / Procmon64 – Process Monitor
-* ProcDump / Procdump64 – Dump process
-* Listdlls / Listdlls64 – Xem DLL loaded
-* Handle / Handle64 – Xem handle mở
-* NotMyFault / NotMyFault64 / notmyfaultc – Test crash, BSOD
-* PsExec / PsExec64 – Chạy process từ xa
-* PsFile – File mở từ máy khác
+Procexp / Procexp64 – Process Explorer
+
+Procmon / Procmon64 – Process Monitor
+
+ProcDump / Procdump64 / Procdump64a – Dump process
+
+Listdlls / Listdlls64 – Xem DLL loaded
+
+Handle / Handle64 – Xem handle mở
+
+NotMyFault / NotMyFault64 / notmyfaultc – Test crash, BSOD
+
+PsExec / PsExec64 – Chạy process từ xa
+
+PsFile / PsFile64 – File mở từ máy khác
+
+LiveKD / LiveKD64 – Debug kernel
+
+PsKill / PsKill64 – Kill process
+
+PsList / PsList64 – Liệt kê process
 
 ## IV. CÔNG CỤ MẠNG (Networking Utilities)
 
-* psping / psping64 – Ping nâng cao
-* TCPView / TCPView64 – Xem TCP/UDP connection
-* tcpvcon / tcpvcon64 – Command version của TCPView
-* whois / whois64 – Truy vấn thông tin domain
-* PsService / PsService64 – Quản lý service từ xa
+psping / psping64 – Ping nâng cao
+
+TCPView / TCPView64 – Xem TCP/UDP connection
+
+tcpvcon / tcpvcon64 – Command version của TCPView
+
+whois / whois64 – Truy vấn thông tin domain
+
+PsService / PsService64 – Quản lý service từ xa
+
+ShareEnum / ShareEnum64 – Xem share mạng
+
+Portmon – Theo dõi cổng COM/LPT
+
+PsExec / PsExec64 – Remote execution
+
+PsFile / PsFile64 – Xem file mở qua network
 
 ## V. CÔNG CỤ BẢO MẬT VÀ FORENSIC
 
-* Sysmon / Sysmon64 – Ghi lại logs an ninh
-* Sigcheck / Sigcheck64 – Kiểm tra chữ ký file
-* AccessChk / AccessChk64 – Permission
-* RegDelNull / RegDelNull64 – Xóa key null
-* RegJump – Jump vào registry
-* PsPasswd / PsPasswd64 – Đổi mật khẩu remote
-* PsGetsid / PsGetsid64 – SID
+Sysmon / Sysmon64 – Log bảo mật sâu
+
+Sigcheck / Sigcheck64 – Kiểm tra chữ ký file
+
+AccessChk / AccessChk64 – Scanner quyền
+
+RegDelNull / RegDelNull64 – Xóa registry null
+
+RegJump – Nhảy đến registry key
+
+PsPasswd / PsPasswd64 – Đổi mật khẩu
+
+PsGetsid / PsGetsid64 – Lấy SID
+
+streams / streams64 – Kiểm tra ADS
+
+Autoruns / Autoruns64 / Autorunsc – Phân tích startup
 
 ## VI. QUẢN TRỊ TÀI KHOẢN & ACTIVE DIRECTORY
 
-* ADInsight / ADInsight64 – Giám sát AD
-* ADExplorer / ADExplorer64 – Xem AD tree
-* Autologon / Autologon64 – Tự động đăng nhập
-* PsLoggedOn / PsLoggedOn64 – Xem user login
-* PsPasswd – Đổi mật khẩu user
+ADInsight / ADInsight64 – Giám sát AD
+
+ADExplorer / ADExplorer64 – Xem AD tree
+
+Autologon / Autologon64 – Tự động đăng nhập
+
+PsLoggedOn / PsLoggedOn64 – Ai đang đăng nhập
+
+PsPasswd / PsPasswd64 – Đổi mật khẩu user
+
+adrestore / adrestore64 – Restore object AD đã xóa
 
 ## VII. QUẢN LÝ REGISTRY & CONFIG
 
-* RegDelNull / RegDelNull64
-* RegJump
-* ShellRunAs
-* PsFile / PsFile64
+RegDelNull / RegDelNull64
+
+RegJump
+
+ShellRunAs
+
+PsFile / PsFile64
+
+Autoruns / Autoruns64
 
 ## VIII. CÔNG CỤ HIỂN THỊ / UI / SYSTEM INFO
 
-* BgInfo / BgInfo64 – Dán thông tin hệ thống lên desktop
-* Desktops / Desktops64 – Virtual desktops
-* Testlimit / Testlimit64 – Test giới hạn hệ thống
-* Coreinfo / Coreinfo64 – CPU topology
-* clockres / clockres64 – Nghịch timer resolution
-* ZoomIt / ZoomIt64 – Phóng to màn hình
+BgInfo / BgInfo64 – Hiển thị thông tin hệ thống
+
+Desktops / Desktops64 – Virtual desktops
+
+Testlimit / Testlimit64 – Test giới hạn hệ thống
+
+Coreinfo / Coreinfo64 – CPU topology
+
+clockres / clockres64 – Timer resolution
+
+ZoomIt / ZoomIt64 – Phóng to màn hình
+
+RDCMan – Remote Desktop Manager
+
+WinObj / Winobj64 – Object Manager Viewer
 
 ## IX. CÔNG CỤ QUẢN LÝ DỊCH VỤ (PsTools Suite)
 
-* PsExec
-* PsFile
-* PsGetSid
-* PsInfo
-* PsKill
-* PsList
-* PsLoggedOn
-* PsLogList
-* PsPasswd
-* PsService
-* PsShutdown
-* PsSuspend
+PsExec
+
+PsFile
+
+PsGetSid
+
+PsInfo
+
+PsKill
+
+PsList
+
+PsLoggedOn
+
+PsLogList
+
+PsPasswd
+
+PsService
+
+PsShutdown
+
+PsSuspend
 
 ## X. TIỆN ÍCH KHÁC
 
-* junction / junction64 – Liên kết NTFS
-* Hex2dec / hex2dec64 – Chuyển đổi hex
-* Eula – Hướng dẫn
-* Readme – Thông tin phiên bản
+junction / junction64 – Liên kết NTFS
+
+hex2dec / hex2dec64 – Chuyển đổi hex
+
+Eula – Hướng dẫn
+
+Readme – Thông tin phiên bản
+
+autoruns.chm – Tài liệu Autoruns
+
+tcpview.chm – Tài liệu TCPView
+
+procmon.chm – Tài liệu Process Monitor
