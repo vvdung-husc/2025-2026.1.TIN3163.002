@@ -1,1 +1,35 @@
+1. Nhóm giám sát hệ thống & tiến trình (System & Process Tools)
+Chức năng: Theo dõi hoạt động hệ thống, tiến trình, file, registry.
+Công cụ tiêu biểu:
+•	Process Explorer – xem tiến trình chi tiết
+•	Process Monitor – theo dõi file + registry real-time
+•	RAMMap – xem RAM dùng như thế nào
+
+ 2. Nhóm quản lý file & ổ đĩa (File & Disk Tools)
+Chức năng: Phân tích ổ đĩa, tối ưu file, xoá an toàn.
+Công cụ tiêu biểu:
+•	Disk2vhd – tạo file VHD từ ổ đĩa thật
+•	Contig – chống phân mảnh 1 file
+•	SDelete – xoá dữ liệu không thể khôi phục
+
+ 3. Nhóm quản lý khởi động & cấu hình (Autorun & Config Tools)
+Chức năng: Kiểm soát chương trình tự chạy và cấu hình hệ thống.
+Công cụ tiêu biểu:
+•	Autoruns – xem toàn bộ startup (mạnh nhất)
+•	RegJump – nhảy nhanh tới registry key
+•	ZoomIt – phóng to màn hình khi trình chiếu
+
+ 4. Nhóm mạng & bảo mật (Network & Security Tools)
+Chức năng: Theo dõi kết nối mạng, quyền truy cập, bảo mật.
+Công cụ tiêu biểu:
+•	TCPView – xem kết nối TCP/UDP
+•	PsPing – đo độ trễ, tốc độ mạng
+•	ShareEnum – xem chia sẻ mạng và quyền
+ 5. Nhóm công cụ dòng lệnh PsTools (Remote Admin Tools)
+Chức năng: Điều khiển máy tính từ xa bằng command line.
+Công cụ tiêu biểu:
+•	PsExec – chạy lệnh từ xa
+•	PsKill – tắt tiến trình từ xa
+•	PsShutdown – tắt/mở máy từ xa
+
 
