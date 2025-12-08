@@ -1,0 +1,64 @@
+1. Công cụ kiểm tra mạng (Network Tools)
+
+Các tool dạng này giúp bạn phân tích kết nối, kiểm tra gói tin, đánh giá trạng thái hệ thống.
+
+• Wireshark
+
+Công cụ phân tích gói tin phổ biến nhất.
+
+Dùng để xem dữ liệu đi qua card mạng, theo dõi giao thức TCP/IP, HTTP, DNS…
+
+• Nmap / Zenmap
+
+Dùng để quét port, kiểm tra máy có đang mở dịch vụ nào.
+
+Phục vụ mục đích kiểm tra lỗ hổng cơ bản, quản trị hệ thống.
+
+• Angry IP Scanner
+
+Quét dải IP nhanh → xem có bao nhiêu máy đang hoạt động.
+
+ 2. Công cụ kiểm tra lỗ hổng hệ thống (Vulnerability Scanners)
+• OpenVAS / Greenbone
+
+Quét lỗ hổng mức hệ thống, dịch vụ, cấu hình sai.
+
+• Nessus (bản trial)
+
+Công cụ chuyên nghiệp để kiểm tra lỗ hổng bảo mật theo CVE.
+ 3. Công cụ phân tích file – mã độc cơ bản
+• Process Explorer / Process Hacker
+
+Xem tiến trình đang chạy → phát hiện tiến trình lạ.
+
+• Autoruns
+
+Kiểm tra chương trình khởi động cùng Windows → phát hiện phần mềm đáng ngờ.
+
+• HashTool / HashCheck
+
+Kiểm tra mã băm (SHA256, MD5) của file để xác định tính toàn vẹn.
+
+ 4. Công cụ quản trị & điều tra hệ thống
+• Sysinternals Suite
+
+Bộ công cụ của Microsoft gồm:
+
+TCPView – xem kết nối mạng đang hoạt động
+
+RAMMap – phân tích bộ nhớ
+
+ProcMon – theo dõi hành vi file/registry
+
+PsExec – chạy lệnh từ xa (quản trị viên)
+
+ 5. Công cụ bảo mật Web (nếu trong folder có)
+• Burp Suite (Community)
+
+Dùng để kiểm tra bảo mật website (HTTP request/response).
+
+Ứng dụng nhiều trong bài lab khai thác web, nhưng dùng phải đúng luật.
+
+• OWASP ZAP
+
+Công cụ mã nguồn mở để kiểm tra lỗi web phổ biến như XSS, SQLi (ở mức cơ bản).

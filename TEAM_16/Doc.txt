@@ -1,0 +1,103 @@
+======================================================================
+TÀI LIỆU TỔNG HỢP: CÔNG CỤ QUẢN TRỊ VÀ PHÂN TÍCH KỸ THUẬT (RE/MALWARE)
+======================================================================
+
+MỤC LỤC:
+I.   NHÓM MẠNG VÀ HỆ THỐNG (NETWORK & SYSTEM)
+II.  NHÓM PHÂN TÍCH TĨNH (STATIC ANALYSIS)
+III. NHÓM PHÂN TÍCH ĐỘNG (DYNAMIC ANALYSIS)
+IV.  TIỆN ÍCH HỖ TRỢ (UTILITIES)
+
+======================================================================
+I. NHÓM MẠNG VÀ HỆ THỐNG (NETWORK & SYSTEM)
+======================================================================
+
+1. NGINX (Web Server)
+   - Khái niệm: Là một máy chủ web mã nguồn mở, hoạt động như một reverse proxy, load balancer. Nổi tiếng với hiệu suất cao và khả năng chịu tải tốt.
+   - Tài liệu tham khảo: https://topdev.vn/blog/nginx-la-gi/
+
+2. ĐIỀU KHIỂN TỪ XA (Remote Desktop trên Linux)
+   - Chức năng: Thiết lập kết nối điều khiển máy tính từ xa.
+   - Thực hành: Cài đặt xrdp trên Kali Linux.
+   - Hướng dẫn (Phần 4): https://monovm.com/blog/kali-rdp/#Installing-xrdp-Kali-Linux
+
+3. NMAP (Network Mapper)
+   - Khái niệm: Công cụ quét mạng dùng để phát hiện các máy chủ (host) và dịch vụ trên mạng máy tính.
+   - Chức năng: Quét cổng (port scanning), xác định hệ điều hành, kiểm tra tường lửa.
+   - Video giới thiệu: https://youtu.be/gN70wz5WFH4?si=uL4-IrMdre5XSOJL
+   - Các lệnh cơ bản: https://www.varonis.com/blog/nmap-commands
+
+======================================================================
+II. NHÓM PHÂN TÍCH TĨNH (STATIC ANALYSIS)
+(Phân tích file thực thi mà không cần chạy chúng)
+======================================================================
+
+1. EXEINFO PE
+   - Loại công cụ: Nhận diện & Phân tích cấu trúc PE.
+   - Chức năng chính:
+     + Xem chi tiết cấu trúc PE Header, Import/Export, Resource.
+     + Xác định Packer (trình nén) của file .exe.
+     + Gợi ý cách Unpack (giải nén) cho các nhà phân tích mã độc.
+     + Đổi tên, xóa hoặc mở file cứng đầu.
+
+2. DIE (Detect It Easy)
+   - Loại công cụ: Nhận diện loại file & Packer (Nâng cao).
+   - Chức năng chính:
+     + Xác định trình biên dịch (Compiler) và trình liên kết (Linker).
+     + Tính toán độ Entropy để phát hiện mã hóa/nén.
+     + Hỗ trợ đa nền tảng (Windows, Linux, macOS).
+     + Có khả năng mở rộng chức năng qua script.
+
+3. RESOURCE HACKER
+   - Loại công cụ: Biên tập tài nguyên (Resource Editor).
+   - Chức năng chính:
+     + Xem và sửa đổi: Icon, Menu, Dialog, String Table, Manifest.
+     + Trích xuất tài nguyên (ảnh, icon) từ file .exe/.dll.
+     + Ứng dụng trong việc Việt hóa phần mềm hoặc thay đổi giao diện.
+
+4. HxD (Hex Editor)
+   - Loại công cụ: Trình soạn thảo hệ thập lục phân.
+   - Chức năng chính:
+     + Xem và sửa nội dung file ở cấp độ byte (Hex).
+     + Chỉnh sửa trực tiếp bộ nhớ (RAM) của tiến trình đang chạy.
+     + Xử lý tốt các file dung lượng lớn, so sánh checksum.
+
+5. IDA (Interactive Disassembler)
+   - Loại công cụ: Dịch ngược (Disassembler) & Gỡ lỗi (Debugger).
+   - Chức năng chính:
+     + Chuyển đổi mã máy (Binary) sang mã Assembly hoặc mã giả C (Pseudocode).
+     + Giúp hiểu logic hoạt động của chương trình mà không cần source code.
+     + Là công cụ tiêu chuẩn trong ngành Reverse Engineering và phân tích mã độc.
+
+======================================================================
+III. NHÓM PHÂN TÍCH ĐỘNG (DYNAMIC ANALYSIS)
+(Giám sát hành vi của file khi đang chạy)
+======================================================================
+
+1. REGSHOT
+   - Chức năng: So sánh Registry.
+   - Cách hoạt động: 
+     + Chụp ảnh Registry lần 1 (trước khi chạy file).
+     + Chạy file cần kiểm tra.
+     + Chụp ảnh Registry lần 2 (sau khi chạy).
+     + So sánh để chỉ ra các key đã bị thêm, sửa, xóa.
+   - Ứng dụng: Phát hiện mã độc thay đổi cấu hình khởi động của Windows.
+
+2. FAKENET
+   - Chức năng: Giả lập mạng (Network Simulation).
+   - Cách hoạt động: Tạo ra môi trường Internet giả lập. Khi mã độc cố gắng kết nối ra ngoài (C&C server), FakeNet sẽ chặn và trả lời lại các yêu cầu đó.
+   - Ứng dụng: Phân tích hành vi mạng của mã độc trong môi trường cô lập (không cần internet thật).
+
+======================================================================
+IV. TIỆN ÍCH HỖ TRỢ (UTILITIES)
+======================================================================
+
+1. EVERYTHING
+   - Chức năng: Tìm kiếm file và thư mục trên Windows.
+   - Điểm mạnh: Tốc độ tìm kiếm tức thì (Real-time) nhờ lập chỉ mục tên file. Hỗ trợ tìm kiếm nâng cao (Regex).
+
+======================================================================
+GHI CHÚ NGƯỜI DÙNG:
+- Luôn thực hiện phân tích mã độc trong máy ảo (VMware/VirtualBox).
+- Sao lưu file gốc trước khi sử dụng Resource Hacker hoặc HxD.
+======================================================================

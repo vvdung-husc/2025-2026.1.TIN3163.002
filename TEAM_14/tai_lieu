@@ -125,3 +125,11 @@ Công dụng
 -   Tìm magic byte: MZ, PE.
 -   Sửa byte JMP, NOP để bypass check.
 -   Phân tích shellcode. ### Tài liệu https://mh-nexus.de/en/hxd/
+
+-có các ảnh của việc kết nối trong foder image
+
+
+
+-Tìm hiểu về Process Explorer (Sysinternals) hay là procexp64.exe
+Công dụng là theo dõi và quản lý các tiến trình đang chạy trên hệ thống Windows nâng cao hơn task manager mặc định trên windows.
+link tham khảo: https://quantrimang.com/download/process-explorer-211152

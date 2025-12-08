@@ -1,0 +1,97 @@
+MỤC TIÊU
+
+Bạn có 2 máy (ví dụ: Windows Server & Kali Linux)
+
+Mỗi máy đều có card Host-only
+
+Bạn đã đặt IP tĩnh cho từng máy
+
+Ví dụ minh hoạ:
+
+Máy Windows Server (VM1) → IP: 192.168.56.10
+
+Máy Kali Linux (VM2) → IP: 192.168.56.20
+
+(hoặc bất kỳ IP nào bạn đã đặt)
+
+ BƯỚC 1 – Kiểm tra IP từng máy
+Trong Windows Server
+
+Mở CMD:
+
+ipconfig
+
+
+Kiểm tra card VMnet1 (Host-only) xem IP đúng chưa.
+Ví dụ:
+
+Ethernet adapter Ethernet 2:
+   IPv4 Address. . . . . . . . . . . : 192.168.56.10
+
+Trong Kali Linux
+
+Mở Terminal:
+
+ip a
+
+
+Kiểm tra eth1 (Host-only):
+
+eth1: inet 192.168.56.20/24
+
+
+Nếu đúng → qua bước tiếp theo.
+
+ BƯỚC 2 – Ping từ máy Windows Server → Kali
+
+Trong Windows Server, mở CMD:
+
+ping 192.168.56.20
+
+
+Nếu OK sẽ thấy:
+
+Reply from 192.168.56.20: bytes=32 time<1ms TTL=64
+
+🟢 BƯỚC 3 – Ping từ Kali → Windows Server
+
+Trong Kali, mở Terminal:
+
+ping 192.168.56.10
+
+
+Nếu OK:
+
+64 bytes from 192.168.56.10: icmp_seq=1 ttl=128 time=0.3 ms
+
+⚠️ NẾU PING KHÔNG ĐƯỢC – KIỂM TRA 4 LỖI PHỔ BIẾN
+1. Card host-only chưa bật
+
+Trong VMware → VM → Settings → Network Adapter → phải là:
+✔ Host-only
+✔ Connect at power on
+
+2. Firewall Windows đang chặn
+
+Để test nhanh, bạn có thể tắt tạm thời:
+
+CMD admin:
+
+netsh advfirewall set allprofiles state off
+
+
+(Chỉ dùng trong LAB)
+
+3. Kali chưa bật dịch vụ mạng
+
+Chạy:
+
+sudo systemctl restart NetworkManager
+
+4. Sai dải IP Host-only (VMnet1)
+
+Kiểm tra trong:
+
+VMware → Edit → Virtual Network Editor → VMnet1
+Phải trùng dải với cả 2 máy
+Ví dụ: 192.168.56.0/24

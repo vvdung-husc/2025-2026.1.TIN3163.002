@@ -1,0 +1,83 @@
+======================================================================
+TÌM HIỂU VÀ PHÂN LOẠI BỘ CÔNG CỤ SYSINTERNALS SUITE
+======================================================================
+
+1. GIỚI THIỆU CHUNG
+   Sysinternals Suite là một bộ công cụ gồm hơn 70 tiện ích nhỏ gọn được phát triển bởi Mark Russinovich (Microsoft).
+   Mục đích: Hỗ trợ quản trị viên hệ thống, chuyên gia bảo mật và lập trình viên trong việc giám sát, quản lý, gỡ lỗi và chẩn đoán các sự cố sâu trong hệ điều hành Windows.
+
+2. PHÂN LOẠI VÀ CÔNG CỤ MINH HỌA
+   Bộ công cụ được chia thành 6 nhóm chính dựa trên chức năng.
+
+----------------------------------------------------------------------
+NHÓM 1: PROCESS UTILITIES (TIỆN ÍCH QUẢN LÝ TIẾN TRÌNH)
+----------------------------------------------------------------------
+* Chức năng: Giám sát, quản lý và phân tích các chương trình đang chạy trên máy tính. Đây là nhóm quan trọng nhất để phát hiện mã độc đang ẩn mình.
+
+* Công cụ minh họa: PROCESS EXPLORER (procexp.exe)
+  - Mô tả: Được mệnh danh là "Task Manager siêu cấp". Nó hiển thị cấu trúc cây cha-con của các tiến trình, cho biết file nào đang mở, DLL nào đang được load, và chủ sở hữu của tiến trình đó.
+  - Tính năng nổi bật: 
+    + Kiểm tra chữ ký số (Verify Signatures) để phát hiện file giả mạo.
+    + Tích hợp VirusTotal để quét nhanh virus của một tiến trình đang chạy.
+    + Hiển thị màu sắc để phân biệt service, ứng dụng, và tiến trình bị treo.
+
+----------------------------------------------------------------------
+NHÓM 2: SECURITY UTILITIES (TIỆN ÍCH BẢO MẬT)
+----------------------------------------------------------------------
+* Chức năng: Kiểm soát quyền truy cập, khởi động và các khía cạnh an ninh của hệ thống.
+
+* Công cụ minh họa: AUTORUNS (autoruns.exe)
+  - Mô tả: Công cụ mạnh mẽ nhất để kiểm tra các chương trình tự khởi động cùng Windows.
+  - Tính năng nổi bật:
+    + Hiển thị tất cả các vị trí tự khởi động (Registry, Startup folder, Scheduled Tasks, Services, Drivers...).
+    + Giúp phát hiện Malware thường gài cắm vào các key khởi động để sống sót sau khi restart máy.
+    + Cho phép bỏ chọn (disable) tạm thời các mục nghi ngờ.
+
+----------------------------------------------------------------------
+NHÓM 3: NETWORKING UTILITIES (TIỆN ÍCH MẠNG)
+----------------------------------------------------------------------
+* Chức năng: Giám sát kết nối mạng, kiểm tra các luồng dữ liệu ra/vào máy tính.
+
+* Công cụ minh họa: TCPVIEW (tcpview.exe)
+  - Mô tả: Một phiên bản đồ họa của lệnh "netstat". Nó liệt kê tất cả các điểm cuối (endpoints) TCP và UDP đang hoạt động.
+  - Tính năng nổi bật:
+    + Hiển thị thời gian thực (Real-time) các kết nối mạng.
+    + Cho biết tiến trình nào (ứng dụng nào) đang kết nối đến địa chỉ IP nào.
+    + Có thể đóng (Close connection) hoặc giết tiến trình (Kill process) ngay lập tức nếu phát hiện kết nối lạ.
+
+
+----------------------------------------------------------------------
+NHÓM 4: FILE AND DISK UTILITIES (TIỆN ÍCH TỆP VÀ Ổ CỨNG)
+----------------------------------------------------------------------
+* Chức năng: Giám sát trạng thái ổ cứng, dung lượng và sự thay đổi của tập tin.
+
+* Công cụ minh họa: PROCESS MONITOR (procmon.exe)
+  *Lưu ý: ProcMon thuộc cả nhóm Process và File, nhưng chức năng giám sát File của nó là mạnh nhất.
+  - Mô tả: Công cụ giám sát thời gian thực các hoạt động của File System, Registry và Process/Thread.
+  - Tính năng nổi bật:
+    + Ghi lại mọi hành động Đọc/Ghi file của tất cả phần mềm.
+    + Giúp tìm ra nguyên nhân lỗi "Access Denied" hoặc xem phần mềm vừa cài đặt đã tạo ra những file rác nào.
+
+
+----------------------------------------------------------------------
+NHÓM 5: SYSTEM INFORMATION (THÔNG TIN HỆ THỐNG)
+----------------------------------------------------------------------
+* Chức năng: Hiển thị thông tin tổng quan về phần cứng và hệ điều hành.
+
+* Công cụ minh họa: BGINFO (Bginfo.exe)
+  - Mô tả: Công cụ tự động hiện thông số kỹ thuật (CPU, RAM, IP, Hostname, OS Version...) lên hình nền Desktop.
+  - Ứng dụng: Rất hữu ích cho quản trị viên quản lý nhiều server, chỉ cần nhìn màn hình là biết đang remote vào máy nào.
+
+
+----------------------------------------------------------------------
+NHÓM 6: MISCELLANEOUS (CÁC TIỆN ÍCH KHÁC)
+----------------------------------------------------------------------
+* Chức năng: Các công cụ hỗ trợ trình chiếu, zoom màn hình hoặc các tác vụ nhỏ lẻ.
+
+* Công cụ minh họa: ZOOMIT (ZoomIt.exe)
+  - Mô tả: Công cụ hỗ trợ thuyết trình.
+  - Tính năng: Phóng to màn hình, vẽ chú thích trực tiếp lên màn hình khi đang trình bày.
+
+  Link tài liệu tham khảo chính thức: https://learn.microsoft.com/en-us/sysinternals/downloads/zoomit
+
+======================================================================
