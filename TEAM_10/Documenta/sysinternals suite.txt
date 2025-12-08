@@ -1,0 +1,109 @@
+I.  NHÓM GIÁM SÁT HỆ THỐNG (System Monitoring)
+1. Process Explorer
+•	Thay thế Task Manager.
+•	Xem chi tiết Process, thread, DLL, handle.
+•	Dò virus, DLL injection, file đang bị khóa.
+2. Process Monitor (ProcMon)
+•	Theo dõi real-time: File, Registry, Process, Thread, Network.
+•	Điều tra malware, lỗi cài phần mềm, lỗi registry.
+3. Process Activity Viewer
+•	Hiển thị hoạt động I/O của tất cả tiến trình.
+4. RAMMap
+•	Xem phân bố RAM: active, standby, driver locked…
+•	Dọn Standby list để giảm lag.
+5. DiskMon
+•	Giám sát đọc/ghi đĩa.
+6. DiskView
+•	Hiển thị cấu trúc phân mảnh vật lý của ổ đĩa.
+7. LiveKd
+•	Dump kernel memory "nóng" mà không reboot.
+II. NHÓM QUẢN LÝ PROCESS & THREAD (Process Utilities)
+1. PsExec
+•	Chạy lệnh từ xa.
+•	Không cần cài agent.
+2. PsList
+•	Xem thông tin process, thread.
+3. PsKill
+•	Kill process từ xa.
+4. PsSuspend
+•	Tạm dừng process.
+5. PsService
+•	Quản lý service từ xa.
+6. PsLoggedOn
+•	Xem người đang đăng nhập máy.
+7. PsInfo
+•	Lấy thông tin phần cứng & OS.
+
+III. NHÓM HỆ THỐNG FILE & DISK (File & Disk Utilities)
+1. Handle
+•	Tìm process đang khóa 1 file.
+•	Tương tự lsof trên Linux.
+2. Sigcheck
+•	Kiểm tra digital signature.
+•	Phát hiện file hệ thống đã bị giả mạo (malware).
+3. Streams
+•	Xem ADS (Alternate Data Streams).
+•	Phát hiện file chứa mã độc trong ADS.
+4. AccessChk
+•	Kiểm tra quyền file, folder, registry, service.
+5. Contig
+•	Chống phân mảnh file đơn lẻ (chuyên dùng cho game).
+6. Disk Usage (DU)
+•	Báo dung lượng thư mục.
+
+IV.  NHÓM BẢO MẬT – QUYỀN – LOGON (Security Utilities)
+1. Autoruns
+•	Mạnh hơn Task Manager Startup.
+•	Dùng để dọn malware, virus khó gỡ.
+•	Xem toàn bộ:
+o	Startup
+o	Scheduled Task
+o	Services
+o	Drivers
+o	Explorer Shell
+o	Browser Helper Objects
+2. Sysmon
+•	Ghi log nâng cao cho Windows Event Logs.
+•	Dùng trong Forensic – SOC – Threat Hunting.
+3. LogonSessions
+•	Hiển thị session đăng nhập.
+4. AccessEnum
+•	Liệt kê permission của folder/share.
+5. PsLoggedOn
+•	Xem user đang login, login ẩn.
+
+V. NHÓM MẠNG (Networking Utilities)
+1. TCPView
+•	Xem real-time TCP/UDP, PID, state.
+•	Dùng để phát hiện process kết nối lạ (malware botnet).
+2. Whois
+•	Tra cứu domain.
+3. AdExplorer / ADInsight
+•	Phân tích Active Directory.
+4. PsPing
+•	Ping mở rộng (đo độ trễ, băng thông).
+5. PortMon
+•	Theo dõi cổng serial và parallel.
+
+VI. NHÓM DESKTOP – UI – TIỆN ÍCH KHÁC
+1. BgInfo
+•	Hiển thị thông tin hệ thống lên Desktop (IP, CPU, RAM).
+2. Desktops
+•	Tạo 4 màn hình desktop độc lập.
+3. ZoomIt
+•	Phóng to màn hình để giảng dạy, thuyết trình.
+•	Vẽ lên màn hình.
+4. Autorun EULA tool
+•	Check license.
+VII.  NHÓM KEMNEL – DRIVER – DEBUGGING
+1. WinObj
+•	Xem Object Manager của Windows Kernel.
+2. VMMap
+•	Xem cấp phát bộ nhớ của process.
+3. ListDLLs
+•	Xem DLL loaded trong mỗi process.
+4. DebugView
+•	Xem output debug mà không cần Visual Studio.
+5. Handle
+•	Theo dõi handle kernel.
+
