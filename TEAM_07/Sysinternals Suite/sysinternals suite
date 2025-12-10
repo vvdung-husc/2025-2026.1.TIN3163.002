@@ -10,3 +10,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - Contig: chống phân mảnh (defrag) từng file hoặc folder để cải thiện tốc độ truy cập
 - DiskView, DiskMon, DiskExt, Disk Usage (DU): xem bản đồ sector của đĩa, theo dõi I/O, liệt kê volume/partition và phân tích xem thư mục/file nào chiếm nhiều dung lượng
 - NTFSInfo, Junction, Streams, EFSDump: xem thông tin chi tiết NTFS (cluster, MFT), quản lý junction/reparse point, stream dữ liệu thay thế (ADS) và mã hóa EFS
+- SDelete: xóa an toàn (secure delete) file/ free space bằng cách ghi đè để khó khôi phục dữ liệu
