@@ -12,3 +12,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - NTFSInfo, Junction, Streams, EFSDump: xem thông tin chi tiết NTFS (cluster, MFT), quản lý junction/reparse point, stream dữ liệu thay thế (ADS) và mã hóa EFS
 - SDelete: xóa an toàn (secure delete) file/ free space bằng cách ghi đè để khó khôi phục dữ liệu
 3. Nhóm mạng (Networking): Các công cụ mạng giúp quan sát kết nối, port, latency, băng thông và dịch tên miền
+- TCPView: hiển thị tất cả kết nối TCP/UDP, port lắng nghe, process tương ứng, rất hữu ích để phát hiện kết nối “lạ”
