@@ -5,27 +5,33 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - PsTools (PsExec, PsList, PsKill, PsService, PsSuspend, PsLoggedOn, PsInfo, PsShutdown…): bộ tiện ích dòng lệnh để liệt kê process, dịch vụ, đăng nhập, chạy lệnh từ xa, kill process, reboot, v.v. trên máy cục bộ hoặc remote
 - ProcDump: tạo dump process theo trigger CPU, exception… phục vụ debug crash hoặc treo ứng dụng
 - VMMap: phân tích chi tiết map bộ nhớ ảo của một process (heap, stack, private bytes…) để tối ưu và debug memory leak
+
 2. Nhóm đĩa, file & hệ thống tệp: hỗ trợ phân tích hiệu năng đĩa, cấu trúc NTFS, phân mảnh, chuyển đổi và sử dụng dung lượng
 - Disk2vhd: chuyển ổ đĩa vật lý sang file VHD/VHDX để dùng với Hyper‑V
 - Contig: chống phân mảnh (defrag) từng file hoặc folder để cải thiện tốc độ truy cập
 - DiskView, DiskMon, DiskExt, Disk Usage (DU): xem bản đồ sector của đĩa, theo dõi I/O, liệt kê volume/partition và phân tích xem thư mục/file nào chiếm nhiều dung lượng
 - NTFSInfo, Junction, Streams, EFSDump: xem thông tin chi tiết NTFS (cluster, MFT), quản lý junction/reparse point, stream dữ liệu thay thế (ADS) và mã hóa EFS
 - SDelete: xóa an toàn (secure delete) file/ free space bằng cách ghi đè để khó khôi phục dữ liệu
+
 3. Nhóm mạng (Networking): Các công cụ mạng giúp quan sát kết nối, port, latency, băng thông và dịch tên miền
 - TCPView: hiển thị tất cả kết nối TCP/UDP, port lắng nghe, process tương ứng, rất hữu ích để phát hiện kết nối “lạ”
 - PsPing: phiên bản ping nâng cao, hỗ trợ ICMP và TCP, đo độ trễ, băng thông và tạo traffic test
 - PortMon: giám sát hoạt động cổng serial và parallel (hữu ích với hệ thống cũ, thiết bị chuyên dụng)
 - WhoIs: truy vấn thông tin đăng ký tên miền (WHOIS) trực tiếp từ Windows
+
 4. Nhóm bảo mật & auditing: tập trung vào quyền truy cập, log bảo mật và điều tra hành vi
 - Sysmon: dịch vụ ghi log chi tiết về tạo process, kết nối mạng, thay đổi file, hash, v.v. vào Windows Event Log, rất quan trọng trong môi trường SOC/SIEM
 - Autoruns: hiển thị và quản lý mọi thứ tự khởi động (startup) từ Run keys, services, drivers, scheduled tasks, shell extensions… giúp dọn sạch autostart và hunting persistence của malware
 - AccessChk, AccessEnum: kiểm tra quyền truy cập trên file, folder, registry, dịch vụ, giúp audit phân quyền
 - Sigcheck: kiểm tra chữ ký số, version, hash của file, có thể gửi hash lên dịch vụ AV để đánh giá
 - PsLoggedOn, LogonSessions: liệt kê tài khoản đang (hoặc từng) đăng nhập vào máy, hữu ích cho forensics và điều tra truy cập trái phép
-6. Nhóm Registry: Các công cụ liên quan tới Registry giúp truy cập và dọn dẹp an toàn hơn
+
 5. Nhóm thông tin hệ thống & giám sát: cung cấp overview về phần cứng, tài nguyên, phiên đăng nhập, driver, dịch vụ…
 - RAMMap: phân tích chi tiết cách Windows sử dụng RAM theo loại page, file cache, driver,...
 - Coreinfo: hiển thị topology CPU (core, logical processor, NUMA, hỗ trợ instruction set) để tối ưu ứng dụng
 - PsInfo: cung cấp thông tin tổng quan hệ điều hành, hotfix, CPU, RAM, domain… ở dạng dòng lệnh
+
+6. Nhóm Registry: Các công cụ liên quan tới Registry giúp truy cập và dọn dẹp an toàn hơn
+- RegJump: mở nhanh một key Registry cụ thể trong Regedit, tiện cho việc theo dõi hướng dẫn hoặc kết quả phân tích
 - LoadOrder: cho biết thứ tự load driver và các thành phần hệ thống
 - LogonSessions: hiển thị các session đăng nhập, thời gian và SID liên quan
