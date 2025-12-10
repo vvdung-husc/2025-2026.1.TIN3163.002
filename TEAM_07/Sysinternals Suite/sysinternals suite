@@ -5,4 +5,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - PsTools (PsExec, PsList, PsKill, PsService, PsSuspend, PsLoggedOn, PsInfo, PsShutdown…): bộ tiện ích dòng lệnh để liệt kê process, dịch vụ, đăng nhập, chạy lệnh từ xa, kill process, reboot, v.v. trên máy cục bộ hoặc remote
 - ProcDump: tạo dump process theo trigger CPU, exception… phục vụ debug crash hoặc treo ứng dụng
 - VMMap: phân tích chi tiết map bộ nhớ ảo của một process (heap, stack, private bytes…) để tối ưu và debug memory leak
-2. 
+2. Nhóm đĩa, file & hệ thống tệp
