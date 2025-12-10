@@ -17,3 +17,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - PortMon: giám sát hoạt động cổng serial và parallel (hữu ích với hệ thống cũ, thiết bị chuyên dụng)
 - WhoIs: truy vấn thông tin đăng ký tên miền (WHOIS) trực tiếp từ Windows
 4. Nhóm bảo mật & auditing: tập trung vào quyền truy cập, log bảo mật và điều tra hành vi
+- Sysmon: dịch vụ ghi log chi tiết về tạo process, kết nối mạng, thay đổi file, hash, v.v. vào Windows Event Log, rất quan trọng trong môi trường SOC/SIEM
