@@ -8,3 +8,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 2. Nhóm đĩa, file & hệ thống tệp: hỗ trợ phân tích hiệu năng đĩa, cấu trúc NTFS, phân mảnh, chuyển đổi và sử dụng dung lượng
 - Disk2vhd: chuyển ổ đĩa vật lý sang file VHD/VHDX để dùng với Hyper‑V
 - Contig: chống phân mảnh (defrag) từng file hoặc folder để cải thiện tốc độ truy cập
+- DiskView, DiskMon, DiskExt, Disk Usage (DU): xem bản đồ sector của đĩa, theo dõi I/O, liệt kê volume/partition và phân tích xem thư mục/file nào chiếm nhiều dung lượng
