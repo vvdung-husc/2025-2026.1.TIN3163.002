@@ -36,3 +36,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 6. Nhóm Registry: Các công cụ liên quan tới Registry giúp truy cập và dọn dẹp an toàn hơn
 - RegJump: mở nhanh một key Registry cụ thể trong Regedit, tiện cho việc theo dõi hướng dẫn hoặc kết quả phân tích
 - Registry Usage (RU): thống kê dung lượng mà các subtree Registry chiếm, giúp phát hiện key phình to bất thường
+- RegDelNull: xóa key/giá trị Registry chứa ký tự null mà Regedit bình thường khó xử lý
