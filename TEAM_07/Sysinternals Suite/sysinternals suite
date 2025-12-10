@@ -27,3 +27,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - Coreinfo: hiển thị topology CPU (core, logical processor, NUMA, hỗ trợ instruction set) để tối ưu ứng dụng
 - PsInfo: cung cấp thông tin tổng quan hệ điều hành, hotfix, CPU, RAM, domain… ở dạng dòng lệnh
 - LoadOrder: cho biết thứ tự load driver và các thành phần hệ thống
+- LogonSessions: hiển thị các session đăng nhập, thời gian và SID liên quan
