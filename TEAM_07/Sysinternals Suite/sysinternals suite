@@ -42,3 +42,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - BgInfo: hiển thị thông tin hệ thống (hostname, IP, OS…) lên desktop background, thuận tiện trong môi trường nhiều server
 - ZoomIt: công cụ zoom màn hình, vẽ annotation khi trình chiếu hoặc demo kỹ thuật
 - Desktops: tạo tối đa 4 desktop ảo trên các bản Windows cũ không có virtual desktop tích hợp
+- ShellRunas: thêm menu chuột phải “Run as different user” để chạy ứng dụng dưới account khác
