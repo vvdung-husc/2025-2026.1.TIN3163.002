@@ -15,3 +15,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - TCPView: hiển thị tất cả kết nối TCP/UDP, port lắng nghe, process tương ứng, rất hữu ích để phát hiện kết nối “lạ”
 - PsPing: phiên bản ping nâng cao, hỗ trợ ICMP và TCP, đo độ trễ, băng thông và tạo traffic test
 - PortMon: giám sát hoạt động cổng serial và parallel (hữu ích với hệ thống cũ, thiết bị chuyên dụng)
+- WhoIs: truy vấn thông tin đăng ký tên miền (WHOIS) trực tiếp từ Windows
