@@ -22,7 +22,7 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - AccessChk, AccessEnum: kiểm tra quyền truy cập trên file, folder, registry, dịch vụ, giúp audit phân quyền
 - Sigcheck: kiểm tra chữ ký số, version, hash của file, có thể gửi hash lên dịch vụ AV để đánh giá
 - PsLoggedOn, LogonSessions: liệt kê tài khoản đang (hoặc từng) đăng nhập vào máy, hữu ích cho forensics và điều tra truy cập trái phép
-5. Nhóm Registry: Các công cụ liên quan tới Registry giúp truy cập và dọn dẹp an toàn hơn
+6. Nhóm Registry: Các công cụ liên quan tới Registry giúp truy cập và dọn dẹp an toàn hơn
 5. Nhóm thông tin hệ thống & giám sát: cung cấp overview về phần cứng, tài nguyên, phiên đăng nhập, driver, dịch vụ…
 - RAMMap: phân tích chi tiết cách Windows sử dụng RAM theo loại page, file cache, driver,...
 - Coreinfo: hiển thị topology CPU (core, logical processor, NUMA, hỗ trợ instruction set) để tối ưu ứng dụng
