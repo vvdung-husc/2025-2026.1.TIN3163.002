@@ -43,3 +43,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - ZoomIt: công cụ zoom màn hình, vẽ annotation khi trình chiếu hoặc demo kỹ thuật
 - Desktops: tạo tối đa 4 desktop ảo trên các bản Windows cũ không có virtual desktop tích hợp
 - ShellRunas: thêm menu chuột phải “Run as different user” để chạy ứng dụng dưới account khác
+- NotMyFault, BlueScreen: tạo crash test / BSOD có chủ đích để học, demo hoặc kiểm tra dump/crash handling
