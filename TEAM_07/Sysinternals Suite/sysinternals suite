@@ -39,3 +39,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - RegDelNull: xóa key/giá trị Registry chứa ký tự null mà Regedit bình thường khó xử lý
 
 7. Nhóm giao diện, tiện ích nhỏ & “misc”:  các tool nhỏ nhưng rất hữu ích cho admin, presenter, hoặc trong các kịch bản đặc biệt
+- BgInfo: hiển thị thông tin hệ thống (hostname, IP, OS…) lên desktop background, thuận tiện trong môi trường nhiều server
