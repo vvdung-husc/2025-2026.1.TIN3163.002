@@ -6,3 +6,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - ProcDump: tạo dump process theo trigger CPU, exception… phục vụ debug crash hoặc treo ứng dụng
 - VMMap: phân tích chi tiết map bộ nhớ ảo của một process (heap, stack, private bytes…) để tối ưu và debug memory leak
 2. Nhóm đĩa, file & hệ thống tệp: hỗ trợ phân tích hiệu năng đĩa, cấu trúc NTFS, phân mảnh, chuyển đổi và sử dụng dung lượng
+- Disk2vhd: chuyển ổ đĩa vật lý sang file VHD/VHDX để dùng với Hyper‑V
