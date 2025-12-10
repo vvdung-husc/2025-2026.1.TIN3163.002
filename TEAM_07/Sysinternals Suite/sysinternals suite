@@ -20,3 +20,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - Sysmon: dịch vụ ghi log chi tiết về tạo process, kết nối mạng, thay đổi file, hash, v.v. vào Windows Event Log, rất quan trọng trong môi trường SOC/SIEM
 - Autoruns: hiển thị và quản lý mọi thứ tự khởi động (startup) từ Run keys, services, drivers, scheduled tasks, shell extensions… giúp dọn sạch autostart và hunting persistence của malware
 - AccessChk, AccessEnum: kiểm tra quyền truy cập trên file, folder, registry, dịch vụ, giúp audit phân quyền
+- Sigcheck: kiểm tra chữ ký số, version, hash của file, có thể gửi hash lên dịch vụ AV để đánh giá
