@@ -22,3 +22,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - AccessChk, AccessEnum: kiểm tra quyền truy cập trên file, folder, registry, dịch vụ, giúp audit phân quyền
 - Sigcheck: kiểm tra chữ ký số, version, hash của file, có thể gửi hash lên dịch vụ AV để đánh giá
 - PsLoggedOn, LogonSessions: liệt kê tài khoản đang (hoặc từng) đăng nhập vào máy, hữu ích cho forensics và điều tra truy cập trái phép
+5. Nhóm thông tin hệ thống & giám sát: cung cấp overview về phần cứng, tài nguyên, phiên đăng nhập, driver, dịch vụ…
