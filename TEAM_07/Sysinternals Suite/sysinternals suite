@@ -2,3 +2,4 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 Nhóm phân tích tiến trình (Process): tập trung vào xem, giám sát và thao tác với process, thread, DLL, handle… trên hệ thống
 - Process Explorer: “Task Manager nâng cao”, hiển thị cây tiến trình, DLL/handle đang mở, CPU/RAM từng tiến trình, kiểm tra chữ ký số và VirusTotal để hỗ trợ hunting malware
 - Process Monitor (ProcMon): giám sát real‑time mọi hoạt động file hệ thống, Registry, tiến trình, thread, DLL để debug ứng dụng, phân tích lỗi và điều tra mã độc
+- PsTools (PsExec, PsList, PsKill, PsService, PsSuspend, PsLoggedOn, PsInfo, PsShutdown…): bộ tiện ích dòng lệnh để liệt kê process, dịch vụ, đăng nhập, chạy lệnh từ xa, kill process, reboot, v.v. trên máy cục bộ hoặc remote
