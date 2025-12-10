@@ -30,8 +30,9 @@ Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để ch
 - RAMMap: phân tích chi tiết cách Windows sử dụng RAM theo loại page, file cache, driver,...
 - Coreinfo: hiển thị topology CPU (core, logical processor, NUMA, hỗ trợ instruction set) để tối ưu ứng dụng
 - PsInfo: cung cấp thông tin tổng quan hệ điều hành, hotfix, CPU, RAM, domain… ở dạng dòng lệnh
+- LoadOrder: cho biết thứ tự load driver và các thành phần hệ thống
+- LogonSessions: hiển thị các session đăng nhập, thời gian và SID liên quan
 
 6. Nhóm Registry: Các công cụ liên quan tới Registry giúp truy cập và dọn dẹp an toàn hơn
 - RegJump: mở nhanh một key Registry cụ thể trong Regedit, tiện cho việc theo dõi hướng dẫn hoặc kết quả phân tích
-- LoadOrder: cho biết thứ tự load driver và các thành phần hệ thống
-- LogonSessions: hiển thị các session đăng nhập, thời gian và SID liên quan
+
