@@ -1,0 +1,4 @@
+Sysinternals Suite là một bộ hơn 70 tiện ích miễn phí dùng để chẩn đoán, giám sát, khắc phục sự cố và phân tích bảo mật trên Windows, do Mark Russinovich phát triển và được Microsoft phân phối chính thức
+Nhóm phân tích tiến trình (Process): tập trung vào xem, giám sát và thao tác với process, thread, DLL, handle… trên hệ thống
+- Process Explorer: “Task Manager nâng cao”, hiển thị cây tiến trình, DLL/handle đang mở, CPU/RAM từng tiến trình, kiểm tra chữ ký số và VirusTotal để hỗ trợ hunting malware
+
