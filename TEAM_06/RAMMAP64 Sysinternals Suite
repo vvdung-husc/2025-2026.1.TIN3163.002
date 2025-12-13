@@ -1,0 +1,60 @@
+SYSINTERNALS SUITE
+CÔNG CỤ: RAMMAP64
+
+THUỘC NHÓM
+
+System Monitoring & Diagnostics
+
+( Giám sát và phân tích hệ thống )
+
+GIỚI THIỆU
+
+RAMMap64 là công cụ thuộc bộ Sysinternals Suite của Microsoft, dùng để phân tích chi tiết cách Windows sử dụng bộ nhớ RAM vật lý và bộ nhớ ảo.
+
+Công cụ này cho phép người dùng quan sát chính xác:
+
+RAM đang được sử dụng cho mục đích nào
+
+Bộ nhớ thuộc hệ thống hay ứng dụng
+
+Tình trạng bộ nhớ đệm (cache), standby, modified
+
+CHỨC NĂNG CHÍNH
+
+Hiển thị tổng dung lượng RAM vật lý
+
+Phân tích bộ nhớ theo từng loại sử dụng
+
+Theo dõi bộ nhớ kernel (paged / nonpaged)
+
+Phát hiện tình trạng chiếm dụng RAM bất thường
+
+Hỗ trợ chẩn đoán lỗi hiệu năng hệ thống
+
+CÁC TAB QUAN TRỌNG
+
+Use Counts: Thống kê RAM theo trạng thái sử dụng
+
+Processes: RAM được dùng bởi từng tiến trình
+
+Priority Summary: Bộ nhớ theo mức ưu tiên
+
+Physical Pages: Trang bộ nhớ vật lý
+
+File Summary: Bộ nhớ gắn với file
+
+File Details: Chi tiết file sử dụng RAM
+
+ỨNG DỤNG THỰC TẾ
+
+Phân tích máy chạy chậm dù còn RAM
+
+Phát hiện memory leak
+
+Học tập cơ chế quản lý bộ nhớ Windows
+
+Hỗ trợ quản trị hệ thống và tối ưu hiệu năng
+
+KẾT LUẬN
+
+RAMMap64 là công cụ phân tích bộ nhớ mạnh mẽ, trực quan và rất cần thiết cho sinh viên CNTT, kỹ sư hệ thống và quản trị mạng khi nghiên cứu hoặc xử lý sự cố liên quan đến RAM.
