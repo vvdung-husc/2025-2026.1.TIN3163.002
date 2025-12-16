@@ -82,4 +82,5 @@ Chức năng chính của công cụ Everything là tìm kiếm tên tệp và t
         -Phân tích phần mềm độc hại: Hiểu rõ cách thức hoạt động của mã độc để phát hiện lỗ hổng, mã hóa hoặc kỹ thuật che giấu.
         -Nghiên cứu lỗ hổng bảo mật: Tìm kiếm và phân tích các điểm yếu trong phần mềm.
         -Kiểm thử và bảo trì phần mềm: Hiểu rõ mã nguồn gốc khi không có sẵn mã nguồn gốc
-        
+-----------------------------------------------------------------------------------------------------------------
+- Sysinternals Suite: link tài liệu tham khảo https://tinyactive.com/sysinternals-suite-bo-cong-cu-toi-uu-windows/
