@@ -1,0 +1,177 @@
+1. DiE – Detect It Easy
+Công dụng:
+	• Nhận diện packer, compiler, protector.
+	• Kiểm tra entropy → xem file có bị pack/nén không.
+Cách dùng:
+	1. Mở DiE.
+	2. Kéo file .exe vào.
+	3. Xem:
+		○ Type: PE32/PE64
+		○ Compiler: MSVC / GCC / Delphi…
+		○ Packer: UPX/Themida/ASPack
+		○ Entropy (độ ngẫu nhiên)
+Ví dụ:
+Nếu Entropy > 7 → file đã bị pack (thường là malware).
+
+TÀI LIỆU THAM KHẢO:
+Investigating a Malicious Stealer to Learn Detect-It-Easy!
+https://github.com/horsicq/Detect-It-Easy
+2. ExeinfoPE
+Công dụng:
+	• Tương tự DiE nhưng chi tiết hơn.
+	• Có chức năng unpack hint (gợi ý cách gỡ pack).
+Cách dùng:
+	1. Kéo file vào.
+	2. Nhìn panel phải:
+		○ Entry Point
+		○ Sections
+		○ Signatures
+	3. Nếu thấy “UPX” → thử upx -d file.exe để unpack.
+
+TÀI LIỆU THAM KHẢO
+http://exeinfo.xn.pl/
+How To Detect Packers | Encrypters | Compilers of a Program (Exe) Free Tools 2017
+3. fakenet3.5 / FakeNet-NG
+Công dụng:
+	• Giả lập Internet để xem malware kết nối tới đâu.
+	• Thay thế DNS, HTTP, HTTPS bằng server ảo.
+ Cách dùng:
+	1. Chạy FakeNet-NG bằng admin.
+	2. Chạy file nghi ngờ malware trong VM.
+	3. Quan sát log:
+		○ Domain
+		○ HTTP request
+		○ Cổng kết nối
+		○ Payload
+Ví dụ:
+Malware cố kết nối hacker-control.xyz:8080 → FakeNet sẽ bắt lại.
+TÀI LIỆU THAM KHẢO
+https://github.com/mandiant/flare-fakenet-ng
+Manual chính thức (PDF):
+FakeNet-NG User Guide trong thư mục docs của repo.
+Getting Started with Network Simulation and Fakenet-NG
+
+4. IDA Pro 7.7
+ Công dụng:
+	• Disassembler mạnh nhất.
+	• Xem code assembly + pseudocode (F5).
+ Cách dùng:
+	1. Mở IDA → load file exe.
+	2. Chờ IDA phân tích Automatic.
+	3. Xem:
+		○ Functions list
+		○ Imports tiếp xúc với API Windows
+		○ Strings để xem keyword như “cmd.exe”, “http”, “token”, “keylogger”
+	4. Nhấn F5 để xem C pseudocode (nếu có plugin Hex-Rays).
+ Ví dụ:
+Tìm hàm chứa "CreateProcessA" → malware có thể tạo tiến trình ngầm.
+
+Tài liệu tham khảo
+• https://hex-rays.com/
+• IDA Pro User Guide (PDF):
+https://hex-rays.com/wp-content/uploads/manuals/ida.pdf
+• IDA Pro Tutorials
+5. Regshot
+ Công dụng:
+	• So sánh Registry trước và sau khi chạy ứng dụng/malware.
+Cách dùng:
+	1. Mở Regshot.
+	2. Nhấn 1st Shot (chụp trước).
+	3. Chạy ứng dụng/malware.
+	4. Nhấn 2nd Shot, rồi Compare.
+ Ví dụ:
+Nếu có dòng mới:
+
+HKCU\Software\Microsoft\Windows\Run\evil.exe
+→ Malware tự chạy khi khởi động.
+
+Tham khảo 
+https://sourceforge.net/projects/regshot/
+Regshot for Malware Analysis | Detect Registry Changes & Malware Persistence
+
+6. Resource Hacker
+ Công dụng:
+	• Xem/đổi icon, resource, dialog, string trong file PE.
+ Cách dùng:
+	1. Mở .exe.
+	2. Duyệt:
+		○ ICON
+		○ STRINGTABLE
+		○ MANIFEST
+	3. Có thể save resource hoặc replace resource.
+ Ví dụ:
+Thường dùng để xem “About”, “Version Info”, hoặc icon malware.
+Tham liệu 
+http://www.angusj.com/resourcehacker/
+
+7. Sysinternals Suite
+Bộ này có rất nhiều tool, nhưng quan trọng nhất:
+ Process Explorer
+Công dụng: Xem tiến trình chi tiết hơn Task Manager.
+Cách dùng:
+	• Mở app → kiểm tra:
+		○ CPU
+		○ Memory
+		○ DLL loaded
+		○ Path file
+ Process Monitor (ProcMon)
+Công dụng: Theo dõi real-time:
+	• File system
+	• Registry
+	• Process
+	• Network
+Cách dùng:
+	1. Mở ProcMon.
+	2. Lọc (Filter) theo:
+Process Name is target.exe
+	3. Chạy file → xem hành vi.
+ Autoruns
+Công dụng: Xem chương trình tự chạy lúc boot.
+ Ví dụ:
+Tab Logon → thấy mục lạ như:
+evil.exe → AppData\Roaming
+TCPView
+Công dụng: Xem mọi kết nối Internet đang mở.
+
+Tai liệu
+https://learn.microsoft.com/sysinternals/
+https://learn.microsoft.com/sysinternals/downloads
+
+8. systeminformer (Process Hacker nâng cấp)
+ Công dụng:
+	• Giám sát tiến trình, dịch vụ, network.
+	• Dễ kill tiến trình bị bảo vệ.
+ Cách dùng:
+	1. Mở chương trình.
+	2. Quan sát tiến trình nghi ngờ.
+	3. Xem tab:
+		○ Memory
+		○ Handles
+		○ Threads
+		○ Network connection
+Tài liệu tham khảo
+https://systeminformer.sourceforge.io/
+https://github.com/winsiderss/systeminformer/wiki
+
+9. x64dbg
+ Công dụng:
+	• Debugger để phân tích runtime.
+	• Dùng để:
+		○ Đặt breakpoint
+		○ Theo dõi register
+		○ Patch code
+		○ Bypass check license, anti-debug
+ Cách dùng:
+	1. Mở x64dbg → load file.
+	2. Run → dừng ở Entry Point.
+	3. Step vào (F7), Step over (F8).
+	4. Quan sát stack, registers, call tree.
+ Ví dụ:
+Tìm chuỗi "Serial key is invalid" → đặt BP → bỏ điều kiện check.
+
+Tài liệu tham khảo
+https://github.com/x64dbg/x64dbg/wiki
+x64dbg Memory Patching Tutorial | Beginner Guide: Breakpoints, Memory Patching & Cracking Basics
+
+Cách cấu hình mạng
+https://www.youtube.com/watch?v=ckqiknxfC6U

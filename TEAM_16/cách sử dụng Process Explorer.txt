@@ -1,0 +1,139 @@
+======================================================================
+HƯỚNG DẪN SỬ DỤNG CHUYÊN SÂU: PROCESS EXPLORER
+(Công cụ thuộc nhóm Process Utilities - Sysinternals)
+======================================================================
+
+1. GIỚI THIỆU
+   Process Explorer (procexp.exe) là công cụ quản lý tác vụ nâng cao, giúp người dùng nhìn thấy chi tiết những gì đang diễn ra trong "hậu trường" của hệ điều hành Windows. Nó cung cấp cái nhìn sâu sắc hơn Task Manager mặc định, đặc biệt hữu ích trong việc phát hiện mã độc (Malware Analysis) và gỡ lỗi hệ thống.
+
+2. CÁC TÍNH NĂNG CỐT LÕI VÀ CÁCH SỬ DỤNG
+
+----------------------------------------------------------------------
+A. PHÂN TÍCH CẤU TRÚC CÂY (PROCESS TREE)
+----------------------------------------------------------------------
+   * Khác biệt: Thay vì liệt kê danh sách lộn xộn, Process Explorer hiển thị tiến trình theo quan hệ Cha-Con (Parent-Child).
+   * Cách xem:
+     - Nhìn vào cột "Process": Các dòng thụt vào trong là tiến trình con.
+     - Ví dụ: Nếu bạn mở Chrome, bạn sẽ thấy `chrome.exe` (Cha) và bên dưới là hàng loạt `chrome.exe` (Con) thụt vào trong.
+   * Ứng dụng phát hiện mã độc:
+     - Nếu thấy `explorer.exe` (Giao diện Windows) lại sinh ra `cmd.exe` (Dòng lệnh) hoặc `powershell.exe` một cách bất thường -> Có thể máy đã bị nhiễm Trojan/Backdoor.
+
+----------------------------------------------------------------------
+B. KIỂM TRA CHỮ KÝ SỐ (VERIFY SIGNATURES)
+----------------------------------------------------------------------
+   * Mục đích: Xác định xem file đang chạy có phải là hàng chính chủ (của Microsoft, Google...) hay là file giả mạo.
+   * Cách thực hiện:
+     1. Trên thanh Menu, chọn [Options].
+     2. Tích vào dòng [Verify Image Signatures].
+     3. Quan sát cột "Verified Signer" mới xuất hiện.
+   * Phân tích:
+     - (Verified) Microsoft Windows: An toàn.
+     - (No Signature): Đáng ngờ (Cần kiểm tra kỹ).
+
+----------------------------------------------------------------------
+C. QUÉT VIRUS TỰ ĐỘNG VỚI VIRUSTOTAL
+----------------------------------------------------------------------
+   * Mục đích: Sử dụng cơ sở dữ liệu của 70+ trình diệt virus để kiểm tra độ sạch của tiến trình mà không cần cài phần mềm.
+   * Cách thực hiện:
+     1. Trên thanh Menu, chọn [Options] -> [VirusTotal.com].
+     2. Tích vào dòng [Check VirusTotal.com].
+     3. Đợi vài giây, cột "VirusTotal" sẽ hiện ra tỉ lệ (Ví dụ: 0/76).
+   * Phân tích:
+     - 0/76 (Màu xanh): Sạch.
+     - 1/76 hoặc cao hơn (Màu đỏ): Cảnh báo có virus. Bấm trực tiếp vào con số đó để xem báo cáo chi tiết trên web.
+
+----------------------------------------------------------------------
+D. TÌM FILE BỊ KHÓA (FIND HANDLES)
+----------------------------------------------------------------------
+   * Tình huống: Bạn muốn xóa một file/folder nhưng Windows báo lỗi "File is open in another program".
+   * Cách thực hiện:
+     1. Bấm tổ hợp phím [Ctrl + F] (hoặc icon cái ống nhòm).
+     2. Gõ tên file hoặc thư mục đang bị kẹt vào ô tìm kiếm.
+     3. Bấm [Search].
+     4. Kết quả sẽ chỉ ra chính xác chương trình nào đang "cầm" (hold) file đó.
+     5. Click đúp vào kết quả để nhảy tới tiến trình đó và tắt nó đi.
+
+----------------------------------------------------------------------
+E. XEM CHI TIẾT VÀ TẮT TIẾN TRÌNH
+----------------------------------------------------------------------
+   * Xem chi tiết (Properties):
+     - Click đúp vào bất kỳ dòng nào.
+     - Tab [TCP/IP]: Xem tiến trình đó đang kết nối mạng đi đâu.
+     - Tab [Strings]: Xem các chuỗi ký tự trong bộ nhớ (dân Reverse Engineering hay dùng để tìm mật khẩu hoặc đường dẫn ẩn).
+   * Tắt tiến trình (Kill):
+     - Chuột phải vào tiến trình -> Chọn [Kill Process] (Tắt 1 cái) hoặc [Kill Process Tree] (Tắt cả dòng họ cha-con của nó).
+
+======================================================================
+LƯU Ý KHI SỬ DỤNG:
+- Luôn chạy Process Explorer với quyền "Run as Administrator" để xem được đầy đủ thông tin hệ thống.
+- Cẩn thận khi Kill các tiến trình hệ thống (thường có màu hồng) như `csrss.exe`, `wininit.exe` vì có thể làm máy tính bị màn hình xanh (BSOD) ngay lập tức.
+============================================================================================================================================
+HƯỚNG DẪN SỬ DỤNG CHUYÊN SÂU: PROCESS EXPLORER
+(Công cụ thuộc nhóm Process Utilities - Sysinternals)
+======================================================================
+
+1. GIỚI THIỆU
+   Process Explorer (procexp.exe) là công cụ quản lý tác vụ nâng cao, giúp người dùng nhìn thấy chi tiết những gì đang diễn ra trong "hậu trường" của hệ điều hành Windows. Nó cung cấp cái nhìn sâu sắc hơn Task Manager mặc định, đặc biệt hữu ích trong việc phát hiện mã độc (Malware Analysis) và gỡ lỗi hệ thống.
+
+2. CÁC TÍNH NĂNG CỐT LÕI VÀ CÁCH SỬ DỤNG
+
+----------------------------------------------------------------------
+A. PHÂN TÍCH CẤU TRÚC CÂY (PROCESS TREE)
+----------------------------------------------------------------------
+   * Khác biệt: Thay vì liệt kê danh sách lộn xộn, Process Explorer hiển thị tiến trình theo quan hệ Cha-Con (Parent-Child).
+   * Cách xem:
+     - Nhìn vào cột "Process": Các dòng thụt vào trong là tiến trình con.
+     - Ví dụ: Nếu bạn mở Chrome, bạn sẽ thấy `chrome.exe` (Cha) và bên dưới là hàng loạt `chrome.exe` (Con) thụt vào trong.
+   * Ứng dụng phát hiện mã độc:
+     - Nếu thấy `explorer.exe` (Giao diện Windows) lại sinh ra `cmd.exe` (Dòng lệnh) hoặc `powershell.exe` một cách bất thường -> Có thể máy đã bị nhiễm Trojan/Backdoor.
+
+----------------------------------------------------------------------
+B. KIỂM TRA CHỮ KÝ SỐ (VERIFY SIGNATURES)
+----------------------------------------------------------------------
+   * Mục đích: Xác định xem file đang chạy có phải là hàng chính chủ (của Microsoft, Google...) hay là file giả mạo.
+   * Cách thực hiện:
+     1. Trên thanh Menu, chọn [Options].
+     2. Tích vào dòng [Verify Image Signatures].
+     3. Quan sát cột "Verified Signer" mới xuất hiện.
+   * Phân tích:
+     - (Verified) Microsoft Windows: An toàn.
+     - (No Signature): Đáng ngờ (Cần kiểm tra kỹ).
+
+----------------------------------------------------------------------
+C. QUÉT VIRUS TỰ ĐỘNG VỚI VIRUSTOTAL
+----------------------------------------------------------------------
+   * Mục đích: Sử dụng cơ sở dữ liệu của 70+ trình diệt virus để kiểm tra độ sạch của tiến trình mà không cần cài phần mềm.
+   * Cách thực hiện:
+     1. Trên thanh Menu, chọn [Options] -> [VirusTotal.com].
+     2. Tích vào dòng [Check VirusTotal.com].
+     3. Đợi vài giây, cột "VirusTotal" sẽ hiện ra tỉ lệ (Ví dụ: 0/76).
+   * Phân tích:
+     - 0/76 (Màu xanh): Sạch.
+     - 1/76 hoặc cao hơn (Màu đỏ): Cảnh báo có virus. Bấm trực tiếp vào con số đó để xem báo cáo chi tiết trên web.
+
+----------------------------------------------------------------------
+D. TÌM FILE BỊ KHÓA (FIND HANDLES)
+----------------------------------------------------------------------
+   * Tình huống: Bạn muốn xóa một file/folder nhưng Windows báo lỗi "File is open in another program".
+   * Cách thực hiện:
+     1. Bấm tổ hợp phím [Ctrl + F] (hoặc icon cái ống nhòm).
+     2. Gõ tên file hoặc thư mục đang bị kẹt vào ô tìm kiếm.
+     3. Bấm [Search].
+     4. Kết quả sẽ chỉ ra chính xác chương trình nào đang "cầm" (hold) file đó.
+     5. Click đúp vào kết quả để nhảy tới tiến trình đó và tắt nó đi.
+
+----------------------------------------------------------------------
+E. XEM CHI TIẾT VÀ TẮT TIẾN TRÌNH
+----------------------------------------------------------------------
+   * Xem chi tiết (Properties):
+     - Click đúp vào bất kỳ dòng nào.
+     - Tab [TCP/IP]: Xem tiến trình đó đang kết nối mạng đi đâu.
+     - Tab [Strings]: Xem các chuỗi ký tự trong bộ nhớ (dân Reverse Engineering hay dùng để tìm mật khẩu hoặc đường dẫn ẩn).
+   * Tắt tiến trình (Kill):
+     - Chuột phải vào tiến trình -> Chọn [Kill Process] (Tắt 1 cái) hoặc [Kill Process Tree] (Tắt cả dòng họ cha-con của nó).
+
+======================================================================
+LƯU Ý KHI SỬ DỤNG:
+- Luôn chạy Process Explorer với quyền "Run as Administrator" để xem được đầy đủ thông tin hệ thống.
+- Cẩn thận khi Kill các tiến trình hệ thống (thường có màu hồng) như `csrss.exe`, `wininit.exe` vì có thể làm máy tính bị màn hình xanh (BSOD) ngay lập tức.
+======================================================================

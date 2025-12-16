@@ -1,0 +1,105 @@
+1) Tải file cấu hình VPN từ TryHackMe
+Bước 1: Đăng nhập TryHackMe
+
+https://tryhackme.com
+
+Bước 2: Vào trang Access
+
+Trên thanh menu → Access
+
+Bước 3: Chọn server gần bạn
+
+Thường là Asia (nếu có) hoặc US West/EU.
+
+Bước 4: Nhấn Download My Configuration File
+
+Bạn sẽ nhận file dạng:
+
+username.ovpn
+
+2) Chép file .ovpn vào Kali Linux
+
+Nếu dùng VMware / VirtualBox:
+
+Kéo thả file vào Desktop Kali
+hoặc
+
+Dùng shared folder / copy paste.
+
+File nên nằm trong thư mục:
+/home/kali/
+
+3) Kết nối TryHackMe bằng OpenVPN trong Kali
+Mở Terminal và chạy:
+sudo openvpn username.ovpn
+
+
+(Nhớ đổi username.ovpn thành tên file thật.)
+
+Nhập mật khẩu sudo nếu cần.
+
+Sau khi chạy, bạn sẽ thấy:
+
+Initialization Sequence Completed
+
+
+→ Nghĩa là VPN đã kết nối thành công.
+
+4) Kiểm tra đã kết nối đúng chưa
+Cách 1: Ping máy TryHackMe
+
+Giả sử bạn đang làm phòng có IP mục tiêu là:
+10.10.x.x
+
+Chạy:
+
+ping 10.10.x.x
+
+
+Nếu có phản hồi → VPN hoạt động.
+
+Cách 2: Kiểm tra IP tunnel
+
+Chạy:
+
+ip a
+
+
+Bạn phải thấy giao diện:
+
+tun0
+
+
+→ Đây là interface VPN mà TryHackMe dùng.
+
+Cách 3: TryHackMe Dashboard báo "Connected"
+
+Trên trình duyệt → quay lại mục Access
+Bạn sẽ thấy trạng thái:
+
+Connected via OpenVPN (tun0)
+
+5) Lỗi thường gặp và cách sửa
+❌ Lỗi: Cannot resolve host address
+
+→ Do tường lửa hoặc DNS.
+Chạy:
+
+sudo systemctl restart NetworkManager
+
+❌ Lỗi: AUTH FAILED
+
+→ Bạn đang dùng file .ovpn sai tài khoản
+→ Tải lại file từ Access page.
+
+❌ Không xuất hiện tun0
+
+Chạy:
+
+sudo apt install openvpn
+
+6) Ngắt kết nối VPN
+
+Trong terminal đang chạy OpenVPN, nhấn:
+
+Ctrl + C

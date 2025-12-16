@@ -24,3 +24,10 @@ Trong đó Host-only có địa chỉ IP: 192.168.56.113/255.255.255.0
 
 VMWare
 https://it.iothings.vn/downloads/
+
+VM - Win2016 Server
+- https://drive.google.com/file/d/1Gr3Pl35xN5bYwaNzBZLp7xkbuYrm0Sdy/view?pli=1
+- https://it.iothings.vn/downloads/VMDienTap.zip
+
+Sysinternals Suite
+- https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite

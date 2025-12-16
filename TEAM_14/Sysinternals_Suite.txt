@@ -1,0 +1,117 @@
+BỘ CÔNG CỤ SYSINTERNALS SUITE: PHÂN LOẠI CHI TIẾT MỤC ĐÍCH SỬ DỤNG
+
+Danh sách này bao gồm các công cụ quan trọng trong Sysinternals Suite, được phân loại theo chức năng chính để quản lý, chẩn đoán và khắc phục sự cố hệ thống Windows.
+
+---
+I. CÔNG CỤ QUẢN LÝ VÀ PHÂN TÍCH TIẾN TRÌNH (PROCESS ANALYSIS)
+---
+
+1.  Process Monitor (procmon.exe):
+    -   Mục đích: Ghi lại và phân tích THỜI GIAN THỰC các hoạt động của Registry, File System, Process và Thread.
+
+2.  Process Explorer (procexp.exe):
+    -   Mục đích: Thay thế Task Manager, giám sát chi tiết tiến trình (DLL, handle, bảo mật).
+
+3.  VMMAP:
+    -   Mục đích: Phân tích chi tiết việc sử dụng bộ nhớ ảo và vật lý (virtual/physical memory) của tiến trình.
+
+4.  PsList / PsKill / PsSuspend:
+    -   Mục đích: Liệt kê, kết thúc (kill) hoặc tạm dừng (suspend) tiến trình từ dòng lệnh.
+
+5.  Handle:
+    -   Mục đích: Tìm kiếm tiến trình đang giữ handle (khóa) một file hoặc tài nguyên hệ thống.
+
+6.  ListDLLs:
+    -   Mục đích: Liệt kê tất cả các file DLL được tải bởi các tiến trình đang chạy.
+
+7.  ProcDump:
+    -   Mục đích: Tạo dump bộ nhớ (minidump) của tiến trình khi gặp lỗi hoặc treo để phân tích.
+
+---
+II. CÔNG CỤ HỆ THỐNG FILE VÀ ĐĨA (FILE SYSTEM & DISK)
+---
+
+1.  DiskMon / DiskView:
+    -   Mục đích: Giám sát hoạt động đĩa vật lý theo thời gian thực (DiskMon) hoặc hiển thị trực quan không gian đĩa (DiskView).
+
+2.  Du (Disk Usage):
+    -   Mục đích: Hiển thị mức sử dụng không gian đĩa của các thư mục.
+
+3.  SDelete:
+    -   Mục đích: Xóa file hoặc thư mục MỘT CÁCH AN TOÀN bằng cách ghi đè dữ liệu, ngăn chặn phục hồi.
+
+4.  Contig:
+    -   Mục đích: Chống phân mảnh các file hoặc thư mục riêng lẻ từ dòng lệnh.
+
+5.  Sync:
+    -   Mục đích: Buộc dữ liệu bộ đệm (cache) được ghi vào đĩa vật lý ngay lập tức.
+
+6.  MoveFile / PendMoves:
+    -   Mục đích: Kiểm soát các lệnh di chuyển/đổi tên file sẽ được thực hiện khi khởi động lại.
+
+---
+III. CÔNG CỤ BẢO MẬT VÀ QUYỀN HẠN (SECURITY & PERMISSIONS)
+---
+
+1.  AccessChk / AccessEnum:
+    -   Mục đích: Kiểm tra và hiển thị quyền hạn hiệu quả (effective permissions) trên các đối tượng hệ thống (file, Registry, service).
+
+2.  Sigcheck:
+    -   Mục đích: Kiểm tra chữ ký số (digital signatures) của file và thông tin phiên bản.
+
+3.  PsGetSid / PsLoggedOn:
+    -   Mục đích: Hiển thị SID và liệt kê người dùng đang đăng nhập vào hệ thống.
+
+4.  Streams:
+    -   Mục đích: Hiển thị các Alternate Data Streams (ADS) bị ẩn trên file hệ thống NTFS.
+
+---
+IV. CÔNG CỤ QUẢN LÝ TỪ XA VÀ MẠNG (REMOTE MANAGEMENT & NETWORKING)
+---
+
+1.  PsExec:
+    -   Mục đích: Thực thi các tiến trình trên hệ thống từ xa.
+
+2.  TCPView:
+    -   Mục đích: Hiển thị kết nối TCP/UDP đang hoạt động và tiến trình sở hữu theo thời gian thực.
+
+3.  ShareEnum:
+    -   Mục đích: Liệt kê các chia sẻ file và quyền truy cập bảo mật trên mạng.
+
+4.  PsPing:
+    -   Mục đích: Kiểm tra độ trễ và băng thông mạng (bao gồm TCP, UDP, HTTP).
+
+5.  PsService / PsShutdown:
+    -   Mục đích: Quản lý dịch vụ và thực hiện lệnh tắt/khởi động lại máy tính từ xa.
+
+6.  Whois:
+    -   Mục đích: Tra cứu thông tin đăng ký (ownership) của một địa chỉ IP hoặc tên miền.
+
+---
+V. CÔNG CỤ REGISTRY VÀ KHỞI ĐỘNG (REGISTRY & AUTOSTART)
+---
+
+1.  Autoruns:
+    -   Mục đích: Hiển thị TẤT CẢ các vị trí tự khởi động (Autostart) trên Windows.
+
+2.  RegJump:
+    -   Mục đích: Nhanh chóng mở Registry Editor và nhảy đến khóa Registry cụ thể.
+
+3.  RegDelNull:
+    -   Mục đích: Xóa các khóa Registry chứa ký tự null không thể xóa bằng Regedit thông thường.
+
+---
+VI. CÔNG CỤ ACTIVE DIRECTORY & TIỆN ÍCH KHÁC
+---
+
+1.  ADExplorer / ADInsight:
+    -   Mục đích: Công cụ GUI để duyệt, chỉnh sửa và quản lý Active Directory (ADExplorer) hoặc giám sát các yêu cầu LDAP (ADInsight).
+
+2.  BgInfo:
+    -   Mục đích: Tạo hình nền desktop hiển thị thông tin hệ thống quan trọng (IP, OS, tên máy).
+
+3.  ZoomIt:
+    -   Mục đích: Công cụ trình chiếu tiện lợi cho phép phóng to, vẽ và đếm ngược trên màn hình.
+
+4.  RDCMan (Remote Desktop Connection Manager):
+    -   Mục đích: Quản lý nhiều phiên Remote Desktop.

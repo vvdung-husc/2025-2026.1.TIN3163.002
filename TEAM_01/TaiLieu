@@ -55,3 +55,31 @@ Nginx nhẹ hơn, hiệu năng cao hơn và ít tốn tài nguyên so với Apac
 Nginx được sử dụng phổ biến để phục vụ các trang web tĩnh, cân bằng tải trên nhiều server, làm reverse proxy, và tăng cường bảo mật website.
 
 ***
+1) Khái niệm nhanh về IPv4
+
+IPv4 là địa chỉ 32-bit, thường viết thành 4 octet thập phân, ví dụ 192.168.1.10.
+Cấu trúc: A.B.C.D — mỗi octet 0–255.
+Subnet mask (mặt nạ mạng) xác định phần mạng/phần host, ví dụ 255.255.255.0 tương đương /24.
+Default gateway: địa chỉ router để ra mạng khác (internet).
+DNS: máy chủ phân giải tên miền (ví dụ 8.8.8.8).
+Hai chế độ gán IP: DHCP (tự động) và Static (tĩnh) — static dùng khi cần IP cố định cho máy chủ, thiết bị mạng, port forwarding,...
+
+2) Mấy ví dụ minh họa (dùng trong hướng dẫn)
+
+IP: 192.168.1.50
+Subnet mask: 255.255.255.0 (tương đương /24)
+Gateway: 192.168.1.1
+DNS: 8.8.8.8 và 8.8.4.4
+
+3) Gán IPv4 trên Windows
+- Giao diện đồ họa (Windows 10/11)
+Mở Settings → Network & Internet → chọn Ethernet hoặc Wi-Fi → click vào kết nối.
+Chọn Edit dưới IP assignment. Chọn Manual → bật IPv4 → nhập: IP address, Subnet prefix length (24 cho 255.255.255.0), Gateway, DNS. → Save.
+Hoặc cũ hơn: Control Panel → Network and Sharing Center → Change adapter settings → chuột phải adapter → Properties → Internet Protocol Version 4 (TCP/IPv4) → Properties → nhập tĩnh.
+
+4) Gán IPv4 trên Linux
+- Tạm thời (chỉ tồn tại cho tới reboot) — hiện đại: ip command
+- Ubuntu (recent) — Netplan (vĩnh viễn)
+- Debian (cũ hoặc minimal) — /etc/network/interfaces
+- RHEL/CentOS/Fedora (NetworkManager / nmcli hoặc ifcfg files)
+- Desktop Linux (NetworkManager GUI)

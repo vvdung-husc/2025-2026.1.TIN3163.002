@@ -1,0 +1,82 @@
+1. Nhóm Công cụ Quản lý File & Ổ đĩa (File & Disk Utilities)
+Nhóm này giúp bạn biết chính xác file nào đang làm gì, nằm ở đâu và xóa chúng an toàn.
+
+ +DiskView: Xem bản đồ trực quan của ổ đĩa. Bạn có thể bấm vào một cụm (cluster) trên bản đồ để xem file nào đang nằm ở đó.
+
++Disk Usage (DU): Công cụ dòng lệnh xem dung lượng thư mục (giống lệnh du của Linux). Nó quét nhanh hơn Windows Explorer rất nhiều.
+
++ SDelete (Secure Delete): Xóa file theo chuẩn quân đội (DoD). Nó ghi đè dữ liệu lên vị trí file cũ nhiều lần để đảm bảo không phần mềm khôi phục nào cứu lại được.
+
++Contig: Chống phân mảnh (defrag) cho từng file lẻ. Rất hay dùng để tối ưu hóa các file database hoặc file máy ảo (VHD) bị phân mảnh nặng.
+
++FindLinks: Tìm các hard link (liên kết cứng) của file (một file nhưng xuất hiện ở nhiều thư mục khác nhau).
+
++Junction: Tạo hoặc xóa các Symbolic Link (liên kết mềm) trên NTFS.
+
++PendMoves: Liệt kê danh sách các file sẽ được đổi tên hoặc xóa khi máy tính khởi động lại (thường dùng khi cài driver/update).
+2. Nhóm Công cụ Mạng (Networking Utilities)
+Dành cho quản trị viên mạng hoặc để kiểm tra bảo mật kết nối.
+
++TCPView: (Cực kỳ quan trọng) Xem tất cả các kết nối TCP/UDP thời gian thực. Bạn có thể chuột phải để đóng kết nối (Close Connection) hoặc tắt tiến trình (End Process) ngay lập tức.
+
++Whois: Gõ whois google.com để xem ai sở hữu tên miền đó, ngày đăng ký, ngày hết hạn.
+
++AD Explorer (Active Directory Explorer): Trình duyệt và chỉnh sửa AD nâng cao, giúp xem cấu trúc cây thư mục người dùng trong mạng doanh nghiệp.
+
++AdRestore: Khôi phục các đối tượng (user, computer...) đã bị xóa trong Active Directory Server 2003/2008.
+
++ShareEnum: Quét toàn bộ mạng nội bộ để xem thư mục nào đang được Share và ai có quyền truy cập (giúp bịt lỗ hổng bảo mật chia sẻ file).
+
++PsPing: Đo độ trễ mạng (latency) và băng thông (bandwidth) chính xác hơn lệnh Ping thông thường.
+3. Nhóm Công cụ Tiến trình (Process Utilities) - MẠNH NHẤT
+Đây là "trái tim" của bộ Sysinternals.
+
++ Process Explorer: Thay thế Task Manager. Tính năng "bá đạo" nhất là:
+
++Kéo biểu tượng "hồng tâm" thả vào cửa sổ phần mềm bất kỳ để biết nó thuộc tiến trình nào.
+
++Kiểm tra VirusTotal trực tiếp cho mọi tiến trình đang chạy.
+
++Process Monitor (ProcMon): Ghi lại log thời gian thực. Ví dụ: Bạn cài game bị lỗi, bật ProcMon lên sẽ thấy game đang cố truy cập vào file .dll nào bị thiếu -> Cài file đó là xong.
+
++ProcDump: Tự động tạo file "dump" (bản chụp bộ nhớ) khi một ứng dụng bị treo (crash) hoặc khi CPU tăng vọt. Lập trình viên dùng file này để debug.
+
++VMMap: Phân tích bộ nhớ RAM của một phần mềm. Biết được nó tốn RAM vào việc gì (chứa ảnh, chứa code, hay chứa dữ liệu rác).
+
+-Bộ công cụ PsTools (Dùng dòng lệnh):
++PsExec: Chạy lệnh trên máy khác qua mạng (ngồi máy A điều khiển máy B cài phần mềm).
+
++PsKill: Diệt tiến trình theo tên hoặc ID.
+
++PsList: Liệt kê tiến trình (giống lệnh ps của Linux).
+
++PsLoggedOn: Xem ai đang đăng nhập vào máy tính này (kể cả đăng nhập ẩn qua mạng).
+
++PsService: Xem và điều khiển các Services (Dịch vụ) của Windows.
+
++PsSuspend: Tạm ngưng (đóng băng) một phần mềm đang chạy mà không tắt nó.
+4. Nhóm Bảo mật (Security Utilities)
++ Autoruns: Kiểm soát khởi động. Nó soi được cả các malware ẩn mình dưới dạng driver, codec, hay explorer shell extension.
+
++AccessChk: Kiểm tra quyền hạn. Ví dụ: accesschk user1 c:\windows để xem user1 có quyền ghi vào thư mục Windows không.
+
++Sysmon: Cài vào máy để giám sát ngầm. Nó ghi lại log chi tiết (ai tạo file, ai sửa registry) vào Windows Event Log. Các hệ thống giám sát an ninh (SIEM) thường dùng cái này.
+
++LogonSessions: Liệt kê các phiên đăng nhập hiện hoạt.
+5. Nhóm Thông tin Hệ thống (System Information)
++BgInfo: Tự động hiện thông số kỹ thuật lên hình nền Desktop. Rất hữu ích cho IT quản lý nhiều server, nhìn màn hình là biết ngay IP, dung lượng ổ cứng còn trống.
+
++RAMMap: Xem chi tiết Windows đang dùng RAM vật lý như thế nào. Có tính năng "Empty Standby List" để giải phóng RAM bị Windows "chiếm dụng" làm cache.
+
++Coreinfo: Hiển thị sơ đồ giữa CPU vật lý và Logical Core, bộ nhớ Cache L1/L2/L3.
+
++LiveKd: Dùng để debug hệ điều hành (kernel) khi máy đang chạy (thường dành cho chuyên gia cao cấp).
+6. Nhóm Tiện ích khác (Miscellaneous)
++ZoomIt: Công cụ thuyết trình tuyệt vời. Phím tắt Ctrl+1 để phóng to màn hình, Ctrl+2 để vẽ bút đỏ lên màn hình.
+
++Strings: Trích xuất các dòng chữ (text) có nghĩa từ một file nhị phân (.exe, .dll). Dùng để soi xem trong file .exe lạ có chứa địa chỉ web độc hại nào không.
+
++Hex2dec: Chuyển đổi nhanh giữa số thập lục phân (Hex) và thập phân (Decimal).
+
++RegJump: Mở nhanh Registry Editor tới đúng đường dẫn bạn muốn (đỡ phải click từng thư mục).
+  

@@ -1,0 +1,63 @@
+Giao thức IPSEC trong lĩnh vực an toàn thông tin
+Bài đăng này đã không được cập nhật trong 4 năm
+
+Internet là một hệ thống thông tin toàn cầu có thể được truy nhập công cộng gồm các mạng máy tính được liên kết với nhau. Hệ thống này truyền thông tin theo kiểu nối chuyển gói dữ liệu (packet switching) dựa trên một giao thức liên mạng đã được chuẩn hóa (giao thức IP). Hệ thống này bao gồm hàng ngàn mạng máy tính nhỏ hơn của các doanh nghiệp, của các viện nghiên cứu và các trường đại học, của người dùng cá nhân và các chính phủ trên toàn cầu... Mạng Internet mang lại rất nhiều tiện ích hữu dụng và cung cấp cho người dùng một khối lượng thông tin và dịch vụ khổng lồ. Trong thập kỷ qua, Internet đã phát triển bùng nổ với tốc độ chóng mặt trên toàn thế giới cả về số lượng, kĩ thuật và chưa có dấu hiệu là sẽ dừng lại. Sự phát triển không chỉ đơn giản là số lượng lớn thành viên mới kết nối vào hệ thống Internet mỗi giờ mà còn là sự xâm nhập của nó vào các khía cạnh cuộc sống hiện đại, vào các hoạt động thương mại với quy mô lớn nhỏ khác nhau... Hiện nay, các tổ chức cơ quan hay chính phủ sử dụng Internet để giới thiệu các sản phẩm, dịch vụ hay điều hành bằng các website của mình. Cùng với thời gian, nó sẽ phát triển thành thương mại điện tử, mọi hoạt động kinh doanh, các giao dịch, điều hành được thực hiện qua mạng Internet. Tuy nhiên, song song với những tiện ích không thể phủ nhận mà mạng Internet mang tới, người dùng còn đối mặt với hàng loạt các nguy cơ mà trong đó nguy cơ hàng đầu bị đánh cắp thông tin, thay đổi thông tin truyển tải một cách có chủ đích. Bài toán đặt ra là làm thế nào để bảo mật an toàn cho các dữ liệu trong quá trình truyền qua mạng? Làm thế nào có thể bảo vệ chống lại các cuộc tấn công trong quá trình truyền tải các dữ liệu đó? IPSec là một trong những giải pháp khả dụng và sau đây chúng ta sẽ đi tìm hiểu về bảo mật các dữ liệu qua mạng Internet bằng việc sử dụng giao thức IPSec.
+
+1.1 Giới thiệu về IPSec
+Giao thức TCP/IP đóng một vai trò rất quan trọng trong các hệ thống hiện nay. Về nguyên tắc, có nhiều tùy chọn khác nhau về giao thức để triển khai các hệ thống mạng như TCP/IP, TPX/SPX, NetBEUI, Apple talk,… Tuy nhiên TCP/IP là sự lựa chọn gần như bắt buộc do giao thức này được sử dụng làm giao thức nền tảng của mạng Internet.
+
+Vào thời điểm thiết kế giao thức này, vấn đề bảo mật thông tin chưa thật sự được quan tâm, do đó, các giao thức trong bộ TCP/IP hầu như không được trang bị bất cứ giao thức nào. Cấu trúc gói dữ liệu (IP, TCP,UDP và cả các giao thức ứng dụng) được mô tả công khai, bắt được gói IP trên mạng, ai cũng có thể phân tích gói để đọc phần dữ liệu chứa bên trong, đó là chưa kể hiện nay, các công cụ bắt và phân tích gói được xây dựng với tính năng mạnh và phát hành rộng rãi. Việc bổ sung các cơ chế bảo mật vào mô hình TCP/IP, bắt đầu từ giao thức IP là một nhu cầu cấp bách.
+
+IP Security (IPSec – Internet Protocol Security) là một giao thức được chuẩn hoá bởi IETF (Internet Engineering Task Force) từ năm 1998 nhằm mục đích nâng cấp các cơ chế mã hoá và xác thực thông tin cho chuỗi thông tin truyền đi trên mạng bằng giao thức IP. Hay nói cách khác, IPSec là sự tập hợp của các chuẩn mở được thiết lập để đảm bảo sự cẩn mật dữ liệu, đảm bảo tính toàn vẹn dữ liệu và chứng thực dữ liệu giữa các thiết bị mạng.
+
+
+
+                          Hình 1.1: IPSec trong mô hình OSI
+
+IPSec cung cấp một cơ cấu bảo mật ở tầng 3 (Network layer) của mô hình OSI vì mọi giao tiếp trong một mạng trên cơ sở IP đều dựa trên các giao thức IP. Do đó, khi một cơ chế bảo mật cao được tích hợp với giao thức IP, toàn bộ mạng được bảo mật bởi vì các giao tiếp đều đi qua tầng 3 (Network layer) trong mô hình OSI. IPSec được thiết kế như phần mở rộng của giao thức IP, được thực hiện thống nhất trong cả hai phiên bản IPv4 và IPv6. Đối với IPv4, việc áp dụng IPSec là một tuỳ chọn, nhưng đối với IPv6, giao thức bảo mật này được triển khai bắt buộc.
+
+1.2 Đánh giá IPSec
+1.2.1 Ưu điểm
+Khi IPSec được triển khai trên bức tường lửa hoặc bộ định tuyến của một mạng riêng, thì tính năng an toàn của IPSec có thể áp dụng cho toàn bộ vào ra mạng riêng đó mà các thành phần khác không cần phải xử lý thêm các công việc liên quan đến bảo mật.
+IPSec được thực hiện bên dưới lớp TCP và UDP, đồng thời nó hoạt động trong suốt đối với các lớp này. Do vậy không cần phải thay đổi phần mềm hay cấu hình lại các dịch vụ khi IPSec được triển khai.
+IPSec có thể được cấu hình để hoạt động một cách trong suốt đối với các ứng dụng đầu cuối, điều này giúp che giấu những chi tiết cấu hình phức tạp mà người dùng phải thực hiện khi kết nối đến mạng nội bộ từ xa thông qua mạng Internet.
+1.2.2 Hạn chế
+Tất cả các gói được xử lý theo IPSec sẽ bị tăng kích thước do phải thêm vào các tiêu đề khác nhau, điều này làm cho thông lượng hiệu dụng của mạng giảm xuống. Vấn đề này có thể được khắc phục bằng cách nén dữ liệu trước khi mã hóa, song các kĩ thuật như vậy vẫn còn đang nghiên cứu và chưa được chuẩn hóa.
+IPSec được thiết kế chỉ để hỗ trợ bảo mật cho lưu lượng IP, không hỗ trợ các dạng lưu lượng khác.
+Việc tính toán nhiều giải thuật phức tạp trong IPSec vẫn còn là một vấn đề khó đối với các trạm làm việc và máy PC năng lực yếu.
+Việc phân phối các phần cứng và phần mềm mật mã vẫn còn bị hạn chế đối với chính phủ một số quốc gia.
+1.3 Ứng dụng của IPSec
+Bảo vệ kết nối từ các mạng chi nhánh đến mạng trung tâm thông qua Internet.
+Bảo vệ kết nối truy cập từ xa (Remote Access).
+Thiết lập các kết nối Intranet và Extranet .
+Nâng cao tính bảo mật của các giao dịch thương mại điện tử.
+
+
+                        Hình 1.2: Ứng dụng của IPSec
+
+2.1 Kiến trúc IPSec
+IPSec là một giao thức phức tạp, dựa trên nền của nhiều kỹ thuật cơ sở khác nhau như mật mã, xác thực, trao đổi khoá… Xét về mặt kiến trúc, IPSec được xây dựng dựa trên các thành phần cơ bản sau đây, mỗi thành phần được định nghĩa trong một tài liệu riêng tương ứng:
+
+
+
+                                  Hình 2.1 Kiến trúc IPSec
+
+Kiến trúc IPSec (RFC 2401): Quy định các cấu trúc, các khái niệm và yêu cầu của IPSec.
+Giao thức ESP (RFC 2406): Mô tả giao thức ESP, là một giao thức mật mã và xác thực thông tin trong IPSec.
+Giao thức AH (RFC 2402): Định nghĩa một giao thức khác với chức năng gần giống ESP. Như vậy khi triển khai IPSec, người sử dụng có thể chọn dùng ESP hoặc AH, mỗi giao thức có ưu và nhược điểm riêng.
+Thuật toán mật mã: Định nghĩa các thuật toán mã hoá và giải mã sử dụng trong IPSec. IPSec chủ yếu dựa vào các thuật toán mã hoá đối xứng.
+Thuật toán xác thực: Định nghĩa các thuật toán xác thực thông tin sử dụng trong AH và ESP.
+Quản lý khoá (RFC 2408): Mô tả các cơ chế quản lý và trao đổi khoá trong IPSec.
+Miền thực thi (Domain of Interpretation – DOI): Định nghĩa môi trường thực thi IPSec. IPSec không phải là một công nghệ riêng biệt mà là sự tổ hợp của nhiều cơ chế, giao thức và kỹ thuật khác nhau, trong đó mỗi giao thức, cơ chế đều có nhiều chế độ hoạt động khác nhau. Việc xác định một tập các chế độ cần thiết để triển khai IPSec trong một tình huống cụ thể là chức năng của miền thực thi. Xét về mặt ứng dụng, IPSec thực chất là một giao thức hoạt động song song với IP nhằm cung cấp 2 chức năng cơ bản mà IP nguyên thuỷ chưa có, đó là mã hoá và xác thực gói dữ liệu. Một cách khái quát có thể xem IPSec là một tổ hợp gồm hai thành phần:
+Giao thức đóng gói, gồm AH và ESP: bảo về truyền thông IP, dựa vào SA (khóa, địa chỉ, các thuật toán mật mã)
+Giao thức trao đổi khoá IKE (Internet Key Exchange): để thiết lập các SA (Security Association) cho AH hoặc ESP, và duy trì/quản lý các kết nối
+2.2 Tính năng của IPSec
+Để thực hiện được chức năng chính của mình là bảo mật dữ liệu trong VPN, IPSec cung cấp những tính năng sau:
+
+2.3.1 Sự bảo mật dữ liệu (Data Confidentiality): Đảm bảo dữ liệu được an toàn, tránh những kẻ tấn công phá hoại bằng cách thay đổi nội dung hoặc đánh cắp dữ liệu quan trọng. Việc bảo vệ dữ liệu được thực hiện bằng các thuật toán mã hóa như DES, 3DES và AES. Tuy nhiên, đây là một tính năng tùy chọn trong IPSec.
+
+2.3.2 Sự toàn vẹn dữ liệu (Data Integrity): Đảm bảo rằng dữ liệu không bị thay đổi trong suốt quá trình trao đổi. Data Integrity bản thân nó không cung cấp sự an toàn dữ liệu. Nó sử dụng thuật toán băm (hash) để kiểm tra dữ liệu bên trong gói tin có bị thay đổi hay không. Những gói tin nào bị phát hiện là đã bị thay đổi thì sẽ bị loại bỏ. Những thuật toán băm: MD5 hoặc SHA-1.
+
+2.3.3 Chứng thực nguồn dữ liệu (Data Origin Authentication): Mỗi điểm cuối của VPN dùng tính năng này để xác định đầu phía bên kia có thực sự là người muốn kết nối đến mình hay không. Lưu ý là tính năng này không tồn tại một mình mà phụ thuộc vào tính năng toàn vẹn dữ liệu. Việc chứng thực dựa vào những kĩ thuật: Pre-shared key, RSA-encryption, RSA-signature.
+
+2.3.4 Tránh trùng lặp (Anti-replay): Đảm bảo gói tin không bị trùng lặp bằng việc đánh số thứ tự. Gói tin nào trùng sẽ bị loại bỏ, đây cũng là tính năng tùy chọn

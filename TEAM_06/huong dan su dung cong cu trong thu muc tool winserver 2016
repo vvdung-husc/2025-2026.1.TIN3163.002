@@ -1,0 +1,164 @@
+# HƯỚNG DẪN CHI TIẾT SỬ DỤNG CÁC CÔNG CỤ AN NINH MẠNG & PHÂN TÍCH MALWARE
+
+## 1. Detect It Easy (DiE)
+
+**Mục đích:** Phân tích PE/ELF/Mach-O, nhận diện packer/cryptor.
+
+### Cách dùng GUI
+
+1. Mở DiE → File → Open → chọn file.
+2. Kiểm tra mục *Packers/Compiler* để xem tệp có bị pack hay không.
+3. Xem *Entropy* và *Sections* để đánh giá mức nén/mã hóa.
+4. Dùng *Plugins* để phân tích sâu hơn.
+
+### Dạng CLI
+
+```
+die.exe [options] <file>
+die.exe -i sample.exe
+```
+
+---
+
+## 2. ExeinfoPe
+
+**Mục đích:** Nhận diện packer/cryptor, phân tích header PE.
+
+### Cách dùng GUI
+
+1. Open → chọn file.
+2. Kiểm tra packer (UPX, VMProtect…).
+3. Xem *Sections*, *Overlay*, *Entry Point*.
+
+### Gợi ý xử lý packer
+
+* Nếu bị UPX:
+
+```
+upx -d sample.exe
+```
+
+---
+
+## 3. FakeNet-NG
+
+**Mục đích:** Mô phỏng môi trường mạng để phân tích kết nối C2.
+
+### Cách dùng
+
+1. Khởi chạy trong VM phân tích.
+2. Cấu hình DNS/HTTP/HTTPS giả lập.
+3. Chạy malware.
+4. Xem log & file pcap.
+
+### Ví dụ
+
+```
+python fakenet.py --config fakenet.conf
+```
+
+---
+
+## 4. IDA Pro 7.7
+
+**Mục đích:** Disassembler, decompiler, debugger.
+
+### Cách dùng
+
+1. File → Open → để IDA auto-analysis.
+2. Sử dụng tab *Functions*, *Strings* để tìm hàm quan trọng.
+3. Nhấn **F5** (nếu dùng Hex-Rays) để xem pseudo-C.
+4. Debug → Start process để debug trực tiếp.
+
+### Script IDA Python
+
+```
+import idautils, idc
+for f in idautils.Functions():
+    print(idc.get_func_name(f))
+```
+
+---
+
+## 5. Regshot
+
+**Mục đích:** Theo dõi thay đổi Registry trước và sau khi chạy malware.
+
+### Cách dùng
+
+1. Tạo snapshot đầu (1st shot).
+2. Chạy chương trình nghi ngờ.
+3. Tạo snapshot thứ hai (2nd shot).
+4. Compare để xem key thay đổi.
+
+---
+
+## 6. Resource Hacker
+
+**Mục đích:** Xem/chỉnh sửa resource của file PE.
+
+### Cách dùng
+
+1. Open file → xem Icon, Dialog, String.
+2. Chỉnh sửa → Save As.
+
+### Ví dụ script
+
+```
+reshacker -open in.exe -save out.exe -action addoverwrite -resource icon.ico, ICONGROUP, 1
+```
+
+---
+
+## 7. Sysinternals Suite
+
+### Process Explorer
+
+* Xem DLL, handle, thread của tiến trình.
+
+### Process Monitor
+
+* Lọc theo process name.
+* Theo dõi registry/file/network.
+
+### Autoruns
+
+* Kiểm tra persistence: Run, Services, Tasks.
+
+### TCPView
+
+* Xem kết nối TCP/UDP realtime.
+
+---
+
+## 8. System Informer
+
+**Mục đích:** Giám sát tiến trình nâng cao.
+
+### Tính năng
+
+* Xem CPU/RAM.
+* Xem DLL.
+* Xem network connections.
+* Kiểm tra injected modules.
+
+---
+
+## 9. x64dbg
+
+**Mục đích:** Debugger mạnh mẽ cho x86/x64.
+
+### Cách dùng
+
+1. File → Open → chọn file.
+2. Đặt breakpoint (Ctrl+B).
+3. Run (F9), Step Into (F7), Step Over (F8).
+4. Quan sát Registers, Stack, Memory.
+
+### Lệnh console
+
+```
+bp <addr>   # breakpoint
+t           # step into
+p           # step over
+```

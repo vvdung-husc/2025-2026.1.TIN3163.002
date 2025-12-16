@@ -1,0 +1,14 @@
+Sysinternals Suite là bộ công cụ mạnh mẽ dành cho Windows, được phát triển bởi Microsoft nhằm hỗ trợ:
++ Chẩn đoán hệ thống
++ Kiểm tra hiệu suất
++ Quản lý tiến trình
++ Phân tích lỗi
++ Kiểm tra các hoạt động ẩn bên trong Windows (file, registry, network…)
++ Xử lý sự cố nâng cao
+
+Ta có nhóm các công cụ như: TCPView, Autoruns, Process Monitor (ProcMon), Process Explorer,...
+
+Ta tải và chạy thử công cụ minh họa TCPView trên Windowns theo link: https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview
+ * chrome.exe → kết nối là bình thường
+    đang kết nối tới static.vnpt.vn, github.com.
+ * smartscreen.exe → hoàn toàn bình thường vì: luôn gửi request lên server Microsoft khi mở Chrome hoặc tải file.
