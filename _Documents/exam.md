@@ -1,4 +1,4 @@
-# Một số câu hỏi An ninh mạng
+# I. Một số câu hỏi An ninh mạng
 1. Tường lửa ***(Firewall)*** là gì?
 2. Giải thích lệnh ***Traceroute***
 3. Giải thích lệnh ***Netstat***
@@ -28,13 +28,13 @@
 	- *Brute Force*
 19.  Nếu nghi ngờ máy tính của mình bị nhiễm mã độc, bạn nên làm những bước gì đầu tiên?
 20. Khi sử dụng máy tính công cộng, cần lưu ý những gì để bảo vệ thông tin cá nhân?
-# Một số thao tác cơ bản với Kali Linux và Window Server
+# II. Một số thao tác cơ bản với Kali Linux và Window Server
 - Máy tính đã cài Kali Linux và Window Sever (có thể mượn bạn để sử dụng) 
 - Xem thông tin địa chỉ IP, địa chỉ MAC
 - Kiểm tra hệ thống có đang online (lệnh Ping)
 - Một số vấn đề cơ bản khác về Kali Linux và Window Server đã cài đặt trong quá trình thực hành *(mục đích của các phần mềm cài đặt trong Linux, Windows)*
 
-# Tiểu luận
+# III. Tiểu luận
 ### Đại diện nhóm đăng ký đề tài (***sử dụng Email HUSC***) tại [Danh sách đăng ký đề tài](https://docs.google.com/spreadsheets/d/16r4JY_--KuAbuLxo2Jv8hAZFXpVYZnL0/edit?usp=sharing&ouid=100313771319244626917&rtpof=true&sd=true)
 - Nhóm tối đa 5 thành viên, có thể làm một mình nếu không có nhóm
 - Tối đa 2 nhóm thực hiện cùng một đề tài 
