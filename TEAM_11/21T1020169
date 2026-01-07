@@ -1,1 +1,19 @@
+1. Tài liệu về Địa chỉ IP & IPv4
+  Giải thích rất kỹ về IP Class, Subnet mask, Default Gateway: https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting
+  IP Addressing and Subnetting Workbook: https://ia801304.us.archive.org/31/items/SubnettingWorkbookVersion2/InstructorsubnetworkbookV2.pdf
+  Tham khảo nhanh: https://en.wikipedia.org/wiki/Subnet
+
+2. Tài liệu về Ubuntu Server 24.04 & Netplan
+  Cấu hình mạng Netplan: https://netplan.readthedocs.io/en/stable/examples/
+
+3. Tài liệu về Nginx
+  Cách start, stop, reload và cấu trúc file config cơ bản: https://nginx.org/en/docs/beginners_guide.html
+  Hướng dẫn thực : https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
+
+4. TryHackMe OpenVPN Guide
+  https://tryhackme.com/room/openvpn
+
+5.Tìm hiểu Nmap
+  Nmap Cheatsheet: https://highon.coffee/blog/nmap-cheat-sheet/
+  https://viblo.asia/p/nmap-network-scanner-cong-cu-quet-mang-va-lo-hong-bao-mat-RnB5p4bb5PG
 
