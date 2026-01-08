@@ -1,1 +1,18 @@
-
+1.Tìm hiểu về địa chỉ IP và cách gán IPv4 trong Window, Linux
++Tìm hiểu về địa chỉ IP: https://www.studocu.vn/vn/document/truong-dai-hoc-sai-gon/he-dieu-hanh-os/cach-chia-mang-con-va-dia-chi-ip-bai-1-tim-hieu-ve-ip/139530155
++Cách gán IPv4 trong Window: https://quantrimang.com/cong-nghe/gan-dia-chi-ip-tinh-47928
++Cách gán IPv4 trong Linux: https://quantrimang.com/cong-nghe/cach-tim-thiet-lap-va-thay-doi-dia-chi-ip-tren-linux-152890
+2.Tìm hiểu về Wireshark
+https://www.wireshark.org/docs/wsug_html_chunked/ChapterIntroduction.html
+3.Tìm hiểu dịch vụ NGINX (cho Window và Linux)
++Dịch vụ NGINX (cho Window):https://quantrimang.com/cong-nghe/cai-dat-va-chay-nginx-server-tren-windows-10-166722
++Dịch vụ NGINX (cho Linux) :https://dev.to/s3cloudhub/installing-nginx-web-server-on-linux-a-step-by-step-guide-3h6p
+4.Kết nối TryHackMe server với OpenVPN trong Kali Linux    
++Link video hướng dẫn : https://youtu.be/1Z5CqWS6Les
+5.Tìm hiểu Sysinternals Suite :
++Quản lý Tiến trình (Process Utilities): Theo dõi những gì đang chạy, tài liệu nào đang mở và các tiến trình đang tiêu thụ tài nguyên ra sao.
++Giám sát Hệ thống (File & Disk Utilities): Xem các hoạt động truy cập tệp tin, kiểm tra dung lượng ổ đĩa và hiệu suất đọc/ghi.
++Mạng (Networking Utilities): Kiểm tra các kết nối TCP/IP, truy vấn DNS và giám sát lưu lượng mạng từ các ứng dụng cụ thể.
++Bảo mật (Security Utilities): Kiểm tra quyền hạn (permissions), các tiến trình chạy ngầm đáng ngờ và quản lý mã hóa.
++Thông tin Hệ thống (System Information): Hiển thị chi tiết về phần cứng, nhân (kernel) và cấu hình hệ thống.
+ 
