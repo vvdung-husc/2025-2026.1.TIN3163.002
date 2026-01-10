@@ -4,7 +4,7 @@ https://docs.bizflycloud.vn/cloud_server/resources/linux_statics_ip/
 
 Kali linux for virtual machine download link:https://www.kali.org/get-kali/#kali-virtual-machines
 
-Note:down vmware version for vmwar
+Note:down vmware version for VMware
 
 Ubuntu server link download: https://ubuntu.com/download/server 
 
