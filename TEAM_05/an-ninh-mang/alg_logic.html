@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>TOTP Demo</title>
+</head>
+<body>
+
+<h2> TOTP Generator & Verifier</h2>
+
+<label>Secret Key:</label>
+<input type="text" id="secret" value="MY_SECRET_KEY"><br><br>
+
+<button onclick="generateOTP()">Sinh OTP</button>
+<p id="otp"></p>
+
+<label>Nhập OTP:</label>
+<input type="text" id="userOtp">
+<button onclick="verifyOTP()">Xác thực</button>
+
+<p id="result"></p>
+
+<script>
+/*
+ * TIME_STEP: thời gian hiệu lực OTP (30 giây)
+ * DIGITS: số chữ số OTP
+ */
+const TIME_STEP = 30;
+const DIGITS = 6;
+
+/**
+ * Chuyển chuỗi sang ArrayBuffer
+ * dùng cho Web Crypto API
+ */
+function strToBuffer(str) {
+    return new TextEncoder().encode(str);
+}
+
+/**
+ * ================== HÀM SINH OTP ==================
+ */
+async function generateOTP() {
+
+    // Lấy khóa bí mật
+    const secret = document.getElementById("secret").value;
+    // Tính bộ đếm thời gian T
+    const time = Math.floor(Date.now() / 1000 / TIME_STEP);
+
+    // Import khóa để dùng HMAC-SHA1
+    const key = await crypto.subtle.importKey(
+        "raw",
+        strToBuffer(secret),
+        { name: "HMAC", hash: "SHA-1" },
+        false,
+        ["sign"]
+    );
+
+    // Chuyển time thành mảng 8 byte
+    const buffer = new ArrayBuffer(8);
+    new DataView(buffer).setBigInt64(0, BigInt(time));
+
+    // Tính HMAC
+    const hmac = await crypto.subtle.sign("HMAC", key, buffer);
+    const hash = new Uint8Array(hmac);
+
+    // Dynamic truncation
+    const offset = hash[hash.length - 1] & 0xf;
+    const binary =
+        ((hash[offset] & 0x7f) << 24) |
+        ((hash[offset + 1] & 0xff) << 16) |
+        ((hash[offset + 2] & 0xff) << 8) |
+        (hash[offset + 3] & 0xff);
+
+    // Lấy 6 chữ số OTP
+    const otp = binary % Math.pow(10, DIGITS);
+
+    // Hiển thị OTP
+    document.getElementById("otp").innerText =
+        "OTP hiện tại: " + otp.toString().padStart(DIGITS, '0');
+}
+
+/**
+ * ================== HÀM XÁC THỰC OTP ==================
+ */
+async function verifyOTP() {
+
+    // Sinh lại OTP hiện tại
+    await generateOTP();
+
+    // OTP hệ thống
+    const generated = document.getElementById("otp").innerText.split(": ")[1];
+    // OTP người dùng nhập
+    const userOtp = document.getElementById("userOtp").value;
+
+    // So sánh OTP
+    document.getElementById("result").innerText =
+        generated === userOtp ?
+        " OTP hợp lệ!" : " OTP sai!";
+}
+</script>
+
+</body>
+</html>

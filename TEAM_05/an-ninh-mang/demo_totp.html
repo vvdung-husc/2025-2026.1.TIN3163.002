@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo TOTP Security - Nhóm G4</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            gap: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        /* Cột Trái: Web Login */
+        .login-box {
+            width: 300px;
+            border-right: 1px solid #ddd;
+            padding-right: 40px;
+        }
+        /* Cột Phải: Giả lập App Authenticator */
+        .phone-app {
+            width: 280px;
+            background-color: #333;
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+        h2, h3 { margin-top: 0; }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background-color: #0056b3; }
+        
+        /* Style cho mã OTP */
+        .otp-display {
+            font-size: 40px;
+            font-weight: bold;
+            color: #4caf50;
+            text-align: center;
+            letter-spacing: 5px;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        }
+        .timer-bar {
+            height: 5px;
+            background-color: #4caf50;
+            width: 100%;
+            transition: width 1s linear;
+        }
+        .message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        
+        .note { font-size: 12px; color: #aaa; text-align: center; margin-top: 10px;}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="login-box">
+        <h2 style="color: #007bff;">Đăng nhập</h2>
+        <p>Xác thực 2 yếu tố (2FA)</p>
+        
+        <label>Tên đăng nhập:</label>
+        <input type="text" value="admin_user" disabled style="background: #eee;">
+        
+        <label>Nhập mã OTP từ thiết bị:</label>
+        <input type="text" id="userOtpInput" placeholder="Nhập 6 số OTP..." maxlength="6" style="font-size: 18px; text-align: center;">
+        
+        <button onclick="verifyOTP()">Xác thực ngay</button>
+        <div id="resultMsg" class="message"></div>
+    </div>
+
+    <div class="phone-app">
+        <h3 style="text-align: center; border-bottom: 1px solid #555; padding-bottom: 10px;">Authenticator</h3>
+        
+        <div style="margin-top: 30px;">
+            <p style="font-size: 14px; margin-bottom: 5px;">Tài khoản: admin_user</p>
+            <div id="appOtpDisplay" class="otp-display">Loading...</div>
+            
+            <div style="background: #555; height: 5px; width: 100%; border-radius: 3px; overflow: hidden;">
+                <div id="progressBar" class="timer-bar"></div>
+            </div>
+            <p id="timerText" style="text-align: right; font-size: 12px; color: #ccc;">30s</p>
+        </div>
+
+        <div class="note">
+            Mã sẽ tự động làm mới sau mỗi 30 giây.<br>
+            Secret Key: <span id="secretDisplay">MY_SECRET_KEY</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ================== TÍCH HỢP LOGIC CỦA G3 ==================
+    const TIME_STEP = 30;
+    const SECRET_KEY = "MY_SECRET_KEY"; // Khóa bí mật chung (Demo)
+
+    // Hàm chuyển string sang buffer (từ G3)
+    function strToBuffer(str) {
+        return new TextEncoder().encode(str);
+    }
+
+    // Hàm tạo OTP (Logic G3 + Nâng cấp trả về Promise)
+    async function generateTOTPCode(secret) {
+        const time = Math.floor(Date.now() / 1000 / TIME_STEP);
+        const key = await crypto.subtle.importKey(
+            "raw", strToBuffer(secret), { name: "HMAC", hash: "SHA-1" }, false, ["sign"]
+        );
+        const buffer = new ArrayBuffer(8);
+        new DataView(buffer).setBigInt64(0, BigInt(time));
+        const hmac = await crypto.subtle.sign("HMAC", key, buffer);
+        const hash = new Uint8Array(hmac);
+        const offset = hash[hash.length - 1] & 0xf;
+        const binary = ((hash[offset] & 0x7f) << 24) | ((hash[offset + 1] & 0xff) << 16) | ((hash[offset + 2] & 0xff) << 8) | (hash[offset + 3] & 0xff);
+        const otp = binary % 1000000;
+        return otp.toString().padStart(6, '0');
+    }
+
+    // ================== XỬ LÝ GIAO DIỆN (G4) ==================
+    
+    // 1. Vòng lặp cập nhật giao diện điện thoại (Real-time)
+    async function updateAuthenticatorApp() {
+        const otp = await generateTOTPCode(SECRET_KEY);
+        document.getElementById("appOtpDisplay").innerText = otp.substring(0, 3) + " " + otp.substring(3, 6); // Format xxx xxx
+        
+        // Tính toán thanh thời gian
+        const epoch = Math.floor(Date.now() / 1000);
+        const timeLeft = TIME_STEP - (epoch % TIME_STEP);
+        const percentage = (timeLeft / TIME_STEP) * 100;
+        
+        document.getElementById("progressBar").style.width = percentage + "%";
+        document.getElementById("timerText").innerText = timeLeft + "s";
+        
+        // Đổi màu thanh thời gian khi sắp hết giờ
+        if(timeLeft <= 5) {
+            document.getElementById("progressBar").style.backgroundColor = "#ff4444";
+            document.getElementById("appOtpDisplay").style.color = "#ff4444";
+        } else {
+            document.getElementById("progressBar").style.backgroundColor = "#4caf50";
+            document.getElementById("appOtpDisplay").style.color = "#4caf50";
+        }
+    }
+
+    // 2. Hàm xử lý nút "Xác thực" trên Web
+    async function verifyOTP() {
+        const inputOtp = document.getElementById("userOtpInput").value.replace(/\s/g, ''); // Xóa khoảng trắng nếu user nhập
+        const currentOtp = await generateTOTPCode(SECRET_KEY);
+        
+        const msgBox = document.getElementById("resultMsg");
+        msgBox.style.display = "block";
+        
+        // Logic kiểm tra G3
+        if (inputOtp === currentOtp) {
+            msgBox.className = "message success";
+            msgBox.innerHTML = "<strong>✅ Thành công!</strong><br>OTP Hợp lệ. Đang đăng nhập...";
+        } else {
+            msgBox.className = "message error";
+            msgBox.innerHTML = "<strong>❌ Thất bại!</strong><br>Mã OTP sai hoặc đã hết hạn.";
+        }
+    }
+
+    // Chạy vòng lặp cập nhật mỗi giây
+    setInterval(updateAuthenticatorApp, 1000);
+    updateAuthenticatorApp(); // Chạy ngay lần đầu
+</script>
+
+</body>
+</html>
