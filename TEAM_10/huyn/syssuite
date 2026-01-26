@@ -1,0 +1,45 @@
+SysInternals là gì? SysInternals Tools dùng để làm gì trên Windows?
+👨
+Kyr Doo-Hyun
+SysInternals là một bộ công cụ cực kỳ hữu dụng với cả người dùng và các quản trị viên CNTT. SysInternals Tools được Microsoft cung cấp miễn phí và nó có các công cụ giúp bạn thực hiện hầu hết mọi nhiệm cụ của quản trị viên, từ giám sát hoặc bắt đầu một quy trình tới len lõi sâu vào hệ thống để xem ứng dụng của bạn đang truy cập các tệp và khóa registry nào.
+
+Vậy chính xác thì SysInternals Tools là gì?
+Thực tế, bộ công cụ SysInternals là một tập hợp các ứng dụng Windows có thể tải xuống miễn phí từ trang Microsoft Technet. Tất cả chúng đều được cung cấp dưới dạng portable, có nghĩa là bạn chỉ cần tải về và sử dụng luôn, không cần cài đặt. Bạn cũng có thể lưu các công cụ này vào USB để chạy trên bất cứ máy tính nào.
+
+Thậm chí, bạn có thể chạy các công cụ này qua hệ thống SysInternals Live mà không cần tải về máy.
+
+SysInternals là gì? SysInternals Tools dùng để làm gì trên Windows?
+
+SysInternals Tools bao gồm các tiện ích như:
+
+Process Explorer: Tương tự Task Manager nhưng được bổ sung thêm nhiều tính năng hơn
+Process Monitor: Giám sát mọi quy trình trên máy tính của bạn bao gồm file hệ thống, registry và thậm chí cả hoạt động của mạng
+Autoruns: Giúp bạn kiểm soát các quy trình khởi động cùng Windows
+TCPView: Giúp bạn biết những gì đang kết nối với tài nguyên trên internet
+Cùng một loạt công cụ, tiện ích khác...
+Hầu hết các công cụ của SysInternals đều yêu cầu quyền admin. Vì thế, nếu muốn thử nghiệm bạn nên sử dụng trên máy ảo trước nếu chưa chắc chắn về những gì các công cụ này có thể thực hiện.
+
+Cách tải SysInternals Tools
+Bạn có thể tải các công cụ SysInternals tại trang web của Microsoft. Bạn có thể tải tất cả công cụ cùng lúc hoặc chọn một công cụ mà bạn thích bằng cách nhấp vào tên công cụ được liệt kê ở bên dưới. Link tải SysInternals Tools:
+
+Tải SysInternals Tools
+Mới đây, Microsoft cũng đã đưa SysInternal Tools lên Microsoft Store của Windows 11. Nếu bạn đang dùng Windows 11 bạn có thể truy cập link Microsoft Store tại đây:
+
+Tải SysInternals Tools từ Microsoft Store trên Windows 11
+Sau khi tải về, bạn chỉ cần giải nén file ZIP và dùng luôn, không cần cài đặt.
+
+Cách chạy công cụ từ SysInternals Live
+Nếu không muốn tải về, bạn có thể dùng các công cụ qua hệ thống SysInternals Live. Về cơ bản, bạn sẽ được truy cập vào thư mục chứa mọi công cụ SysInternals do chính Microsoft chia sẻ từ bất cứ máy tính nào có kết nối internet chỉ bằng một câu lệnh.
+
+Nhấn Win + R để mở Run
+Nhập \\live.sysinternals.com\tools vào Run rồi nhấn Enter
+SysInternals là gì? SysInternals Tools dùng để làm gì trên Windows?
+
+Bạn chờ một chút thư mục chứa các công cụ sẽ hiện ra và bạn có thể nhấn đúp vào bất cứ công cụ nào để chạy ngay lập tức
+SysInternals là gì? SysInternals Tools dùng để làm gì trên Windows?
+
+Bạn cũng có thể chạy một công cụ bằng cách nhập câu lệnh \\live.sysinternals.com\tools\<toolname>. Thay <toolname> bằng tên công cụ bạn muốn chạy ví dụ procexp.exe để chạy Process Explorer hoặc procmon.exe để chạy Process Monitor
+Các công cụ mới được cập nhật
+Mới đây, Microsoft đã tung ra bản cập nhật cho 17 công cụ của SysInternals. Những công cụ được cập nhật bao gồm AccessEnum, Autoruns, CacheSet, Contig, Process Monitor, PsShutdown, TCPView....
+
+Ngoài ra, Microsoft còn bổ sung thêm một công cụ mới mang tên Desktop. Công cụ này cho phép bạn tạo tới 4 màn hình ảo và sử dụng một khay giao diện hoặc phím tắt để xem trước những gì diễn ra trên màn hình và chuyển đổi dễ dàng giữa chúng.

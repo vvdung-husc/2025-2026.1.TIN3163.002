@@ -143,6 +143,7 @@ nmap -p- -sV -sC -O <IP-muc-tieu>
 
 * [https://nmap.org/book/](https://nmap.org/book/)
 * [https://nmap.org/nsedoc/](https://nmap.org/nsedoc/)
+* https://nmap.org/book/man.html  //Tài liệu hướng dẫn sử dụng (Nmap Reference Guide)
 
 ---
 

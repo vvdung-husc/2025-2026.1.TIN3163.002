@@ -1,0 +1,43 @@
+Tổng quan về Sysinternals Suite
+Định nghĩa: Bộ sưu tập các tiện ích (utilities) miễn phí từ Microsoft, ban đầu được phát triển bởi Mark Russinovich và Bryce Cogswell.
+
+Mục đích: Giúp chuyên gia IT, quản trị viên hệ thống (Sysadmins), và nhà phát triển (Developers) quản lý, khắc phục sự cố (troubleshoot) và chuẩn đoán (diagnose) các hệ điều hành và ứng dụng Windows.
+
+Đặc điểm nổi bật: Cung cấp thông tin chi tiết và sâu sắc hơn về tiến trình, hệ thống tập tin, mạng so với các công cụ Windows tích hợp sẵn.
+
+Phân nhóm Công cụ Sysinternals
+1. Công cụ Quản lý Tiến trình (Process Utilities)
+Process Explorer: "Task Manager" nâng cao. Hiển thị thông tin chi tiết về tiến trình, DLL đã tải, các handle đang mở. Rất quan trọng cho việc tìm kiếm phần mềm độc hại (malware) và gỡ lỗi.
+
+Process Monitor: Giám sát các hoạt động của Hệ thống tập tin (File System), Registry, tiến trình và luồng theo thời gian thực. Công cụ chính để khắc phục sự cố hệ thống.
+
+Autoruns: Hiển thị tất cả các chương trình, driver và dịch vụ tự động khởi động (startup). Hữu ích để tìm và loại bỏ các thành phần khởi động không mong muốn.
+
+2. Công cụ Quản lý Hệ thống và Thông tin (System Information & Management)
+PsTools (PsExec, PsKill, PsList, v.v.): Tập hợp các công cụ dòng lệnh cho phép quản lý các máy tính cục bộ và từ xa (remote) (thực thi lệnh, tắt máy, liệt kê tiến trình).
+
+BGInfo: Tự động tạo hình nền desktop hiển thị các thông tin quan trọng về hệ thống (tên máy, IP, v.v.).
+
+Coreinfo: Hiển thị ánh xạ giữa các bộ xử lý logic và các nhân vật lý (physical cores), bao gồm cả bộ nhớ cache.
+
+3. Công cụ Mạng (Networking Utilities)
+TCPView: Công cụ GUI hiển thị danh sách chi tiết tất cả các kết nối TCP và UDP trên hệ thống, bao gồm cả tiến trình sở hữu kết nối.
+
+ShareEnum: Quét các chia sẻ mạng (network shares) và các quyền truy cập (permissions), giúp tìm các lỗ hổng bảo mật.
+
+4. Công cụ Hệ thống Tập tin và Ổ đĩa (File System and Disk Utilities)
+Disk2vhd: Tạo các ảnh đĩa ảo (VHD/VHDX) của các ổ đĩa vật lý để sử dụng với Hyper-V hoặc Virtual PC.
+
+SDelete: Tiện ích dòng lệnh để xóa an toàn (secure deletion) các tập tin và thư mục, đảm bảo dữ liệu không thể phục hồi.
+
+ZoomIt: Công cụ hỗ trợ trình bày, cho phép phóng to (zoom), vẽ và đánh dấu trên màn hình.
+
+5. Công cụ Bảo mật (Security Utilities)
+AccessEnum: Hiển thị đầy đủ quyền truy cập (permissions) của thư mục, tệp tin và khóa Registry, giúp xem ai có thể truy cập tài nguyên nào.
+
+LogonSessions: Liệt kê tất cả các phiên đăng nhập (logon sessions) đang hoạt động trên hệ thống.
+LLink: https://learn.microsoft.com/en-us/sysinternals/
+https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite
+https://www.google.com/search?q=https://www.youtube.com/watch%3Fv%3DFj-y5j12_eE
+
+

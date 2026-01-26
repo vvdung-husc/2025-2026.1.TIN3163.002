@@ -1,0 +1,173 @@
+8 công cụ Sysinternals giúp bạn khám phá sức mạnh thực sự của Windows
+Đăng bởi
+author-avatar
+Phạm Thảo
+Vào 20/01/2025
+0
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 12 1
+Nếu bạn là người dùng Windows và muốn theo dõi hoặc kiểm soát các hoạt động của hệ thống, hoặc đơn giản chỉ cần thực hiện khắc phục sự cố nhanh chóng, thì Sysinternals Suite của Microsoft chắc chắn là bộ công cụ bạn nên thử. Đây là tập hợp các tiện ích miễn phí với nhiều tính năng hỗ trợ quản lý hệ thống nâng cao. Bộ công cụ này giúp đơn giản hóa nhiều tác vụ như giám sát quy trình, phân tích registry, quản lý tài nguyên, quản lý tệp và nhiều hơn thế nữa.
+
+Mặc dù không được tích hợp sẵn trong hệ điều hành Windows, nhưng tôi sẽ hướng dẫn bạn cách cài đặt bộ công cụ này một cách nhanh chóng. Hiện tại, Sysinternals Suite bao gồm hơn 70 công cụ khác nhau, nhưng dưới đây là 10 công cụ mà tôi đánh giá là hữu ích nhất.
+
+Xem thêm: Hướng dẫn chi tiết và dễ dàng cách kết nối điện thoại Android với máy tính Windows 11
+
+Đây là một số công cụ Sysinternals hữu ích nhất, được thiết kế đặc biệt dành cho những người dùng nâng cao. Như bạn thấy, chúng khá dễ dàng để cài đặt và sử dụng. Tin tôi đi, những gì tôi giới thiệu chỉ mới là phần bề nổi trong khả năng của các công cụ này. Khi bạn bắt đầu sử dụng, bạn sẽ khám phá thêm nhiều tính năng thú vị hơn nữa.
+
+Đừng quên tìm hiểu thêm các công cụ hữu ích khác trong bộ Sysinternals Suite, bởi bộ công cụ này có hơn 70 tiện ích đang chờ bạn khám phá!
+
+1. SigCheck (sigcheck.exe)
+Xác minh tính toàn vẹn và chữ ký số của tệp
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 2 e1737298531546
+
+SigCheck là một công cụ dòng lệnh giúp bạn kiểm tra chữ ký số của các tệp trên hệ thống. Công cụ này đặc biệt hữu ích trong việc đảm bảo tính xác thực của phần mềm và phát hiện các tệp chưa được ký hoặc đã bị can thiệp. Với SigCheck, bạn có thể hiển thị thông tin chi tiết về phiên bản tệp, bao gồm cả thông tin nhà xuất bản và chữ ký mã hóa. Điều này hỗ trợ bạn xác định liệu tệp có đến từ nguồn đáng tin cậy hay không.
+
+Công cụ này còn tích hợp với VirusTotal để kiểm tra các tệp có khả năng chứa mối đe dọa hay không. Sự kết hợp các tính năng này khiến SigCheck trở thành giải pháp đáng tin cậy để xác minh tính hợp lệ của các tệp trước khi thực thi chúng.
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 1 e1737298517959
+
+Nếu bạn thường xuyên tải xuống các tệp từ những nguồn không chính thức, SigCheck là một công cụ tuyệt vời mà bạn nên bổ sung vào thư viện của mình. Bạn có thể truy cập công cụ này bằng lệnh sigcheck.exe.
+
+Ví dụ, nếu bạn muốn kiểm tra chữ ký của các tệp trong một thư mục cụ thể, chẳng hạn như System32, bạn có thể sử dụng lệnh:
+
+javascript
+Sao chépChỉnh sửa
+sigcheck -e -c C:/Windows/System32 >System32Signature.csv
+Lệnh này sẽ tạo một tệp System32Signature.csv chứa thông tin chữ ký của tất cả các tệp trong thư mục System32. Hãy chờ một chút, tệp sẽ được lưu trong thư mục hồ sơ người dùng của bạn. Sau đó, bạn chỉ cần mở tệp và kiểm tra chữ ký của các tệp trong thư mục System32. Đây là một cách nhanh chóng và hiệu quả để đảm bảo tính toàn vẹn của hệ thống.
+
+2. MoveFile (movefile.exe)
+Di chuyển và xóa tệp bị khóa
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 4 e1737298980641
+
+MoveFile là công cụ bổ trợ hoàn hảo cho PendMoves, giúp bạn xử lý các tệp không thể di chuyển hoặc đổi tên do bị khóa bởi các chương trình khác. Với MoveFile, bạn có thể lên lịch thực hiện thao tác di chuyển hoặc đổi tên tệp trong lần khởi động hệ thống tiếp theo. Các thao tác này sẽ được tự động thực hiện ngay sau khi hệ thống khởi động lại mà không cần bạn can thiệp thêm.
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 3 e1737299012103
+
+Bạn có thể sử dụng công cụ này bằng lệnh movefile.exe.
+
+Để di chuyển một tệp từ vị trí này sang vị trí khác, hãy làm theo cú pháp sau:
+
+css
+Sao chépChỉnh sửa
+movefile <địa chỉ tệp hiện tại> <địa chỉ điểm đến>
+Ví dụ: nếu bạn muốn di chuyển tệp MoveThisFile.txt từ ổ E: sang ổ D:, hãy sử dụng lệnh sau:
+
+mathematica
+Sao chépChỉnh sửa
+movefile E:\MoveThisFile.txt D:\MoveThisFile.txt
+MoveFile là công cụ lý tưởng để xử lý những trường hợp bạn không thể di chuyển hoặc đổi tên tệp ngay lập tức, đảm bảo quá trình làm việc của bạn không bị gián đoạn bởi các tệp đang bị khóa.
+
+3. PendMoves (pendmoves.exe)
+Quản lý các thao tác tệp đang chờ xử lý
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 5 e1737299181449
+
+Bạn không thể xóa hoặc di chuyển một tệp vì tệp đó đang được một chương trình khác sử dụng? PendMoves là một công cụ dòng lệnh hữu ích thuộc bộ Sysinternals, được thiết kế để xử lý các thao tác tệp bị “mắc kẹt”.
+
+PendMoves hiển thị danh sách tất cả các thao tác tệp mà hệ điều hành đã lên lịch để thực hiện trong lần khởi động lại tiếp theo. Điều này giúp bạn xác định tệp nào đang bị khóa và chương trình nào đang sử dụng chúng. Với PendMoves, bạn sẽ có quyền kiểm soát chi tiết hơn đối với các thao tác tệp.
+
+Để sử dụng công cụ này, chỉ cần mở dòng lệnh và chạy lệnh pendmoves.exe. Công cụ sẽ cung cấp thông tin cần thiết, giúp bạn dễ dàng quản lý các tệp bị khóa mà không cần can thiệp sâu vào hệ thống.
+
+4. SDelete (sdelete.exe)
+Xóa dữ liệu vĩnh viễn, không thể khôi phục
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 6 e1737299673988
+
+SDelete là một công cụ mạnh mẽ giúp bạn xóa an toàn các thư mục và tệp để chúng không thể được phục hồi. Công cụ này ghi đè dữ liệu bằng các mẫu ngẫu nhiên, khiến các phần mềm khôi phục không thể truy xuất lại dữ liệu gốc. Đây là một giải pháp cực kỳ quan trọng dành cho những ai cần xử lý các dữ liệu nhạy cảm hoặc bảo mật.
+
+Ngoài ra, SDelete còn hỗ trợ xóa toàn bộ ổ đĩa để giải phóng dung lượng, ngăn chặn việc khôi phục các tệp đã xóa từ không gian trống của ổ đĩa.
+
+Nếu bạn đang có kế hoạch loại bỏ ổ cứng cũ hoặc xử lý các tài liệu nhạy cảm, SDelete sẽ mang lại sự an tâm bằng cách đảm bảo dữ liệu đã xóa thực sự biến mất. Nhờ tính đơn giản, gọn nhẹ và hiệu quả, SDelete là giải pháp tốt nhất và dễ sử dụng nhất để quản lý dữ liệu an toàn.
+
+Bạn không cần đến các phần mềm xóa dữ liệu bên thứ ba để bảo vệ quyền riêng tư của mình, vì công cụ này đã có thể thực hiện mọi thứ chỉ với một lệnh dòng: sdelete.exe. Khi bạn nhập lệnh này vào cửa sổ dòng lệnh, tất cả các hướng dẫn sử dụng công cụ sẽ được hiển thị, giúp bạn dễ dàng xóa dữ liệu một cách an toàn và hiệu quả.
+
+5. ZoomIt (ZoomIt.exe)
+Người bạn đồng hành hoàn hảo cho thuyết trình
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 7 e1737299873558
+
+ZoomIt là một công cụ hữu ích giúp bạn nâng cao hiệu quả trong các buổi thuyết trình. Công cụ này cho phép bạn phóng to các khu vực cụ thể trên màn hình, vẽ chú thích, và thêm văn bản trực tiếp vào màn hình. Đây là một lựa chọn tuyệt vời dành cho sinh viên, giáo viên, chuyên gia IT hoặc bất kỳ ai thường xuyên thực hiện thuyết trình.
+
+Tính năng phóng to giúp bạn làm nổi bật bất kỳ phần nào trên màn hình để khán giả tập trung hoàn toàn vào khu vực đó. Điều này đặc biệt hữu ích khi bạn cần nhấn mạnh các đoạn văn bản nhỏ hoặc các chi tiết phức tạp trong các buổi trình chiếu trực tiếp.
+
+Công cụ chú thích của ZoomIt cho phép bạn vẽ trực tiếp lên màn hình (bằng tay trên màn hình cảm ứng, hoặc bằng chuột hoặc bút cảm ứng nếu được hỗ trợ) hoặc thêm văn bản. Điều này giúp bạn dễ dàng giải thích các khái niệm phức tạp một cách trực quan hơn với khán giả.
+
+ZoomIt cũng hỗ trợ phóng to trực tiếp (live zoom), cho phép bạn vừa phóng to màn hình vừa thực hiện thao tác trên đó. Ví dụ, khi bạn đang vẽ trên một bức canvas lớn, bạn có thể phóng to một phần cụ thể để khán giả quan sát trong khi bạn vẫn tiếp tục làm việc trực tiếp trên đó.
+
+Để bắt đầu sử dụng, bạn có thể chạy lệnh ZoomIt.exe hoặc tìm kiếm ZoomIt trong Windows. Một số phím tắt cơ bản:
+
+Ctrl + 1: Phóng to cố định.
+Ctrl + 4: Phóng to trực tiếp.
+ZoomIt không chỉ là một công cụ hỗ trợ trình bày mà còn giúp bạn tạo ra những buổi thuyết trình chuyên nghiệp và ấn tượng hơn.
+
+6. TCPView (tcpview.exe)
+Đơn giản hóa việc giám sát mạng
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 8 e1737342910741
+
+TCPView là một công cụ giám sát mạng mạnh mẽ, hiển thị danh sách các kết nối TCP và UDP đang hoạt động trên hệ thống của bạn với đầy đủ thông tin chi tiết. Công cụ này cung cấp các thông tin quan trọng như địa chỉ nội bộ và từ xa, trạng thái kết nối, cũng như các quy trình liên quan đến từng kết nối. Đây là một công cụ hữu ích để hiểu và quản lý các hoạt động mạng trên Windows.
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 9 e1737342938395
+
+Với TCPView, bạn có thể kiểm tra ứng dụng nào đang sử dụng băng thông internet và cách chúng kết nối với các máy chủ từ xa. Công cụ này cập nhật theo thời gian thực, giúp người dùng dễ dàng theo dõi bất kỳ thay đổi nào trong trạng thái kết nối hiện tại. Điều này rất hữu ích để phát hiện truy cập trái phép vào mạng hoặc xác định xem phần mềm độc hại có đang giao tiếp với các máy chủ bên ngoài hay không.
+
+Ngoài ra, TCPView còn phân tích chi tiết từng quy trình cụ thể cho mỗi kết nối, giúp bạn xác định ứng dụng nào đang làm gì trên mạng. Nếu công việc của bạn phụ thuộc vào mạng, TCPView là một công cụ thiết yếu để giám sát và giải quyết các vấn đề liên quan đến mạng.
+
+Bạn có thể khởi chạy công cụ này bằng lệnh tcpview.exe trên dòng lệnh hoặc đơn giản chỉ cần tìm kiếm trong Windows. TCPView sẽ giúp bạn kiểm soát mạng của mình một cách hiệu quả và chuyên nghiệp hơn.
+
+7. Autoruns (Autoruns.exe)
+Kiểm soát chương trình khởi động một cách toàn diện
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 11 e1737343517411
+
+Autoruns là một công cụ tương tự như phần Startup Apps trong Task Manager, nhưng được trang bị nhiều tính năng và tùy chọn hơn rất nhiều. Nó cung cấp cho bạn quyền kiểm soát hoàn toàn các ứng dụng và các thành phần khác của Windows được cấu hình để khởi động tự động khi hệ thống khởi động. Ngoài danh sách ứng dụng khởi động, bạn còn có thể xem các dịch vụ, trình điều khiển, khóa registry, codec đa phương tiện, và các tác vụ được lên lịch khởi động cùng hệ thống. Hơn nữa, các tiện ích mở rộng và add-on của trình duyệt cũng được liệt kê kèm thông tin chi tiết.
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 10 e1737343631267
+
+Với Autoruns, bạn có thể dễ dàng phân tích, xác định và loại bỏ những thành phần không cần thiết hoặc đáng ngờ đang chạy ẩn trong nền. Công cụ này cung cấp thông tin chi tiết về từng mục, bao gồm đường dẫn tệp, mô tả và nhà phát hành. Đặc biệt, nó làm nổi bật các tệp không có chữ ký hoặc có khả năng độc hại, giúp bạn phát hiện và loại bỏ malware. Bạn cũng có thể tự kiểm tra bằng cách nhấp chuột phải và chọn Check VirusTotal.
+
+Ngoài việc xem danh sách các mục khởi động, Autoruns còn cho phép bạn dễ dàng kích hoạt, vô hiệu hóa hoặc xóa chúng. Điều này đảm bảo rằng chỉ những thành phần thực sự cần thiết mới được tải khi Windows khởi động, từ đó tối ưu hóa thời gian khởi động.
+
+Bạn có thể khởi chạy Autoruns bằng cách tìm kiếm trong Start Menu hoặc sử dụng lệnh Autoruns.exe. Với công cụ này, việc quản lý các chương trình khởi động sẽ trở nên đơn giản và hiệu quả hơn bao giờ hết.
+
+8. Process Explorer (procexp.exe)
+Task Manager phiên bản nâng cấp mạnh mẽ
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 13 e1737344145429
+
+Process Explorer có thể được xem như một phiên bản nâng cấp toàn diện của công cụ Task Manager trên Windows. Công cụ này cung cấp thông tin chi tiết về các tiến trình đang chạy, bao gồm các handle liên quan và thư viện liên kết động (DLL). Những thông tin này giúp bạn biết chương trình nào đang sử dụng tệp nào, từ đó chẩn đoán các vấn đề hệ thống và xác định tiến trình gây ra sự cố. Nếu bạn phát hiện bất kỳ tiến trình nào đáng ngờ, chỉ cần nhấp chuột phải và chọn Check on VirusTotal.com để kiểm tra xem liệu đó có phải là malware hay không.
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 14 e1737344172419
+
+Một tính năng nổi bật khác của Process Explorer là khả năng giám sát thời gian thực. Công cụ này hiển thị các tiến trình đang sử dụng CPU và FPU thông qua biểu đồ thời gian thực, cho phép bạn nhanh chóng nhận ra các ứng dụng tiêu tốn nhiều tài nguyên. Từ đó, bạn dễ dàng phát hiện các bất thường làm chậm hệ thống. Giao diện hiển thị theo dạng cây giúp bạn hiểu rõ hơn về mối quan hệ giữa các tiến trình đang chạy. Bạn cũng có thể tạm dừng, kết thúc hoặc khôi phục các tiến trình ngay trong công cụ.
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 12 e1737344191458
+
+Ngoài ra, Process Explorer cung cấp thông tin chi tiết về từng tiến trình, như các tham số dòng lệnh, thuộc tính bảo mật, các handle mở và nhiều thông tin khác. Nếu muốn, bạn có thể thay thế Task Manager mặc định của Windows bằng Process Explorer thông qua menu Options.
+
+Để khởi chạy công cụ, bạn có thể sử dụng lệnh procexp.exe trên dòng lệnh hoặc tìm kiếm trong Start Menu. Với Process Explorer, việc quản lý và tối ưu hóa hệ thống của bạn sẽ trở nên hiệu quả hơn bao giờ hết.
+
+9. Bắt đầu cài đặt Sysinternals trên máy tính Windows của bạn
+Trước khi tiến hành, bạn cần tải xuống và cài đặt Sysinternals Suite để có thể sử dụng các công cụ của nó. Microsoft cung cấp hai cách để làm điều này:
+
+Cách 1: Sử dụng Microsoft Store
+
+Đây là cách thuận tiện nhất. Chỉ cần mở ứng dụng Microsoft Store, tìm kiếm “Sysinternals Suite” trong thanh tìm kiếm, sau đó chọn nó từ danh sách kết quả. Tiếp theo, cài đặt và khởi chạy ứng dụng. Sau khi khởi chạy, bạn sẽ được chuyển hướng đến trang của Microsoft, nơi cung cấp đầy đủ thông tin về cách sử dụng các công cụ. Thông thường, bạn sẽ cần sử dụng Command Prompt để khởi chạy từng công cụ trong Sysinternals.
+
+Tuy nhiên, trên thiết bị chạy Windows 10 của tôi, một số công cụ không hoạt động khi cài đặt Sysinternals theo cách này.
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 15 e1737344554541
+
+Cách 2: Tải trực tiếp từ trang chính thức của Microsoft
+
+Cách thứ hai là tải xuống gói Sysinternals Suite trực tiếp từ trang chính thức của Microsoft. Truy cập trang tải xuống, nhấp vào liên kết Sysinternals Suite, và một tệp ZIP chứa tất cả các công cụ sẽ được tải về. Sau đó, giải nén nội dung tệp ZIP vào ổ đĩa và thư mục bạn muốn.
+
+Khi mở thư mục, bạn sẽ thấy các tệp thực thi của tất cả các công cụ. Để thuận tiện hơn, bạn có thể thêm Sysinternals vào PATH của hệ thống. Điều này cho phép bạn chạy các công cụ trực tiếp từ dòng lệnh mà không cần phải điều hướng đến thư mục chứa chúng mỗi lần.
+
+Giờ đây, hãy cùng khám phá những công cụ tốt nhất trong bộ Sysinternals Suite!
+
+8 cong cu Sysinternals giup ban kham pha suc manh thuc su cua Windows 16 e1737344585792
+
+10. Kết luận
+Sysinternals không chỉ là bộ công cụ mạnh mẽ dành cho các chuyên gia IT mà còn là giải pháp hữu ích giúp bạn khai thác tối đa sức mạnh của hệ điều hành Windows. Từ việc giám sát hiệu suất, phát hiện lỗi hệ thống, đến bảo mật, các công cụ này mang lại khả năng quản lý sâu sắc và chính xác mà ít giải pháp nào có thể so sánh. Hãy thử áp dụng ngay các công cụ này để làm chủ hệ thống của bạn!

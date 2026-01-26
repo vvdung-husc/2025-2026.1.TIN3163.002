@@ -1,0 +1,76 @@
+// Import thư viện tạo HMAC
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+
+// Import ByteBuffer để chuyển long sang mảng byte
+import java.nio.ByteBuffer;
+// Import Scanner để nhập dữ liệu
+import java.util.Scanner;
+
+public class TOTP {
+
+    // Thời gian hiệu lực OTP (30 giây)
+    private static final long TIME_STEP = 30;
+    // Số chữ số của OTP
+    private static final int OTP_DIGITS = 6;
+    // Thuật toán HMAC theo chuẩn TOTP
+    private static final String HMAC_ALGO = "HmacSHA1";
+
+    /**
+     * Sinh mã OTP theo thời gian (TOTP)
+     */
+    public static String generateTOTP(String secretKey) throws Exception {
+
+        // Lấy thời gian hiện tại (giây)
+        long time = System.currentTimeMillis() / 1000;
+        long counter = time / TIME_STEP;
+
+        // Chuyển counter thành mảng byte
+        byte[] data = ByteBuffer.allocate(8).putLong(counter).array();
+
+        // Tạo HMAC với khóa bí mật
+        SecretKeySpec key = new SecretKeySpec(secretKey.getBytes(), HMAC_ALGO);
+        Mac mac = Mac.getInstance(HMAC_ALGO);
+        mac.init(key);
+
+        // Tính giá trị băm
+        byte[] hash = mac.doFinal(data);
+
+        // Cắt động để lấy OTP
+        int offset = hash[hash.length - 1] & 0x0F;
+        int binary = ((hash[offset] & 0x7f) << 24)
+                   | ((hash[offset + 1] & 0xff) << 16)
+                   | ((hash[offset + 2] & 0xff) << 8)
+                   | (hash[offset + 3] & 0xff);
+
+        int otp = binary % (int) Math.pow(10, OTP_DIGITS);
+        return String.format("%06d", otp);
+    }
+
+    /**
+     * Xác thực OTP người dùng nhập
+     */
+    public static boolean verifyTOTP(String secretKey, String userOTP) throws Exception {
+        return generateTOTP(secretKey).equals(userOTP);
+    }
+
+    /**
+     * Chương trình chính
+     */
+    public static void main(String[] args) throws Exception {
+
+        Scanner sc = new Scanner(System.in);
+        String secretKey = "MY_SECRET_KEY";
+
+        // Sinh và hiển thị OTP
+        System.out.println("OTP hiện tại: " + generateTOTP(secretKey));
+
+        // Nhập OTP để kiểm tra
+        System.out.print("Nhập OTP: ");
+        String input = sc.nextLine();
+
+        System.out.println(
+            verifyTOTP(secretKey, input) ? "OTP hợp lệ!" : "OTP không hợp lệ!"
+        );
+    }
+}

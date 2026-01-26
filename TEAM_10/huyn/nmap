@@ -1,0 +1,134 @@
+Nmap là gì? Cách sử dụng nmap Cơ bản.
+Photo of Trần Hiếu Trần Hiếu29 Tháng 6 2022Last Updated: 29 Tháng 6 2022 22.352 4 minutes read
+Trước khi tìm hiểu nmap, bạn phải hiểu về internet và những ai làm về IT việc troubleshoot khá quan trọng trong việc quản trị mạng nội bộ. Ngoài phần mềm nmap ra còn có phần mềm có thể troubleshoot được hệ thống mạng là Wireshark.
+
+Vậy nmap là gì? Nó đóng vai trò như nào trong việc quản trị mạng máy tính?
+
+>> Tham gia Group để nhận ngay bộ công cụ AI x3 hiệu suất làm việc <<
+
+Khái niệm về nmap
+Nmap là 1 ứng dụng đa nền tảng ban đầu chạy trên hệ điều hành linux và đã được phát triển trên các hệ điều hành khác như Windows và Linux.
+Nmap là một công cụ quét mạng mạnh mẽ và dùng để phát hiện ra lỗ hổng trong mạng, port, từ đó giúp IT có thể khắc phục được sự cố mạng nhanh hơn.
+Cài đặt nmap
+Cài đặt trên Windows
+Truy cập link website: https://nmap.org/download để cài đặt và sau đó khởi động ứng dụng Zenmap trên hệ điều hành
+
+
+Trong quá trình sử dụng phần mềm phiên bản cài đặt trên GUI có thể diễn ra 1 vài lỗi và chậm hơn so với UNIX
+Cài đặt trên Ubuntu và Debian
+Mở dòng lệnh terminal gõ:
+# sudo apt-get install nmap -y
+Cài đặt trên Centos & Red-hat
+yum install nmap -y
+dnf install nmap -y
+
+
+Cài đặt trên MacOS
+Trên macos có thể tải file .dmg cài đặt https://nmap.org/dist/nmap-7.92.dmg
+Các câu lệnh nmap
+Nmap thường được sử dụng để xác định port, khám phá lỗ hổng trong mạng, tìm được thông tin các thiết bị đang trực tuyến và đặc biệt dùng để lập bản đồ mạng dễ dàng hơn.
+IP:
+
+Cú pháp:
+# nmap  [OPTIONS] ...... [TARGET]
+Ví dụ để muốn biết thông tin thiết bị trực tuyến đang sử dụng là gì, dùng options -sO
+# nmap -sO {hostname}
+Hiển thị thông số port TCP của thiết bị
+# nmap -p T{ports}   {IP target or hostname}
+hoặc
+
+# nmap -sT {hostname} lệnh này tìm các port TCP
+Hiển thị thông số của Router, Interface và gói tin của mạng để việc dễ fix bug.
+# nmap --iflist
+Sau đó kết quả sẽ ra như hình dưới:
+
+***********************INTERFACES************************
+DEV (SHORT) IP/MASK TYPE UP MTU MAC
+lo (lo) 127.0.0.1/8 loopback up 65536
+lo (lo) ::1/128 loopback up 65536
+ens33 (ens33) 10.10.3.2**/22 ethernet up 1500 00:0C:**:6C:04:47
+ens33 (ens33) fe80::5675:**c6:37**:5f39/64 ethernet up 1500 00:0C:**:6C:04:47
+
+**************************ROUTES**************************
+DST/MASK DEV METRIC GATEWAY
+10.10.0.0/22 ens33 100
+0.0.0.0/0 ens33 100 10.10.0.1
+::1/128 lo 0 fe80::5675:35c6:37b5:5f39/128 lo 0
+fe80::/64 ens33 100
+ff00::/8 ens33 256
+Hiển thị hướng dẫn về lệnh nmap
+# man nmap
+Phiên bản của nmap
+# nmap -V
+Nmap version 6.40 ( http://nmap.org )
+Platform: x86_64-redhat-linux-gnu
+Compiled with: nmap-liblua-5.2.2 openssl-1.0.2k libpcre-8.32 libpcap-1.5.3 nmap-libdnet-1.12 ipv6
+Compiled without:
+Available nsock engines: epoll poll select
+
+Nhận thêm nhiều thông tin hơn khi scan trong mạng
+# nmap -v {hostname}
+Ex: nmap -v 10.10.3.247
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2022-06-27 02:42 +07
+Initiating Parallel DNS resolution of 1 host. at 02:42
+Completed Parallel DNS resolution of 1 host. at 02:42, 0.03s elapsed
+Initiating SYN Stealth Scan at 02:42
+Scanning 10.10.3.247 [1000 ports]
+Discovered open port 22/tcp on 10.10.3.247
+Completed SYN Stealth Scan at 02:42, 1.59s elapsed (1000 total ports)
+Nmap scan report for 10.10.3.247
+Host is up (0.000010s latency).
+Not shown: 999 closed ports
+PORT STATE SERVICE
+22/tcp open ssh
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 1.66 seconds
+Raw packets sent: 1061 (46.684KB) | Rcvd: 2123 (89.168KB)
+
+Scan ngoại trừ 1 host trong mạng
+# nmap {hostname} --exclude {hostname}
+Ex: # nmap 10.10.3.* –exclude 10.10.3.247
+
+Khi đó nmap sẽ scan toàn bộ mạng trong nội bộ ngoại trừ mạng 10.10.3.247
+
+Kiểm tra host còn tồn tại( alive) không:
+# nmap -sn {hostname}
+Scan port phổ biến
+Scan 1 port
+# nmap -p 443 {hostname}
+Scan nhiều port( 2 port trở lên)
+# nmap -p 443,80 {hostname}
+Scan các port nằm trong khoảng cần tìm
+# nmap -p 80-443 {hostname}
+Quét xác định phiên bản của dịch vụ đang chạy trên host:
+# nmap -PN -p {số_cổng} -sV {hostname}
+Công dụng của nmap
+Phát hiện và khai thác lỗ hổng bảo mật.
+Phát hiện backdoor
+Quét mạng trong nội bộ và mạng bên ngoài
+Quét máy chủ và các cổng của máy chủ hệ thống.
+Xác định hệ điều hành, thông tin từng dịch vụ, thông tin tường lửa đang sử dụng
+Cung cấp thông tin về các thiết bị vật lý, DNS và địa chỉ MAC.
+Trạng thái các cổng nmap.
+Trong quá trình scan ta có thể thấy trạng thái các cổng như sau :
+
+Open: Đang có một dịch vụ thực hiện kết nối ra bên ngoài nhưng không bị giám sát bởi tường lửa.
+Closed: Máy mục tiêu vẫn nhận và phản hồi, nhưng ko có ứng dụng nào đang nghe trên cổng đó. Khi đó cổng được báo là đóng vẫn có thể cho ta biết host đang sống
+Filtered: Đã có sự ngăn chặn bởi tường lửa, bạn sẽ chẳng nhận được bất cứ phản hồi gì từ mục tiêu cả.
+Unfiltered: Không bị chặn, nhưng không thể biết được cổng đóng hay mở.
+Open/Filtered: không biết là cổng mở hay bị lọc. Nó xảy ra đối với kiểu quét mà cổng dù mở nhưng không phản hồi gì cả nên biểu hiện của nó giống như bị lọc.
+Closed/Filtered: Trạng thái xuất hiện khi Nmap không biết được port đó đang Closed hay Filtered. Nó được sử dụng cho quét IPID Idle.
+Một số các options khác.
+-sP: Sử dụng Ping để scan Nmap
+
+-sF sử dụng FIN ScanNmap
+
+-sX: sử dụng phương thức XMAS Scan Nmap
+
+–sN: sử dụng phương thức NULL ScanNmap
+
+–SR /I RPC dsử dụng để scan RPC
+
+Dưới đây là số các port UDP/TCP, mọi người tham khảo ảnh dưới để tìm kiếm dễ hơn:

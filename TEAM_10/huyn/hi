@@ -1,0 +1,168 @@
+Hướng dẫn chi tiết các kỹ thuật phân tích mã độc từ Static Analysis đến Dynamic Analysis
+Bài đăng này đã không được cập nhật trong 2 năm
+
+Ngày nay, với sự gia tăng mạnh mẽ về số lượng và độ phức tạp của mã độc, nhu cầu phân tích và hiểu rõ về chúng trở nên vô cùng quan trọng. Trong bài viết này, chúng ta sẽ tìm hiểu về các kỹ thuật phân tích mã độc, từ Static Analysis đến Dynamic Analysis.
+
+Phần 1: Phân tích tĩnh (Static Analysis)
+Phân tích tĩnh, còn được gọi là code review, là quá trình phân tích mã độc mà không cần thực thi nó. Việc này giúp nhà phân tích có thể xác định được đặc điểm và hành vi của mã độc.
+
+1.1 File Signature Analysis:
+File signature analysis là phương pháp phân tích mã độc dựa trên đặc điểm nhận dạng của nó. Các công cụ như VirusTotal được sử dụng để so sánh mã hash của tập tin nghi ngờ với các cơ sở dữ liệu chứa chữ ký của các loại mã độc đã biết.
+
+Giả sử bạn có một tập tin nghi ngờ trong hệ thống của mình, có tên là "file_suspicious.exe". Bạn không rõ nguồn gốc của nó và lo ngại rằng đó có thể là một loại mã độc. Để kiểm tra, bạn có thể sử dụng VirusTotal.
+
+Đầu tiên, truy cập vào trang web của VirusTotal.
+
+Chọn tùy chọn "Choose File" hoặc kéo và thả tập tin "file_suspicious.exe" vào giao diện trang web.
+
+VirusTotal sẽ tiến hành quét tập tin và tạo ra một báo cáo chi tiết. Báo cáo này sẽ chứa thông tin về tập tin, bao gồm cả mã hash của nó.
+
+VirusTotal sẽ so sánh mã hash này với cơ sở dữ liệu chữ ký mã độc của mình, mà bao gồm hàng triệu loại mã độc đã được biết đến.
+
+Nếu mã hash của "file_suspicious.exe" khớp với một trong những chữ ký trong cơ sở dữ liệu của VirusTotal, bạn sẽ biết rằng tập tin đó chứa mã độc.
+
+Trong báo cáo, VirusTotal cũng cung cấp thông tin về loại mã độc (nếu có), cũng như các chi tiết khác như hành vi của nó, phân loại từ các công ty bảo mật khác, v.v.
+
+VirusTotal là một công cụ hữu ích không chỉ để phát hiện mã độc, mà còn cung cấp thông tin chi tiết giúp nhà phân tích mã độc trong công việc của họ.
+
+1.2 Disassembly and Decompilation:
+Disassembly cho phép nhà phân tích dịch ngược mã máy của một tập tin thực thi thành mã assembly, trong khi Decompilation dịch ngược mã này thành mã nguồn cao cấp hơn, như C++ hay Java. Công cụ như IDA Pro, Ghidra, và Radare2 thường được sử dụng trong quá trình này.
+
+Ví dụ minh họa về việc sử dụng công cụ IDA Pro để thực hiện Disassembly và Decompilation:
+
+Giả sử bạn có một tập tin thực thi đáng ngờ, "suspicious.exe", và bạn muốn biết nó làm gì khi được thực thi.
+
+Bước 1: Mở tập tin trong IDA Pro
+
+Khởi động IDA Pro và mở "suspicious.exe". IDA Pro sẽ bắt đầu phân tích tập tin và tạo ra một biểu đồ kiểm soát luồng (control flow graph) cũng như biểu diễn mã assembly của tập tin.
+
+Bước 2: Kiểm tra mã Assembly
+
+Bạn có thể xem mã assembly được tạo ra và tìm kiếm các hàm hay đoạn mã đáng ngờ. Đôi khi, mã độc thường chứa các hàm có tên lạ hoặc sử dụng các cấu trúc mã lệnh không thông thường.
+
+Bước 3: Decompilation
+
+Nếu bạn muốn thấy mã nguồn ở dạng cao hơn, bạn có thể sử dụng chức năng Decompiler của IDA Pro. Bằng cách này, mã Assembly sẽ được dịch ngược thành ngôn ngữ C tương đối dễ đọc hơn.
+
+Bước 4: Phân tích mã nguồn
+
+Điều cuối cùng bạn muốn làm là phân tích mã nguồn đã Decompilation. Tìm hiểu cách mã độc hoạt động: nó tạo ra các kết nối mạng như thế nào, viết hoặc đọc từ đĩa như thế nào, hoặc sửa đổi registry như thế nào. Đây là cơ hội để bạn hiểu rõ cách thức hoạt động của mã độc.
+
+Cần lưu ý rằng việc phân tích mã độc là một hoạt động phức tạp yêu cầu kiến thức sâu về lập trình và hệ thống máy tính. Bạn cũng nên thực hiện những hoạt động này trong một môi trường cô lập để tránh gây hại cho hệ thống chính của mình.
+
+1.3 Strings Analysis:
+Phân tích chuỗi có thể giúp tìm hiểu về chức năng của mã độc thông qua các chuỗi văn bản có trong tập tin thực thi. Các công cụ như strings trong Linux hoặc Sysinternals Strings cho Windows rất hữu ích.
+
+Ví dụ minh họa về việc sử dụng công cụ strings trong Linux để phân tích mã độc.
+
+Giả sử bạn có một tập tin thực thi đáng ngờ tên là "suspicious.bin" trên máy chạy Linux và bạn muốn xem nếu có thông tin hữu ích nào có thể được rút ra từ nó.
+
+Bước 1: Mở Terminal
+
+Mở cửa sổ terminal trên máy Linux của bạn.
+
+Bước 2: Sử dụng Strings
+
+Chạy lệnh sau: strings suspicious.bin > output.txt. Lệnh này sẽ tìm tất cả các chuỗi văn bản có thể đọc được trong tập tin "suspicious.bin" và ghi chúng vào tập tin "output.txt".
+
+Bước 3: Xem kết quả
+
+Mở tập tin "output.txt" và xem các chuỗi đã được trích xuất. Các chuỗi này có thể bao gồm các tên hàm, đường dẫn tập tin, thông điệp lỗi, URL, và nhiều thông tin khác có thể giúp bạn hiểu được chức năng và mục đích của tập tin thực thi.
+
+Ví dụ, bạn có thể tìm thấy một URL đáng ngờ, có thể là một máy chủ C&C (Command & Control) mà mã độc sử dụng để nhận lệnh. Hoặc bạn có thể thấy tên các hàm hay đường dẫn liên quan đến các hoạt động đáng ngờ như sửa đổi registry, tạo kết nối mạng, hoặc mã hóa dữ liệu.
+
+Hãy nhớ rằng strings chỉ trích xuất thông tin và không thực hiện bất kỳ hành động nào đối với mã độc, do đó việc sử dụng nó rất an toàn. Tuy nhiên, nó chỉ là một phần trong quy trình phân tích mã độc và thường cần kết hợp với các phương pháp khác để có cái nhìn toàn diện về mã độc.
+
+Ví dụ minh họa khác về việc sử dụng công cụ Sysinternals Strings trong Windows để phân tích mã độc:
+
+Giả sử bạn có một tập tin thực thi đáng ngờ có tên là "suspicious.exe" trên máy tính Windows của bạn, và bạn muốn xem nếu có thông tin nào có thể được rút ra từ nó.
+
+Bước 1: Tải và cài đặt Sysinternals Strings
+
+Bạn có thể tải Sysinternals Strings từ trang web chính thức của Microsoft. Sau khi đã tải xong, giải nén và cài đặt công cụ này.
+
+Bước 2: Mở Command Prompt
+
+Khởi chạy Command Prompt (cmd) với quyền quản trị (Run as administrator).
+
+Bước 3: Sử dụng Sysinternals Strings
+
+Điều hướng đến thư mục chứa Sysinternals Strings, sau đó chạy lệnh sau: strings64 -n 7 suspicious.exe > output.txt. Lệnh này sẽ tìm tất cả các chuỗi văn bản có thể đọc được có độ dài ít nhất là 7 ký tự trong tập tin "suspicious.exe" và ghi chúng vào tập tin "output.txt".
+
+Bước 4: Xem kết quả
+
+Mở tập tin "output.txt" và xem các chuỗi đã được trích xuất. Những chuỗi này có thể bao gồm các tên hàm, đường dẫn tập tin, thông điệp lỗi, URL, và nhiều thông tin khác có thể giúp bạn hiểu được chức năng và mục đích của tập tin thực thi.
+
+Ví dụ, bạn có thể tìm thấy một URL đáng ngờ, có thể là một máy chủ C&C (Command & Control) mà mã độc sử dụng để nhận lệnh. Hoặc bạn có thể thấy tên các hàm hay đường dẫn liên quan đến các hoạt động đáng ngờ như sửa đổi registry, tạo kết nối mạng, hoặc mã hóa dữ liệu.
+
+Hãy nhớ rằng, tương tự như công cụ strings trong Linux, Sysinternals Strings chỉ trích xuất thông tin và không thực hiện bất kỳ hành động nào đối với mã độc, do đó việc sử dụng nó rất an toàn.
+
+Phần 2: Phân tích động (Dynamic Analysis)
+Khác với phân tích tĩnh, phân tích động là quá trình thực thi mã độc trong một môi trường kiểm soát để nắm bắt hành vi và tác động của nó đối với hệ thống.
+
+2.1 Sandboxing:
+Sandboxing cho phép nhà phân tích thực thi mã độc trong một môi trường cô lập, giúp ngăn ngừa việc mã độc lan truyền hoặc gây hại cho hệ thống thực. Công cụ như Cuckoo Sandbox và Joe Sandbox được sử dụng rộng rãi.
+
+Một ví dụ minh họa về việc sử dụng Cuckoo Sandbox để phân tích mã độc:
+
+Giả sử bạn có một tập tin thực thi đáng ngờ tên là "suspicious.exe", bạn muốn biết nó sẽ làm gì khi được thực thi, nhưng không muốn chạy nó trên hệ thống chính của bạn.
+
+Bước 1: Cài đặt Cuckoo Sandbox
+
+Đầu tiên, cài đặt Cuckoo Sandbox trên hệ thống của bạn. Hệ thống này nên cô lập và không có thông tin nhạy cảm, vì bạn sẽ thực thi mã độc trên nó.
+
+Bước 2: Gửi tập tin đáng ngờ vào Sandbox
+
+Tải tập tin "suspicious.exe" lên Cuckoo Sandbox. Sandbox sẽ chạy tập tin trong một môi trường an toàn, cô lập và ghi lại tất cả các hành động mà nó thực hiện.
+
+Bước 3: Phân tích kết quả
+
+Sau khi tập tin đã chạy xong, Cuckoo Sandbox sẽ tạo ra một báo cáo chi tiết, bao gồm các file đã được tạo ra, đăng ký đã được thay đổi, kết nối mạng đã được thực hiện, và nhiều hơn nữa.
+
+Cuckoo Sandbox cũng có khả năng chụp ảnh màn hình và ghi lại các gói tin mạng, cung cấp cho bạn cái nhìn sâu hơn về hoạt động của mã độc.
+
+Lưu ý rằng quy trình này chỉ là một ví dụ và có thể yêu cầu các bước phụ thuộc vào cấu hình cụ thể của hệ thống của bạn. Ngoài ra, việc phân tích mã độc có thể gây hại cho hệ thống của bạn, do đó bạn nên chỉ thực hiện nó nếu bạn có kinh nghiệm với mã độc và biết cách bảo vệ hệ thống của mình.
+
+2.2 Network Traffic Analysis:
+Phân tích giao thông mạng giúp nhà phân tích nắm bắt được thông tin về các giao tiếp mạng của mã độc, như địa chỉ IP, cổng, giao thức mạng và hơn thế nữa. Wireshark là một công cụ phân tích gói tin mạng phổ biến.
+
+Giả sử bạn đã cài đặt một máy ảo (VM) để thực thi một tập tin đáng ngờ "suspicious.exe", và bạn muốn phân tích lưu lượng mạng được tạo ra khi tập tin này được thực thi.
+
+Bước 1: Cài đặt và khởi động Wireshark
+
+Đầu tiên, cài đặt Wireshark trên cùng máy chủ với máy ảo của bạn. Mở Wireshark và bắt đầu theo dõi lưu lượng mạng trên interface mà máy ảo của bạn sẽ sử dụng.
+
+Bước 2: Thực thi tập tin đáng ngờ
+
+Trên máy ảo, thực thi tập tin "suspicious.exe". Đảm bảo máy ảo của bạn chỉ có thể truy cập Internet thông qua giao diện mà Wireshark đang theo dõi.
+
+Bước 3: Phân tích lưu lượng mạng
+
+Sau khi "suspicious.exe" đã chạy một thời gian, dừng Wireshark và xem các gói tin mạng đã được ghi lại. Các gói tin này có thể giúp bạn xác định máy chủ C&C (Command & Control), phương thức giao tiếp, và các thông tin khác về mã độc.
+
+Ví dụ, bạn có thể thấy gói tin HTTP đến một địa chỉ IP đáng ngờ, có thể là máy chủ C&C. Hoặc bạn có thể thấy các gói tin DNS đáng ngờ, chỉ ra rằng mã độc có thể sử dụng DNS để truyền thông tin.
+
+Lưu ý rằng phân tích lưu lượng mạng là một quá trình phức tạp yêu cầu kiến thức sâu về giao thức mạng. Hơn nữa, mã độc thường sử dụng các kỹ thuật để che dấu lưu lượng mạng của chúng, do đó việc phân tích có thể không đơn giản.
+
+2.3 System Interaction Analysis:
+Phân tích sự tương tác hệ thống giúp nắm bắt được hành vi của mã độc đối với hệ thống, như việc sửa đổi registry, tạo, chỉnh sửa hoặc xóa các tập tin và thư mục, v.v. Sysinternals Suite của Microsoft cung cấp nhiều công cụ hữu ích cho quá trình này.
+
+Ví dụ minh họa về việc sử dụng một số công cụ trong Sysinternals Suite để phân tích tương tác hệ thống khi phân tích mã độc:
+
+Bước 1: Cài đặt Sysinternals Suite
+
+Sysinternals Suite là một tập hợp các công cụ nhỏ, di động mà Microsoft cung cấp miễn phí. Bạn có thể tải về từ trang web chính thức của Microsoft.
+
+Bước 2: Sử dụng Process Explorer
+
+Process Explorer là một công cụ tương tự như Task Manager nhưng mạnh mẽ hơn. Khi bạn chạy một tập tin đáng ngờ, Process Explorer sẽ hiển thị mọi thông tin về quá trình, bao gồm CPU, bộ nhớ, đĩa, và sử dụng mạng, cũng như DLLs mà nó đang sử dụng, và registry keys mà nó đã mở.
+
+Bước 3: Sử dụng Process Monitor
+
+Process Monitor là một công cụ mạnh mẽ theo dõi và hiển thị tất cả các hoạt động của tệp và registry trong thời gian thực. Khi chạy tập tin đáng ngờ, Process Monitor có thể giúp bạn xem nó đang thực hiện những thao tác gì trên hệ thống, bao gồm việc mở, đọc, và ghi tập tin, thay đổi registry, và nhiều hơn nữa.
+
+Bước 4: Sử dụng TCPView
+
+TCPView là một công cụ theo dõi tất cả các kết nối TCP và UDP trên hệ thống của bạn. Khi chạy tập tin đáng ngờ, TCPView có thể giúp bạn xác định nếu nó đang tạo các kết nối mạng đáng ngờ.
+
+Những công cụ này có thể giúp bạn có cái nhìn rõ ràng hơn về hoạt động của một tập tin đáng ngờ khi nó được thực thi trên hệ thống của bạn. Tuy nhiên, hãy nhớ rằng việc chạy mã độc trên hệ thống chính của bạn có thể gây hại, do đó bạn nên thực hiện các bước này trong một môi trường cô lập và kiểm soát.

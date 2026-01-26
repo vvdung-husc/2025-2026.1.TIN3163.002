@@ -1,0 +1,145 @@
+NGHIÊN CỨU VỀ IPSEC VPN
+
+Môn học: An ninh mạng
+
+1. Giới thiệu chung
+
+Trong bối cảnh Internet phát triển mạnh mẽ, việc truyền dữ liệu qua các mạng công cộng tiềm ẩn nhiều nguy cơ mất an toàn như nghe lén, giả mạo hay thay đổi dữ liệu. Để giải quyết vấn đề này, VPN (Virtual Private Network – Mạng riêng ảo) ra đời, cho phép thiết lập kênh truyền an toàn trên hạ tầng mạng công cộng.
+
+IPSec VPN (Internet Protocol Security Virtual Private Network) là một trong những công nghệ VPN phổ biến và quan trọng nhất, được sử dụng rộng rãi trong các hệ thống mạng doanh nghiệp và chính phủ nhằm đảm bảo an toàn thông tin ở mức độ cao.
+
+2. Khái niệm IPSec VPN
+
+IPSec là một bộ giao thức bảo mật hoạt động ở tầng mạng (Layer 3 – Network Layer) trong mô hình OSI. IPSec cung cấp các dịch vụ bảo mật cho gói tin IP, bao gồm:
+
+Xác thực nguồn gốc dữ liệu
+
+Đảm bảo toàn vẹn dữ liệu
+
+Bảo mật nội dung dữ liệu bằng mã hóa
+
+Chống tấn công phát lại (Replay Attack)
+
+IPSec VPN là việc sử dụng IPSec để tạo ra các đường hầm VPN an toàn giữa:
+
+Hai mạng (Site-to-Site VPN)
+
+Người dùng và mạng nội bộ (Remote Access VPN)
+
+3. Các dịch vụ bảo mật của IPSec
+
+IPSec cung cấp 4 dịch vụ bảo mật chính:
+
+3.1. Xác thực (Authentication)
+
+Đảm bảo gói tin đến từ đúng nguồn gửi, không bị giả mạo.
+
+3.2. Toàn vẹn dữ liệu (Integrity)
+
+Phát hiện việc dữ liệu bị thay đổi trong quá trình truyền.
+
+3.3. Bảo mật dữ liệu (Confidentiality)
+
+Mã hóa dữ liệu để ngăn chặn việc nghe lén.
+
+3.4. Chống phát lại (Anti-Replay)
+
+Ngăn chặn kẻ tấn công gửi lại các gói tin cũ nhằm đánh lừa hệ thống.
+
+4. Các giao thức chính trong IPSec
+4.1. AH (Authentication Header)
+
+Cung cấp xác thực và toàn vẹn dữ liệu
+
+Không mã hóa dữ liệu
+
+Ít được sử dụng trong thực tế
+
+4.2. ESP (Encapsulating Security Payload)
+
+Cung cấp xác thực, toàn vẹn và mã hóa dữ liệu
+
+Là giao thức được sử dụng phổ biến nhất trong IPSec VPN
+
+5. Chế độ hoạt động của IPSec
+5.1. Transport Mode
+
+Chỉ mã hóa phần payload của gói IP
+
+Header IP gốc vẫn được giữ nguyên
+
+Thường dùng trong giao tiếp host-to-host
+
+5.2. Tunnel Mode
+
+Mã hóa toàn bộ gói IP ban đầu
+
+Tạo thêm một IP header mới
+
+Thường dùng trong VPN (Site-to-Site, Remote Access)
+
+6. Giao thức IKE (Internet Key Exchange)
+
+IKE chịu trách nhiệm:
+
+Xác thực hai đầu VPN
+
+Thương lượng thuật toán mã hóa
+
+Trao đổi khóa bảo mật một cách an toàn
+
+Các phương thức xác thực IKE:
+
+Pre-Shared Key (PSK)
+
+Chứng chỉ số (Digital Certificate)
+
+Username/Password (kết hợp)
+
+7. Các mô hình IPSec VPN phổ biến
+7.1. Site-to-Site IPSec VPN
+
+Kết nối hai mạng LAN ở hai vị trí địa lý khác nhau
+
+Thường dùng cho các chi nhánh doanh nghiệp
+
+7.2. Remote Access IPSec VPN
+
+Cho phép người dùng từ xa truy cập mạng nội bộ
+
+Phổ biến trong làm việc từ xa
+
+8. Ưu điểm và nhược điểm của IPSec VPN
+8.1. Ưu điểm
+
+Bảo mật cao
+
+Hoạt động trong suốt với ứng dụng
+
+Chuẩn mở, được hỗ trợ bởi nhiều thiết bị mạng
+
+Phù hợp cho mạng doanh nghiệp lớn
+
+8.2. Nhược điểm
+
+Cấu hình phức tạp
+
+Khó triển khai cho người dùng phổ thông
+
+Có thể gặp vấn đề với NAT (NAT Traversal)
+
+9. So sánh IPSec VPN với một số VPN khác
+Tiêu chí	IPSec VPN	SSL VPN
+Tầng hoạt động	Tầng mạng	Tầng ứng dụng
+Mức độ bảo mật	Rất cao	Cao
+Độ phức tạp	Cao	Thấp
+Phù hợp	Doanh nghiệp	Người dùng cá nhân
+10. Ứng dụng thực tế của IPSec VPN
+
+Kết nối chi nhánh doanh nghiệp
+
+Hệ thống ngân hàng, tài chính
+
+Chính phủ và quốc phòng
+
+Bảo mật truy cập từ xa cho nhân viên
